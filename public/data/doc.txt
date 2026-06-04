@@ -1,0 +1,468 @@
+K-12 DIGITAL BOOK JSON STRUCTURE SPECIFICATION (v2.0)
+=========================================================
+
+This is a universal, stack-agnostic JSON structure for a multilingual
+K-12 digital textbook. It is designed to be rendered identically in any
+frontend framework (Jetpack Compose, Next.js/React, etc.). The structure
+separates pure educational content from presentation, supports multiple
+languages, and uses a block-based architecture with structured inline text.
+
+---------------------------------------------------------
+1. OVERALL LESSON / SECTION JSON
+---------------------------------------------------------
+Every lesson, section, or page is a JSON object with these top-level fields:
+
+{
+  "id": "9.1",                           // Unique identifier (string)
+  "title": {                             // Multilingual string (see §2)
+    "en": "Properties of Radicals",
+    "uz": "Ildizlarning xossalari",
+    "ru": "Свойства радикалов"
+  },
+  "langs": ["en", "uz", "ru"],           // Available languages (optional)
+  "blocks": [ ... ]                      // Ordered list of content blocks (see §4)
+}
+
+---------------------------------------------------------
+2. MULTILINGUAL STRINGS
+---------------------------------------------------------
+Every user-visible string is a map from language code to text:
+{ "en": "text", "uz": "...", "ru": "..." }
+
+The client selects the active language once and picks the corresponding value.
+If a language is missing, fall back to English.
+
+---------------------------------------------------------
+3. INLINE RICH TEXT FORMAT
+---------------------------------------------------------
+All text is stored NOT as raw strings with markup, but as an array of 
+inline objects. This is the ONLY way text appears in the entire structure.
+
+An inline array is an ordered list of nodes, where each node has a "type":
+
+- plain: Simple text
+  { "type": "plain", "text": "Write and solve " }
+
+- term: Glossary term (clickable, links to glossary)
+  { "type": "term", "id": "equation", "display": "equations" }
+  "id" is the key in the global glossary, "display" is the visible text.
+
+- math: LaTeX inline math (render with KaTeX/MathJax)
+  { "type": "math", "latex": "\\sqrt{a}" }
+
+- bold, italic, underline: Formatting that wraps other inline nodes
+  { "type": "bold", "text": [ { "type": "plain", "text": "strong text" } ] }
+  Same structure for italic and underline.
+
+- highlight: Visually highlighted text (like <mark>)
+  { "type": "highlight", "text": [ ... ] }
+
+Example of a full inline text:
+"text": [
+  { "type": "plain", "text": "Write and solve " },
+  { "type": "term", "id": "equation", "display": "equations" },
+  { "type": "plain", "text": " with " },
+  { "type": "term", "id": "variable", "display": "variables" },
+  { "type": "plain", "text": " on both sides." }
+]
+
+IMPORTANT: No {{...}} or <Word ...> markup anywhere. All formatted text 
+must be converted to this array format.
+
+---------------------------------------------------------
+4. TOP-LEVEL BLOCKS (DISCRIMINATED UNION)
+---------------------------------------------------------
+The "blocks" array contains objects, each with a "type" field. The 
+rest of the structure depends on the type. These are the block types:
+
+4.1 learning_target
+--------------------
+{
+  "type": "learning_target",
+  "target": [ Inline array ],                // Learning objective
+  "success_criteria": [                      // Array of inline arrays
+    [ Inline array ],
+    [ Inline array ],
+    ...
+  ]
+}
+
+4.2 explore_it
+--------------
+{
+  "type": "explore_it",
+  "header": {
+    "title": { Multilingual string }
+  },
+  "margin_content": [                        // Items rendered in side margin
+    { type: "mtr_badge", ... },
+    { type: "image", ... }
+  ],
+  "body": [                                  // Main content blocks (task_blocks, etc.)
+    { type: "instruction_text", ... },
+    { type: "task_block", ... },
+    ...
+  ]
+}
+
+4.3 lesson_concept
+------------------
+{
+  "type": "lesson_concept",
+  "id": "sec_03",                            // Anchor ID (optional)
+  "title": { Multilingual string },
+  "margin_content": [                        // Usually vocabulary_box, etc.
+    { type: "vocabulary_box", ... }
+  ],
+  "body": [                                  // paragraphs, bullet_lists, key_ideas_box, etc.
+    { type: "paragraph", ... },
+    { type: "key_ideas_box", ... }
+  ]
+}
+
+4.4 example_block
+-----------------
+{
+  "type": "example_block",
+  "id": "sec_06",                            // Optional anchor
+  "has_video": true,                         // Boolean flag
+  "label": { Multilingual string },         // e.g. "EXAMPLE 2"
+  "title": { Multilingual string },
+  "margin_content": [                        // Usually study_tip_box
+    { type: "study_tip_box", ... }
+  ],
+  "body": [
+    { type: "paragraph", ... },
+    { type: "worked_solutions", ... }
+  ]
+}
+
+4.5 self_assessment_block
+-------------------------
+{
+  "type": "self_assessment_block",
+  "id": "sec_07_self_assessment",            // Anchor ID
+  "title": { Multilingual string },
+  "rating_scale": [                          // 4-level scale
+    { "value": 1, "text": { Multilingual } },
+    { "value": 2, "text": { Multilingual } },
+    { "value": 3, "text": { Multilingual } },
+    { "value": 4, "text": { Multilingual } }
+  ],
+  "body": [
+    { "type": "instruction_text", ... },
+    { "type": "question_grid", ... }
+  ]
+}
+
+---------------------------------------------------------
+5. GENERIC / NESTABLE BLOCK TYPES
+---------------------------------------------------------
+These can appear inside "body", "content", or "margin_content" arrays.
+
+5.1 paragraph
+--------------
+{ "type": "paragraph", "text": [ Inline array ] }
+
+5.2 instruction_text
+---------------------
+Same as paragraph but typically used for teacher instructions.
+{ "type": "instruction_text", "text": [ Inline array ] }
+
+5.3 bullet_list
+----------------
+{ "type": "bullet_list", "items": [ [Inline array], [Inline array], ... ] }
+
+5.4 equation_grid
+------------------
+Displays a grid of LaTeX equations. 
+{ 
+  "type": "equation_grid",
+  "columns": 1,           // number of columns (hint for layout)
+  "align": "left",        // "left" or "center"
+  "items": [
+    { "id": "a_i", "latex": "\\text{i. } \\sqrt{a} + \\sqrt{b} ..." },
+    ...
+  ]
+}
+
+5.5 question_grid
+------------------
+Similar to equation_grid but for self‑assessment questions.
+{
+  "type": "question_grid",
+  "columns": 2,
+  "items": [
+    { "id": "sa_q1", "label": "1.", "latex": "\\sqrt{24}" },
+    ...
+  ]
+}
+
+5.6 card_tiles
+---------------
+Visual cards with LaTeX content.
+{
+  "type": "card_tiles",
+  "tiles": [
+    { "id": "t1", "latex": "2" },
+    { "id": "t2", "latex": "\\frac14" }
+  ]
+}
+
+5.7 worked_solutions
+---------------------
+Step-by-step worked example.
+{
+  "type": "worked_solutions",
+  "steps": [
+    {
+      "label": "a.",                        // Optional step label
+      "expression": "\\sqrt[3]{-128}",      // Initial expression
+      "work": [
+        {
+          "line": "= \\sqrt[3]{-64 \\cdot 2}",
+          "explanation": [ Inline array ]    // Why this step was taken
+        },
+        ...
+      ]
+    }
+  ]
+}
+
+5.8 key_ideas_box
+------------------
+Highlighted box with key mathematical properties.
+{
+  "type": "key_ideas_box",
+  "style": "lightbulb_container",           // Visual theme hint
+  "title": { Multilingual string },
+  "concepts": [
+    {
+      "subtitle": { Multilingual string },
+      "matrix": [                           // Array of rows
+        {
+          "label": { Multilingual },         // e.g. "Words"
+          "text": [ Inline array ]           // OR "latex": "..." for math
+        },
+        {
+          "label": { Multilingual },         // "Numbers"
+          "latex": "..."
+        },
+        {
+          "label": { Multilingual },         // "Algebra"
+          "translations": {                  // One latex per language
+            "en": { "latex": "..." },
+            "uz": { "latex": "..." },
+            "ru": { "latex": "..." }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+5.9 vocabulary_box
+-------------------
+A margin box listing glossary terms.
+{
+  "type": "vocabulary_box",
+  "icon": "az_vocab",                       // Icon identifier
+  "title": { Multilingual },
+  "terms": [
+    {
+      "term": { Multilingual },
+      "reference": "p. 470"                 // Cross-reference
+    }
+  ]
+}
+
+5.10 study_tip_box
+-------------------
+Margin tip for students.
+{
+  "type": "study_tip_box",
+  "icon": "lightbulb",
+  "title": { Multilingual },
+  "text": [ Inline array ]
+}
+
+5.11 mtr_badge
+---------------
+A "Mathematical Teaching Routine" badge in the margin.
+{
+  "type": "mtr_badge",
+  "id": 1,
+  "badge": "ANALYZE A PROBLEM",             // Non-translatable label
+  "prompt": [ Inline array ]               // Guiding question
+}
+
+5.12 image
+-----------
+{
+  "type": "image",
+  "src": "/assets/graphics/student_thinking_cutout.png",
+  "style": "transparent_cutout",           // Optional rendering hint
+  "alt": { Multilingual string }
+}
+
+5.13 video
+-----------
+{
+  "type": "video",
+  "src": "url-to-video.mp4",
+  "poster": "thumbnail.jpg"                // Optional
+}
+
+5.14 task_block
+----------------
+Used inside explore_it or anywhere to present a step-by-step task.
+{
+  "type": "task_block",
+  "label": "a.",                           // Optional letter/number
+  "level": 1,                              // Indentation level (1,2,3)
+  "instruction": [ Inline array ],
+  "content": [ ... ]                       // Optional sub-blocks (equation_grid, card_tiles, etc.)
+}
+
+---------------------------------------------------------
+6. LAYOUT HINTS
+---------------------------------------------------------
+The JSON separates main content ("body") from marginal content ("margin_content").
+On wide screens (desktop), margin_content is rendered in a side column; on narrow 
+screens (mobile), it may be collapsed, shown as pop‑ups, or injected into the flow.
+
+Grid blocks (equation_grid, question_grid) include "columns" as a suggestion; 
+the renderer may reduce columns on small screens.
+"align" in equation_grid suggests left or center alignment.
+
+---------------------------------------------------------
+7. GLOSSARY AND TERM REFERENCES
+---------------------------------------------------------
+The "term" inline node references a global glossary dictionary. The client 
+should maintain a mapping from "id" to definitions. Example:
+
+Glossary:
+{
+  "equation": {
+    "id": "equation",
+    "word": { "en": "equation", "uz": "tenglama", "ru": "уравнение" },
+    "definition": {
+      "en": "A mathematical statement that two expressions are equal.",
+      "uz": "...",
+      "ru": "..."
+    },
+    "images": [],
+    "examples": {
+      "en": ["2x + 3 = 11"],
+      "uz": ["2x + 3 = 11"],
+      "ru": ["2x + 3 = 11"]
+    },
+    "relatedConcepts": ["variable", "equality", "solution"]
+  },
+  "variable": { ... }
+}
+
+When rendering a term, the client can show a tooltip or link to the glossary.
+
+---------------------------------------------------------
+8. MATH / LATEX
+---------------------------------------------------------
+All math is stored as LaTeX strings in "latex" fields. Inline math uses 
+the "math" inline node. Render using KaTeX, MathJax, or native library.
+
+---------------------------------------------------------
+9. EXAMPLE OF A COMPLETE LESSON (ABBREVIATED)
+---------------------------------------------------------
+{
+  "id": "9.1",
+  "title": { "en": "Properties of Radicals", "uz": "...", "ru": "..." },
+  "langs": ["en", "uz", "ru"],
+  "blocks": [
+    {
+      "type": "learning_target",
+      "target": { "en": [ ... ], "uz": [ ... ], "ru": [ ... ] },
+      "success_criteria": { "en": [ [ ... ], [ ... ] ], "uz": ..., "ru": ... }
+    },
+    {
+      "type": "explore_it",
+      "header": { "title": { "en": "Performing Operations with Square Roots" } },
+      "margin_content": [
+        {
+          "type": "mtr_badge",
+          "id": 1,
+          "badge": "ANALYZE A PROBLEM",
+          "prompt": { "en": [ ... ] }
+        },
+        { "type": "image", "src": "...", "alt": {...} }
+      ],
+      "body": [
+        { "type": "instruction_text", "text": { "en": [ ... ] } },
+        { "type": "task_block", "label": "a.", "level": 1, ... },
+        { "type": "task_block", "label": "b.", "level": 1, ... }
+      ]
+    },
+    {
+      "type": "lesson_concept",
+      "title": { "en": "Using Properties of Radicals" },
+      "margin_content": [
+        { "type": "vocabulary_box", ... }
+      ],
+      "body": [
+        { "type": "paragraph", "text": { "en": [ ... ] } },
+        { "type": "key_ideas_box", ... }
+      ]
+    },
+    {
+      "type": "example_block",
+      "label": { "en": "EXAMPLE 2" },
+      "title": { "en": "Using Properties of Cube Roots" },
+      "has_video": true,
+      "body": [
+        { "type": "paragraph", ... },
+        { "type": "worked_solutions", ... }
+      ]
+    },
+    {
+      "type": "self_assessment_block",
+      "title": { "en": "SELF-ASSESSMENT" },
+      "rating_scale": [ ... ],
+      "body": [
+        { "type": "instruction_text", ... },
+        { "type": "question_grid", ... }
+      ]
+    }
+  ]
+}
+
+---------------------------------------------------------
+10. MIGRATION FROM OLD FORMAT
+---------------------------------------------------------
+If you have existing JSON with `{{...}}` or `<Word id="...">...</Word>` markup:
+
+- Replace every `{{glossary_id|display_text}}` with a "term" inline node:
+  { "type": "term", "id": "glossary_id", "display": "display_text" }
+- Replace `<Word id="...">display</Word>` similarly.
+- Split plain text around those markers into separate "plain" nodes.
+- Ensure all inline content becomes an array. Example:
+  Old: "Write and solve {{equation|equations}} with {{variable|variables}}"
+  New: [
+    { "type": "plain", "text": "Write and solve " },
+    { "type": "term", "id": "equation", "display": "equations" },
+    { "type": "plain", "text": " with " },
+    { "type": "term", "id": "variable", "display": "variables" }
+  ]
+
+- For HTML-like tags (e.g., <em>, <strong>), use "italic" or "bold" inline types.
+
+---------------------------------------------------------
+11. RENDERING GUIDELINES FOR DEVELOPERS
+---------------------------------------------------------
+- Parse the "blocks" array sequentially.
+- For each block, switch on "type" and render the corresponding UI component.
+- For inline arrays, iterate and render each node according to its type.
+- Maintain a global glossary map and make "term" nodes interactive.
+- Adapt layout (margins, columns) based on screen size but keep the logical 
+  order intact.
+
+---------------------------------------------------------
+END OF SPECIFICATION

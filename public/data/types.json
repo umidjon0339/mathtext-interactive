@@ -1,0 +1,192 @@
+{
+  "type": "learning_target",
+  "content": {
+    "target": {
+      "en": "Use properties of <Word id='radical'>radicals</Word> to write equivalent <Word id='expression'>expressions</Word>.",
+      "uz": "Teng kuchli <Word id='expression'>ifodalarni</Word> yozish uchun <Word id='radical'>radikallarning</Word> xossalaridan foydalaning.",
+      "ru": "Используйте свойства <Word id='radical'>радикалов</Word> для записи эквивалентных <Word id='expression'>выражений</Word>."
+    },
+    "success_criteria": {
+      "en": [
+        "I can use properties of <Word id='square_root'>square roots</Word> to write equivalent <Word id='expression'>expressions</Word>.",
+        "I can use properties of <Word id='cube_root'>cube roots</Word> to write equivalent <Word id='expression'>expressions</Word>.",
+        "I can <Word id='rationalize'>rationalize</Word> the <Word id='denominator'>denominator</Word> of a <Word id='fraction'>fraction</Word>.",
+        "I can perform <Word id='operation'>operations</Word> with <Word id='radical'>radicals</Word>."
+      ],
+      "uz": [
+        "Men teng kuchli <Word id='expression'>ifodalarni</Word> yozish uchun <Word id='square_root'>kvadrat ildiz</Word> xossalaridan foydalana olaman.",
+        "Men teng kuchli <Word id='expression'>ifodalarni</Word> yozish uchun <Word id='cube_root'>kub ildiz</Word> xossalaridan foydalana olaman.",
+        "Men <Word id='fraction'>kasr</Word> <Word id='denominator'>maxrajini</Word> <Word id='rationalize'>irrasionallikdan qutqara</Word> olaman.",
+        "Men <Word id='radical'>ildizlar</Word> ustida <Word id='operation'>amallar</Word> bajara olaman."
+      ],
+      "ru": [
+        "Я могу использовать свойства <Word id='square_root'>квадратных корней</Word> для записи эквивалентных <Word id='expression'>выражений</Word>.",
+        "Я могу использовать свойства <Word id='cube_root'>кубических корней</Word> для записи эквивалентных <Word id='expression'>выражений</Word>.",
+        "Я могу <Word id='rationalize'>избавиться от иррациональности</Word> в <Word id='denominator'>знаменателе</Word> <Word id='fraction'>дроби</Word>.",
+        "Я могу выполнять <Word id='operation'>действия</Word> с <Word id='radical'>радикалами</Word>."
+      ]
+    }
+  }
+}
+
+
+
+{
+  "type": "explore_it",
+  "header": {
+    "title": {
+      "en": "Investigating Data and Mathematical Relationships",
+      "uz": "Ma'lumotlar va matematik bog'liqliklarni o'rganish",
+      "ru": "Исследование данных и математических зависимостей"
+    }
+  },
+  
+  "margin_content": [
+    {
+      "type": "mtr_badge",
+      "id": 1,
+      "badge": "ANALYZE A PROBLEM",
+      "prompt": {
+        "en": "What patterns do you notice as the input values increase?",
+        "uz": "Kiritilgan qiymatlar ortib borishi bilan qanday qonuniyatlarni sezyapsiz?",
+        "ru": "Какие закономерности вы замечаете по мере увеличения входных значений?"
+      }
+    },
+    {
+      "type": "tip_box",
+      "text": {
+        "en": "Tip: Always check if your fractions can be simplified before graphing.",
+        "uz": "Maslahat: Grafik chizishdan oldin har doim kasrlarni soddalashtirish mumkinligini tekshiring.",
+        "ru": "Подсказка: Всегда проверяйте, можно ли упростить дроби перед построением графика."
+      }
+    }
+  ],
+
+  "body": [
+    {
+      "type": "instruction_text",
+      "text": {
+        "en": "Work with a partner. A survey collected data from 100 students regarding their study hours and test scores. The results are illustrated below.",
+        "uz": "Sherigingiz bilan birgalikda ishlang. So'rovnomada 100 ta talabaning dars qilish soatlari va imtihon natijalari haqida ma'lumot to'plandi. Natijalar quyida ko'rsatilgan.",
+        "ru": "Работайте в паре. В ходе опроса были собраны данные 100 студентов, касающиеся часов обучения и баллов за тест. Результаты приведены ниже."
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/graphs/scatter_plot_study_hours.png",
+      "style": "bordered_chart",
+      "alt": {
+        "en": "A scatter plot showing study hours on the x-axis and test scores on the y-axis."
+      },
+      "caption": {
+        "en": "Study Hours vs. Test Scores"
+      }
+    },
+    {
+      "type": "data_table",
+      "headers": [
+        { "en": "Student", "uz": "Talaba", "ru": "Студент" },
+        { "en": "Hours (x)", "uz": "Soatlar (x)", "ru": "Часы (x)" },
+        { "en": "Score (y)", "uz": "Ball (y)", "ru": "Балл (y)" }
+      ],
+      "rows": [
+        ["1", "2.5", "75"],
+        ["2", "4.0", "88"],
+        ["3", "1.5", "60"],
+        ["4", "5.5", "95"]
+      ]
+    },
+    {
+      "type": "task_block",
+      "label": "a.",
+      "level": 1,
+      "instruction": {
+        "en": "Describe the relationship between study hours and test scores based on the scatter plot.",
+        "uz": "Korelatsiya grafigiga asoslanib, dars qilish soatlari va imtihon ballari o'rtasidagi bog'liqlikni tavsiflang.",
+        "ru": "Опишите зависимость между часами обучения и баллами за тест на основе диаграммы рассеяния."
+      },
+      "content": []
+    },
+    {
+      "type": "task_block",
+      "label": "b.",
+      "level": 1,
+      "instruction": {
+        "en": "Consider the following mathematical rules. Use the numbers provided below to fill in the missing boxes.",
+        "uz": "Quyidagi matematik qoidalarni ko'rib chiqing. Bo'sh kataklarni to'ldirish uchun quyida berilgan sonlardan foydalaning.",
+        "ru": "Рассмотрите следующие математические правила. Используйте предложенные ниже числа, чтобы заполнить пустые ячейки."
+      },
+      "content": [
+        {
+          "type": "card_tiles",
+          "tiles": [
+            { "id": "t1", "latex": "y = mx + b" },
+            { "id": "t2", "latex": "\\sqrt{x}" },
+            { "id": "t3", "latex": "r^2" }
+          ]
+        },
+        {
+          "type": "equation_grid",
+          "columns": 2,
+          "align": "center",
+          "equations": [
+            { "id": "eq1", "latex": "f(x) = \\dots" },
+            { "id": "eq2", "latex": "g(x) = \\dots" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "task_block",
+      "label": "i.",
+      "level": 2,
+      "instruction": {
+        "en": "Is the calculated slope positive or negative?",
+        "uz": "Hisoblangan og'ish koeffitsiyenti musbatmi yoki manfiy?",
+        "ru": "Является ли вычисленный наклон положительным или отрицательным?"
+      },
+      "content": []
+    },
+    {
+      "type": "task_block",
+      "label": "ii.",
+      "level": 2,
+      "instruction": {
+        "en": "What does the y-intercept represent in this specific real-world context?",
+        "uz": "Ushbu hayotiy kontekstda y-o'qini kesib o'tish nuqtasi nimani anglatadi?",
+        "ru": "Что означает y-пересечение в данном конкретном контексте реального мира?"
+      },
+      "content": [
+        {
+          "type": "image",
+          "src": "/assets/diagrams/y_intercept_helper.png",
+          "style": "inline_thumbnail",
+          "alt": {
+            "en": "A close up look of a line intersecting the vertical y-axis at the origin point."
+          }
+        }
+      ]
+    },
+    {
+      "type": "task_block",
+      "label": "c.",
+      "level": 1,
+      "instruction": {
+        "en": "Use the interactive coordinate grid module layout to accurately plot your line of best fit forecast.",
+        "uz": "To'g'ri chiziqning eng mos keladigan prognozini aniq chizish uchun interaktiv koordinata tarmog'i modulidan foydalaning.",
+        "ru": "Используйте интерактивный модуль координатной сетки для точного построения линии наилучшего соответствия."
+      },
+      "content": [
+        {
+          "type": "coordinate_plane_config",
+          "x_min": 0,
+          "x_max": 10,
+          "y_min": 0,
+          "y_max": 100,
+          "grid_step_x": 1,
+          "grid_step_y": 10
+        }
+      ]
+    }
+  ]
+}

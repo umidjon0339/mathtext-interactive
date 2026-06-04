@@ -1,0 +1,472 @@
+{
+  "equation": {
+    "id": "equation",
+    "word": { "en": "equation", "uz": "tenglama", "ru": "уравнение" },
+    "definition": {
+      "en": "A mathematical statement that two expressions are equal.",
+      "uz": "Ikki ifodaning tengligini ko'rsatuvchi matematik ifoda.",
+      "ru": "Математическое утверждение о равенстве двух выражений."
+    },
+    "images": [
+      "/assets/glossary/equation1.png",
+      "/assets/glossary/equation2.png"
+    ],
+    "examples": {
+      "en": ["2x + 3 = 11"],
+      "uz": ["2x + 3 = 11"],
+      "ru": ["2x + 3 = 11"]
+    },
+    "relatedConcepts": ["variable", "equality", "solution"]
+  },
+  "variable": {
+    "id": "variable",
+    "word": { "en": "variable", "uz": "o'zgaruvchi", "ru": "переменная" },
+    "definition": {
+      "en": "A symbol, usually a letter, that represents an unknown or changing value.",
+      "uz": "Noma'lum yoki o'zgaruvchi qiymatni ifodalovchi belgi, odatda harf.",
+      "ru": "Символ, обычно буква, обозначающий неизвестное или изменяющееся значение."
+    },
+    "images": [
+      "/assets/glossary/variable1.jpg"
+    ],
+    "examples": {
+      "en": ["x + 5 = 9, x is a variable."],
+      "uz": ["x + 5 = 9 da x o'zgaruvchi."],
+      "ru": ["В x + 5 = 9, x — переменная."]
+    },
+    "relatedConcepts": ["equation", "solution"]
+  },
+  "equality": {
+    "id": "equality",
+    "word": { "en": "equality", "uz": "tenglik", "ru": "равенство" },
+    "definition": {
+      "en": "A relationship showing that two quantities have the same value.",
+      "uz": "Ikki miqdorning bir xil qiymatga ega ekanligini ko'rsatuvchi munosabat.",
+      "ru": "Отношение, показывающее, что две величины имеют одинаковое значение."
+    },
+    "images": [
+      "/assets/glossary/equality1.png",
+      "/assets/glossary/equality2.png"
+    ],
+    "examples": {
+      "en": ["7 = 7 is an equality."],
+      "uz": ["7 = 7 tenglikdir."],
+      "ru": ["7 = 7 — равенство."]
+    },
+    "relatedConcepts": ["equation"]
+  },
+  "term": {
+    "id": "term",
+    "word": { "en": "term", "uz": "had", "ru": "член" },
+    "definition": {
+      "en": "A number, variable, or product of numbers and variables in an expression.",
+      "uz": "Ifodadagi son, o'zgaruvchi yoki son va o'zgaruvchining ko'paytmasi.",
+      "ru": "Число, переменная или произведение чисел и переменных в выражении."
+    },
+    "images": [
+      "/assets/glossary/term1.png",
+      "/assets/glossary/term2.png"
+    ],
+    "examples": {
+      "en": ["3x and 5 are terms in 3x + 5."],
+      "uz": ["3x + 5 da 3x va 5 hadlardir."],
+      "ru": ["В 3x + 5, 3x и 5 — члены."]
+    },
+    "relatedConcepts": ["variable", "expression"]
+  },
+  "solution": {
+    "id": "solution",
+    "word": { "en": "solution", "uz": "yechim", "ru": "решение" },
+    "definition": {
+      "en": "A value that makes an equation true.",
+      "uz": "Tenglamani to'g'ri qiladigan qiymat.",
+      "ru": "Значение, которое делает уравнение верным."
+    },
+    "images": [
+      "/assets/glossary/solution1.png",
+      "/assets/glossary/solution2.png"
+    ],
+    "examples": {
+      "en": ["x = 4 is the solution to x + 2 = 6."],
+      "uz": ["x + 2 = 6 ning yechimi x = 4."],
+      "ru": ["x = 4 — решение x + 2 = 6."]
+    },
+    "relatedConcepts": ["equation", "variable"]
+  },
+  "square_root": {
+    "id": "square_root",
+    "word": { "en": "square root", "uz": "kvadrat ildiz", "ru": "квадратный корень" },
+    "definition": {
+      "en": "A number that when multiplied by itself equals a given number.",
+      "uz": "O'ziga ko'paytirilganda berilgan sonni beradigan son.",
+      "ru": "Число, которое при умножении само на себя дает данное число."
+    },
+    "images": [],
+    "examples": {
+      "en": ["√9 = 3"],
+      "uz": ["√9 = 3"],
+      "ru": ["√9 = 3"]
+    },
+    "relatedConcepts": ["radical", "cube_root"]
+  },
+  "radical": {
+    "id": "radical",
+    "word": { "en": "radical", "uz": "radikal", "ru": "радикал" },
+    "definition": {
+      "en": "An expression that contains a root symbol (√).",
+      "uz": "Ildiz belgisi (√) qatnashgan ifoda.",
+      "ru": "Выражение, содержащее знак корня (√)."
+    },
+    "images": [],
+    "examples": {
+      "en": ["√5 is a radical."],
+      "uz": ["√5 radikal."],
+      "ru": ["√5 — радикал."]
+    },
+    "relatedConcepts": ["square_root", "radicand"]
+  },
+  "rational_exponent": {
+    "id": "rational_exponent",
+    "word": { "en": "rational exponent", "uz": "ratsional ko'rsatkich", "ru": "рациональный показатель" },
+    "definition": {
+      "en": "An exponent written as a fraction.",
+      "uz": "Kasr ko'rinishida yozilgan daraja ko'rsatkichi.",
+      "ru": "Показатель степени, записанный в виде дроби."
+    },
+    "images": [],
+    "examples": {
+      "en": ["x^(1/2) = √x"],
+      "uz": ["x^(1/2) = √x"],
+      "ru": ["x^(1/2) = √x"]
+    },
+    "relatedConcepts": ["square_root"]
+  },
+  "rational_number": {
+    "id": "rational_number",
+    "word": { "en": "rational number", "uz": "ratsional son", "ru": "рациональное число" },
+    "definition": {
+      "en": "A number that can be written as a fraction of two integers.",
+      "uz": "Ikki butun sonning bo'linmasi ko'rinishida yozish mumkin bo'lgan son.",
+      "ru": "Число, которое можно представить в виде дроби двух целых чисел."
+    },
+    "images": [],
+    "examples": {
+      "en": ["3/4 is rational."],
+      "uz": ["3/4 ratsional."],
+      "ru": ["3/4 — рациональное число."]
+    },
+    "relatedConcepts": ["irrational_number"]
+  },
+  "irrational_number": {
+    "id": "irrational_number",
+    "word": { "en": "irrational number", "uz": "irratsional son", "ru": "иррациональное число" },
+    "definition": {
+      "en": "A number that cannot be expressed as a fraction of integers.",
+      "uz": "Butun sonlarning nisbati sifatida yozib bo'lmaydigan son.",
+      "ru": "Число, которое нельзя выразить в виде дроби целых чисел."
+    },
+    "images": [],
+    "examples": {
+      "en": ["π is irrational."],
+      "uz": ["π irratsional."],
+      "ru": ["π — иррациональное число."]
+    },
+    "relatedConcepts": ["rational_number"]
+  },
+  "sum": {
+    "id": "sum",
+    "word": { "en": "sum", "uz": "yig'indi", "ru": "сумма" },
+    "definition": {
+      "en": "The result of adding numbers.",
+      "uz": "Sonlarni qo'shish natijasi.",
+      "ru": "Результат сложения чисел."
+    },
+    "images": [],
+    "examples": {
+      "en": ["2 + 3 = 5, so 5 is the sum."],
+      "uz": ["2 + 3 = 5, 5 yig'indi."],
+      "ru": ["2 + 3 = 5, 5 — сумма."]
+    },
+    "relatedConcepts": ["product"]
+  },
+  "product": {
+    "id": "product",
+    "word": { "en": "product", "uz": "ko'paytma", "ru": "произведение" },
+    "definition": {
+      "en": "The result of multiplying numbers.",
+      "uz": "Sonlarni ko'paytirish natijasi.",
+      "ru": "Результат умножения чисел."
+    },
+    "images": [],
+    "examples": {
+      "en": ["2 × 3 = 6, so 6 is the product."],
+      "uz": ["2 × 3 = 6, 6 ko'paytma."],
+      "ru": ["2 × 3 = 6, 6 — произведение."]
+    },
+    "relatedConcepts": ["sum"]
+  },
+  "var_a": {
+    "id": "var_a",
+    "word": { "en": "a", "uz": "a", "ru": "a" },
+    "definition": {
+      "en": "A variable representing an unknown or changing value, often used in examples.",
+      "uz": "Noma'lum yoki o'zgaruvchi qiymatni ifodalovchi o'zgaruvchi, odatda misollarda qo'llaniladi.",
+      "ru": "Переменная, представляющая неизвестное или изменяющееся значение, часто используется в примерах."
+    },
+    "images": [],
+    "examples": { "en": [], "uz": [], "ru": [] },
+    "relatedConcepts": ["variable"]
+  },
+  "var_b": {
+    "id": "var_b",
+    "word": { "en": "b", "uz": "b", "ru": "b" },
+    "definition": {
+      "en": "A variable representing another unknown or changing value, often used alongside a.",
+      "uz": "Boshqa noma'lum yoki o'zgaruvchi qiymatni ifodalovchi o'zgaruvchi, odatda a bilan birga ishlatiladi.",
+      "ru": "Переменная, представляющая другое неизвестное или изменяющееся значение, часто используется вместе с a."
+    },
+    "images": [],
+    "examples": { "en": [], "uz": [], "ru": [] },
+    "relatedConcepts": ["variable"]
+  },
+  "radical_expression": {
+    "id": "radical_expression",
+    "word": { "en": "radical expression", "uz": "radikal ifoda", "ru": "радикальное выражение" },
+    "definition": {
+      "en": "An expression that contains a radical symbol (√).",
+      "uz": "Ildiz belgisi (√) qatnashgan ifoda.",
+      "ru": "Выражение, содержащее знак радикала (√)."
+    },
+    "images": [],
+    "examples": {
+      "en": ["√x + 3 is a radical expression."],
+      "uz": ["√x + 3 radikal ifoda."],
+      "ru": ["√x + 3 — радикальное выражение."]
+    },
+    "relatedConcepts": ["radical"]
+  },
+  "simplest_form_of_a_radical": {
+    "id": "simplest_form_of_a_radical",
+    "word": { "en": "simplest form of a radical", "uz": "radikalning eng sodda shakli", "ru": "простейший вид радикала" },
+    "definition": {
+      "en": "A radical expression that meets three conditions: no perfect nth power factors in the radicand other than 1, no fractions in the radicand, and no radicals in the denominator.",
+      "uz": "Radikal ifoda uchta shartni qanoatlantirsa, eng sodda shaklda bo'ladi: ildiz ostidagi ifodada 1 dan boshqa to'liq n-daraja ko'paytuvchi yo'q, ildiz ostida kasr yo'q, kasrning maxrajida radikal yo'q.",
+      "ru": "Радикальное выражение считается простейшим, если выполняются три условия: подрадикальное выражение не имеет сомножителей в точной n-й степени, кроме 1; подрадикальное выражение не содержит дробей; радикалы отсутствуют в знаменателе."
+    },
+    "images": [],
+    "examples": {
+      "en": ["√12 is not in simplest form; 2√3 is."],
+      "uz": ["√12 eng sodda shaklda emas; 2√3 eng sodda shaklda."],
+      "ru": ["√12 не в простейшем виде; 2√3 — простейший."]
+    },
+    "relatedConcepts": ["radical", "radicand"]
+  },
+  "rationalizing_the_denominator": {
+    "id": "rationalizing_the_denominator",
+    "word": { "en": "rationalizing the denominator", "uz": "maxrajni irratsionallikdan qutqarish", "ru": "избавление от иррациональности в знаменателе" },
+    "definition": {
+      "en": "The process of eliminating a radical from the denominator of a fraction by multiplying the fraction by an appropriate form of 1.",
+      "uz": "Kasrning maxrajidagi radikalni yo'qotish uchun kasrni 1 ning mos shakliga ko'paytirish jarayoni.",
+      "ru": "Процесс исключения радикала из знаменателя дроби путем умножения дроби на подходящую форму 1."
+    },
+    "images": [],
+    "examples": {
+      "en": ["To rationalize 1/√2, multiply by √2/√2 to get √2/2."],
+      "uz": ["1/√2 ni irratsionallikdan qutqarish uchun √2/√2 ga ko'paytirib, √2/2 hosil qilish."],
+      "ru": ["Чтобы избавиться от иррациональности в 1/√2, умножьте на √2/√2 и получите √2/2."]
+    },
+    "relatedConcepts": ["radical", "denominator"]
+  },
+  "like_radicals": {
+    "id": "like_radicals",
+    "word": { "en": "like radicals", "uz": "o'xshash radikallar", "ru": "подобные радикалы" },
+    "definition": {
+      "en": "Radicals with the same index and radicand, which can be added or subtracted like like terms.",
+      "uz": "Ko'rsatkichi va ildiz ostidagi ifodasi bir xil bo'lgan radikallar, ularni o'xshash hadlar kabi qo'shish yoki ayirish mumkin.",
+      "ru": "Радикалы с одинаковым показателем и подрадикальным выражением, которые можно складывать или вычитать подобно подобным членам."
+    },
+    "images": [],
+    "examples": {
+      "en": ["2√3 and 5√3 are like radicals."],
+      "uz": ["2√3 va 5√3 o'xshash radikallar."],
+      "ru": ["2√3 и 5√3 — подобные радикалы."]
+    },
+    "relatedConcepts": ["radical", "radicand"]
+  },
+  "cube_root": {
+    "id": "cube_root",
+    "word": { "en": "cube root", "uz": "kub ildiz", "ru": "кубический корень" },
+    "definition": {
+      "en": "A number that when multiplied by itself three times equals a given number.",
+      "uz": "O'ziga uch marta ko'paytirilganda berilgan sonni beradigan son.",
+      "ru": "Число, которое при умножении само на себя трижды дает заданное число."
+    },
+    "images": [],
+    "examples": {
+      "en": ["∛8 = 2"],
+      "uz": ["∛8 = 2"],
+      "ru": ["∛8 = 2"]
+    },
+    "relatedConcepts": ["square_root", "radical"]
+  },
+  "radicand": {
+    "id": "radicand",
+    "word": { "en": "radicand", "uz": "ildiz ostidagi ifoda", "ru": "подрадикальное выражение" },
+    "definition": {
+      "en": "The number or expression inside a radical symbol.",
+      "uz": "Radikal belgisi ichidagi son yoki ifoda.",
+      "ru": "Число или выражение, стоящее под знаком радикала."
+    },
+    "images": [],
+    "examples": {
+      "en": ["In √(x+2), x+2 is the radicand."],
+      "uz": ["√(x+2) da x+2 ildiz ostidagi ifoda."],
+      "ru": ["В √(x+2), x+2 — подрадикальное выражение."]
+    },
+    "relatedConcepts": ["radical"]
+  },
+  "distributive_property": {
+    "id": "distributive_property",
+    "word": { "en": "Distributive Property", "uz": "Taqsimot xossasi", "ru": "Распределительное свойство" },
+    "definition": {
+      "en": "a(b + c) = ab + ac, used to multiply a single term by a sum or difference.",
+      "uz": "a(b + c) = ab + ac, yig'indini yoki ayirmani ko'paytirishda ishlatiladi.",
+      "ru": "a(b + c) = ab + ac, используется для умножения одночлена на сумму или разность."
+    },
+    "images": [],
+    "examples": {
+      "en": ["3(x + 4) = 3x + 12"],
+      "uz": ["3(x + 4) = 3x + 12"],
+      "ru": ["3(x + 4) = 3x + 12"]
+    },
+    "relatedConcepts": ["product", "sum"]
+  },
+  "product_property_of_square_roots": {
+    "id": "product_property_of_square_roots",
+    "word": { "en": "Product Property of Square Roots", "uz": "Kvadrat ildizning ko'paytma xossasi", "ru": "Свойство произведения квадратных корней" },
+    "definition": {
+      "en": "√ab = √a ⋅ √b for a ≥ 0 and b ≥ 0.",
+      "uz": "√ab = √a ⋅ √b, bunda a ≥ 0 va b ≥ 0.",
+      "ru": "√ab = √a ⋅ √b, где a ≥ 0 и b ≥ 0."
+    },
+    "images": [],
+    "examples": {
+      "en": ["√(4⋅9) = √4 ⋅ √9 = 2⋅3 = 6"],
+      "uz": ["√(4⋅9) = √4 ⋅ √9 = 2⋅3 = 6"],
+      "ru": ["√(4⋅9) = √4 ⋅ √9 = 2⋅3 = 6"]
+    },
+    "relatedConcepts": ["square_root", "radical"]
+  },
+  "product_property_of_cube_roots": {
+    "id": "product_property_of_cube_roots",
+    "word": { "en": "Product Property of Cube Roots", "uz": "Kub ildizning ko'paytma xossasi", "ru": "Свойство произведения кубических корней" },
+    "definition": {
+      "en": "∛ab = ∛a ⋅ ∛b for any real numbers a and b.",
+      "uz": "∛ab = ∛a ⋅ ∛b, istalgan haqiqiy a va b sonlari uchun.",
+      "ru": "∛ab = ∛a ⋅ ∛b для любых действительных чисел a и b."
+    },
+    "images": [],
+    "examples": {
+      "en": ["∛(8⋅27) = ∛8 ⋅ ∛27 = 2⋅3 = 6"],
+      "uz": ["∛(8⋅27) = ∛8 ⋅ ∛27 = 2⋅3 = 6"],
+      "ru": ["∛(8⋅27) = ∛8 ⋅ ∛27 = 2⋅3 = 6"]
+    },
+    "relatedConcepts": ["cube_root", "radical"]
+  },
+  "commutative_property_of_multiplication": {
+    "id": "commutative_property_of_multiplication",
+    "word": { "en": "Commutative Property of Multiplication", "uz": "Ko'paytirishning o'rin almashtirish xossasi", "ru": "Переместительное свойство умножения" },
+    "definition": {
+      "en": "a ⋅ b = b ⋅ a; order does not affect the product.",
+      "uz": "a ⋅ b = b ⋅ a; ko'paytuvchilarning tartibi natijaga ta'sir qilmaydi.",
+      "ru": "a ⋅ b = b ⋅ a; порядок множителей не влияет на произведение."
+    },
+    "images": [],
+    "examples": {
+      "en": ["3 ⋅ 5 = 5 ⋅ 3 = 15"],
+      "uz": ["3 ⋅ 5 = 5 ⋅ 3 = 15"],
+      "ru": ["3 ⋅ 5 = 5 ⋅ 3 = 15"]
+    },
+    "relatedConcepts": ["product"]
+  },
+  "quotient_property_of_square_roots": {
+    "id": "quotient_property_of_square_roots",
+    "word": { "en": "Quotient Property of Square Roots", "uz": "Kvadrat ildizning bo'linma xossasi", "ru": "Свойство частного квадратных корней" },
+    "definition": {
+      "en": "√(a/b) = √a / √b for a ≥ 0 and b > 0.",
+      "uz": "√(a/b) = √a / √b, bunda a ≥ 0 va b > 0.",
+      "ru": "√(a/b) = √a / √b, где a ≥ 0 и b > 0."
+    },
+    "images": [],
+    "examples": {
+      "en": ["√(9/4) = √9 / √4 = 3/2"],
+      "uz": ["√(9/4) = √9 / √4 = 3/2"],
+      "ru": ["√(9/4) = √9 / √4 = 3/2"]
+    },
+    "relatedConcepts": ["square_root", "radical"]
+  },
+  "quotient_property_of_cube_roots": {
+    "id": "quotient_property_of_cube_roots",
+    "word": { "en": "Quotient Property of Cube Roots", "uz": "Kub ildizning bo'linma xossasi", "ru": "Свойство частного кубических корней" },
+    "definition": {
+      "en": "∛(a/b) = ∛a / ∛b for any real numbers a and b, with b ≠ 0.",
+      "uz": "∛(a/b) = ∛a / ∛b, istalgan haqiqiy a va b (b ≠ 0) sonlari uchun.",
+      "ru": "∛(a/b) = ∛a / ∛b для любых действительных a и b, где b ≠ 0."
+    },
+    "images": [],
+    "examples": {
+      "en": ["∛(8/27) = ∛8 / ∛27 = 2/3"],
+      "uz": ["∛(8/27) = ∛8 / ∛27 = 2/3"],
+      "ru": ["∛(8/27) = ∛8 / ∛27 = 2/3"]
+    },
+    "relatedConcepts": ["cube_root", "radical"]
+  },
+  "index_math": {
+    "id": "index_math",
+    "word": { "en": "index", "uz": "ko'rsatkich", "ru": "показатель" },
+    "definition": {
+      "en": "The small number outside a radical sign that indicates the degree of the root.",
+      "uz": "Radikal belgisining tashqarisidagi ildiz darajasini ko'rsatuvchi kichik son.",
+      "ru": "Маленькое число вне знака радикала, указывающее степень корня."
+    },
+    "images": [],
+    "examples": {
+      "en": ["In ∛8, the index is 3."],
+      "uz": ["∛8 da ko'rsatkich 3."],
+      "ru": ["В ∛8 показатель равен 3."]
+    },
+    "relatedConcepts": ["radical", "radicand"]
+  },
+  "denominator": {
+    "id": "denominator",
+    "word": { "en": "denominator", "uz": "maxraj", "ru": "знаменатель" },
+    "definition": {
+      "en": "The bottom number in a fraction, representing the total number of equal parts.",
+      "uz": "Kasrning pastki qismidagi son, teng bo'laklar umumiy sonini ifodalaydi.",
+      "ru": "Нижнее число в дроби, показывающее общее количество равных частей."
+    },
+    "images": [],
+    "examples": {
+      "en": ["In 3/4, 4 is the denominator."],
+      "uz": ["3/4 da 4 maxraj."],
+      "ru": ["В 3/4, 4 — знаменатель."]
+    },
+    "relatedConcepts": ["fraction", "numerator"]
+  },
+  "quotient": {
+    "id": "quotient",
+    "word": { "en": "quotient", "uz": "bo'linma", "ru": "частное" },
+    "definition": {
+      "en": "The result of dividing one number by another.",
+      "uz": "Bir sonni ikkinchisiga bo'lish natijasi.",
+      "ru": "Результат деления одного числа на другое."
+    },
+    "images": [],
+    "examples": {
+      "en": ["In 10 ÷ 2 = 5, 5 is the quotient."],
+      "uz": ["10 ÷ 2 = 5 da 5 bo'linma."],
+      "ru": ["В 10 ÷ 2 = 5, 5 — частное."]
+    },
+    "relatedConcepts": ["division", "product"]
+  }
+}

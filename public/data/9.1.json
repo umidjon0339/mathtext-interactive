@@ -1,0 +1,1810 @@
+{
+  "id": "9.1",
+  "title": {
+    "en": "Properties of Radicals",
+    "uz": "Ildizlarning xossalari",
+    "ru": "Свойства радикалов"
+  },
+  "langs": ["en", "uz", "ru"],
+  "blocks": [
+    {
+      "type": "learning_target",
+      "target": {
+        "en": [
+          { "type": "plain", "text": "Write and solve " },
+          { "type": "term", "id": "equation", "display": "equations" },
+          { "type": "plain", "text": " with " },
+          { "type": "term", "id": "variable", "display": "variables" },
+          { "type": "plain", "text": " on both sides." }
+        ],
+        "uz": [
+          { "type": "plain", "text": "Ikkala tomonida ham " },
+          { "type": "term", "id": "variable", "display": "o'zgaruvchilar" },
+          { "type": "plain", "text": " bo'lgan " },
+          { "type": "term", "id": "equation", "display": "tenglamalarni" },
+          { "type": "plain", "text": " yozing va yeching." }
+        ],
+        "ru": [
+          { "type": "plain", "text": "Запишите и решите " },
+          { "type": "term", "id": "equation", "display": "уравнения" },
+          { "type": "plain", "text": " с " },
+          { "type": "term", "id": "variable", "display": "переменными" },
+          { "type": "plain", "text": " по обе стороны." }
+        ]
+      },
+      "success_criteria": {
+        "en": [
+          [
+            { "type": "plain", "text": "I can apply properties of " },
+            { "type": "term", "id": "equality", "display": "equality" },
+            { "type": "plain", "text": " using " },
+            { "type": "term", "id": "variable", "display": "variable" },
+            { "type": "plain", "text": " " },
+            { "type": "term", "id": "term", "display": "terms" },
+            { "type": "plain", "text": "." }
+          ],
+          [
+            { "type": "plain", "text": "I can solve " },
+            { "type": "term", "id": "equation", "display": "equations" },
+            { "type": "plain", "text": " with " },
+            { "type": "term", "id": "variable", "display": "variables" },
+            { "type": "plain", "text": " on both sides." }
+          ],
+          [
+            { "type": "plain", "text": "I can recognize when an " },
+            { "type": "term", "id": "equation", "display": "equation" },
+            { "type": "plain", "text": " has zero, one, or infinitely many " },
+            { "type": "term", "id": "solution", "display": "solutions" },
+            { "type": "plain", "text": "." }
+          ]
+        ],
+        "uz": [
+          [
+            { "type": "plain", "text": "Men " },
+            { "type": "term", "id": "variable", "display": "o'zgaruvchili" },
+            { "type": "plain", "text": " " },
+            { "type": "term", "id": "term", "display": "hadlar" },
+            { "type": "plain", "text": " yordamida " },
+            { "type": "term", "id": "equality", "display": "tenglik" },
+            { "type": "plain", "text": " xossalarini qo'llay olaman." }
+          ],
+          [
+            { "type": "plain", "text": "Men ikkala tomonida ham " },
+            { "type": "term", "id": "variable", "display": "o'zgaruvchilar" },
+            { "type": "plain", "text": " bo'lgan " },
+            { "type": "term", "id": "equation", "display": "tenglamalarni" },
+            { "type": "plain", "text": " yecha olaman." }
+          ],
+          [
+            { "type": "plain", "text": "Men " },
+            { "type": "term", "id": "equation", "display": "tenglama" },
+            { "type": "plain", "text": " nol, bitta yoki cheksiz ko'p " },
+            { "type": "term", "id": "solution", "display": "yechimga" },
+            { "type": "plain", "text": " ega bo'lgan holatlarni aniqlay olaman." }
+          ]
+        ],
+        "ru": [
+          [
+            { "type": "plain", "text": "Я могу применять свойства " },
+            { "type": "term", "id": "equality", "display": "равенства" },
+            { "type": "plain", "text": " используя " },
+            { "type": "term", "id": "variable", "display": "переменные" },
+            { "type": "plain", "text": " " },
+            { "type": "term", "id": "term", "display": "члены" },
+            { "type": "plain", "text": "." }
+          ],
+          [
+            { "type": "plain", "text": "Я могу решать " },
+            { "type": "term", "id": "equation", "display": "уравнения" },
+            { "type": "plain", "text": " с " },
+            { "type": "term", "id": "variable", "display": "переменными" },
+            { "type": "plain", "text": " по обе стороны." }
+          ],
+          [
+            { "type": "plain", "text": "Я могу определить, когда " },
+            { "type": "term", "id": "equation", "display": "уравнение" },
+            { "type": "plain", "text": " имеет ноль, одно или бесконечно много " },
+            { "type": "term", "id": "solution", "display": "решений" },
+            { "type": "plain", "text": "." }
+          ]
+        ]
+      }
+    },
+    {
+      "type": "explore_it",
+      "header": {
+        "title": {
+          "en": "Performing Operations with Square Roots",
+          "uz": "Kvadrat ildizlar bilan amallar bajarish",
+          "ru": "Выполнение действий с квадратными корнями"
+        }
+      },
+      "margin_content": [
+        {
+          "type": "mtr_badge",
+          "id": 1,
+          "badge": "ANALYZE A PROBLEM",
+          "prompt": {
+            "en": [
+              { "type": "plain", "text": "What types of values of " },
+              { "type": "term", "id": "var_a", "display": "a" },
+              { "type": "plain", "text": " and " },
+              { "type": "term", "id": "var_b", "display": "b" },
+              { "type": "plain", "text": " make the expressions easier to evaluate?" }
+            ]
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "instruction_text",
+          "text": {
+            "en": [ { "type": "bold", "text": [ { "type": "plain", "text": "Work with a partner." } ] } ],
+            "uz": [ { "type": "bold", "text": [ { "type": "plain", "text": "Sherigingiz bilan ishlang." } ] } ],
+            "ru": [ { "type": "bold", "text": [ { "type": "plain", "text": "Работайте с партнером." } ] } ]
+          }
+        },
+        {
+          "type": "task_block",
+          "label": "a.",
+          "level": 1,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "Determine which of the following are general rules by choosing various values for a and b. Use what you know about " },
+              { "type": "term", "id": "radical", "display": "radicals" },
+              { "type": "plain", "text": " and " },
+              { "type": "term", "id": "rational_exponent", "display": "rational exponents" },
+              { "type": "plain", "text": " to justify your answer." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Turli a va b qiymatlarini tanlab, quyidagilardan qaysilari umumiy qoidalar ekanligini aniqlang. " },
+              { "type": "term", "id": "radical", "display": "Radikallar" },
+              { "type": "plain", "text": " va " },
+              { "type": "term", "id": "rational_exponent", "display": "ratsional ko'rsatkichlar" },
+              { "type": "plain", "text": " haqidagi bilimlaringizdan foydalanib javobingizni asoslang." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Определите, какие из следующих утверждений являются общими правилами, выбирая различные значения a и b. Используйте то, что вы знаете о " },
+              { "type": "term", "id": "radical", "display": "радикалах" },
+              { "type": "plain", "text": " и " },
+              { "type": "term", "id": "rational_exponent", "display": "рациональных показателях" },
+              { "type": "plain", "text": ", чтобы обосновать свой ответ." }
+            ]
+          },
+          "content": [
+            {
+              "type": "equation_grid",
+              "columns": 1,
+              "align": "left",
+              "items": [
+                { "id": "a_i", "latex": "\\text{i. } \\sqrt{a} + \\sqrt{b} \\stackrel{?}{=} \\sqrt{a + b}" },
+                { "id": "a_ii", "latex": "\\text{ii. } \\sqrt{a} \\cdot \\sqrt{b} \\stackrel{?}{=} \\sqrt{a \\cdot b}" },
+                { "id": "a_iii", "latex": "\\text{iii. } \\sqrt{a} - \\sqrt{b} \\stackrel{?}{=} \\sqrt{a - b}" },
+                { "id": "a_iv", "latex": "\\text{iv. } \\frac{\\sqrt{a}}{\\sqrt{b}} \\stackrel{?}{=} \\sqrt{\\frac{a}{b}}" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "task_block",
+          "label": "b.",
+          "level": 1,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "Explain in your own words how to add, subtract, multiply, and divide " },
+              { "type": "term", "id": "square_root", "display": "square roots" },
+              { "type": "plain", "text": "." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "" },
+              { "type": "term", "id": "square_root", "display": "Kvadrat ildiz" },
+              { "type": "plain", "text": "larni qanday qo'shish, ayirish, ko'paytirish va bo'lishni o'z so'zlaringiz bilan tushuntiring." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Объясните своими словами, как складывать, вычитать, умножать и делить " },
+              { "type": "term", "id": "square_root", "display": "квадратные корни" },
+              { "type": "plain", "text": "." }
+            ]
+          },
+          "content": []
+        },
+        {
+          "type": "task_block",
+          "label": "c.",
+          "level": 1,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "Consider the list of " },
+              { "type": "term", "id": "rational_number", "display": "rational" },
+              { "type": "plain", "text": " and " },
+              { "type": "term", "id": "irrational_number", "display": "irrational" },
+              { "type": "plain", "text": " numbers shown. Add two more " },
+              { "type": "term", "id": "rational_number", "display": "rational numbers" },
+              { "type": "plain", "text": " and two more " },
+              { "type": "term", "id": "irrational_number", "display": "irrational numbers" },
+              { "type": "plain", "text": " to the list." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ko'rsatilgan " },
+              { "type": "term", "id": "rational_number", "display": "ratsional" },
+              { "type": "plain", "text": " va " },
+              { "type": "term", "id": "irrational_number", "display": "irratsional" },
+              { "type": "plain", "text": " sonlar ro'yxatini ko'rib chiqing. Ro'yxatga yana ikkita " },
+              { "type": "term", "id": "rational_number", "display": "ratsional" },
+              { "type": "plain", "text": " va ikkita " },
+              { "type": "term", "id": "irrational_number", "display": "irratsional" },
+              { "type": "plain", "text": " son qo'shing." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Рассмотрите список " },
+              { "type": "term", "id": "rational_number", "display": "рациональных" },
+              { "type": "plain", "text": " и " },
+              { "type": "term", "id": "irrational_number", "display": "иррациональных" },
+              { "type": "plain", "text": " чисел. Добавьте в список ещё два " },
+              { "type": "term", "id": "rational_number", "display": "рациональных" },
+              { "type": "plain", "text": " и два " },
+              { "type": "term", "id": "irrational_number", "display": "иррациональных" },
+              { "type": "plain", "text": " числа." }
+            ]
+          },
+          "content": [
+            {
+              "type": "card_tiles",
+              "tiles": [
+                { "id": "t1", "latex": "2" },
+                { "id": "t2", "latex": "\\frac{1}{4}" },
+                { "id": "t3", "latex": "0" },
+                { "id": "t4", "latex": "\\sqrt{3}" },
+                { "id": "t5", "latex": "-\\sqrt{3}" },
+                { "id": "t6", "latex": "\\frac{1}{\\sqrt{3}}" },
+                { "id": "t7", "latex": "\\pi" }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": {
+                "en": [
+                  { "type": "plain", "text": "Experiment with " },
+                  { "type": "term", "id": "sum", "display": "sums" },
+                  { "type": "plain", "text": " and " },
+                  { "type": "term", "id": "product", "display": "products" },
+                  { "type": "plain", "text": " of two numbers from the list to determine whether each statement is " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "always" } ] },
+                  { "type": "plain", "text": ", " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "sometimes" } ] },
+                  { "type": "plain", "text": ", or " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "never" } ] },
+                  { "type": "plain", "text": " true. Explain your reasoning." }
+                ],
+                "uz": [
+                  { "type": "plain", "text": "Ro'yxatdagi ikkita sonning " },
+                  { "type": "term", "id": "sum", "display": "yig'indisi" },
+                  { "type": "plain", "text": " va " },
+                  { "type": "term", "id": "product", "display": "ko'paytmasi" },
+                  { "type": "plain", "text": " bilan tajriba qilib, har bir fikrning " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "har doim" } ] },
+                  { "type": "plain", "text": ", " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "ba'zan" } ] },
+                  { "type": "plain", "text": " yoki " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "hech qachon" } ] },
+                  { "type": "plain", "text": " to'g'ri ekanligini aniqlang. Fikringizni tushuntiring." }
+                ],
+                "ru": [
+                  { "type": "plain", "text": "Экспериментируйте с " },
+                  { "type": "term", "id": "sum", "display": "суммами" },
+                  { "type": "plain", "text": " и " },
+                  { "type": "term", "id": "product", "display": "произведениями" },
+                  { "type": "plain", "text": " двух чисел из списка, чтобы определить, является ли каждое утверждение " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "всегда" } ] },
+                  { "type": "plain", "text": ", " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "иногда" } ] },
+                  { "type": "plain", "text": " или " },
+                  { "type": "italic", "text": [ { "type": "plain", "text": "никогда" } ] },
+                  { "type": "plain", "text": " верным. Объясните свои рассуждения." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "task_block",
+          "label": "i.",
+          "level": 2,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "The " },
+              { "type": "term", "id": "sum", "display": "sum" },
+              { "type": "plain", "text": " of two " },
+              { "type": "term", "id": "rational_number", "display": "rational numbers" },
+              { "type": "plain", "text": " is rational." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ikkita " },
+              { "type": "term", "id": "rational_number", "display": "ratsional son" },
+              { "type": "plain", "text": "ning " },
+              { "type": "term", "id": "sum", "display": "yig'indisi" },
+              { "type": "plain", "text": " ratsional bo'ladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "" },
+              { "type": "term", "id": "sum", "display": "Сумма" },
+              { "type": "plain", "text": " двух " },
+              { "type": "term", "id": "rational_number", "display": "рациональных чисел" },
+              { "type": "plain", "text": " рациональна." }
+            ]
+          }
+        },
+        {
+          "type": "task_block",
+          "label": "ii.",
+          "level": 2,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "The sum of a rational number and an " },
+              { "type": "term", "id": "irrational_number", "display": "irrational number" },
+              { "type": "plain", "text": " is irrational." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Bir ratsional son va " },
+              { "type": "term", "id": "irrational_number", "display": "irratsional son" },
+              { "type": "plain", "text": "ning yig'indisi irratsional bo'ladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Сумма рационального числа и " },
+              { "type": "term", "id": "irrational_number", "display": "иррационального числа" },
+              { "type": "plain", "text": " иррациональна." }
+            ]
+          }
+        },
+        {
+          "type": "task_block",
+          "label": "iii.",
+          "level": 2,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "The sum of two " },
+              { "type": "term", "id": "irrational_number", "display": "irrational numbers" },
+              { "type": "plain", "text": " is irrational." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ikkita " },
+              { "type": "term", "id": "irrational_number", "display": "irratsional son" },
+              { "type": "plain", "text": "ning yig'indisi irratsional bo'ladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Сумма двух " },
+              { "type": "term", "id": "irrational_number", "display": "иррациональных чисел" },
+              { "type": "plain", "text": " иррациональна." }
+            ]
+          }
+        },
+        {
+          "type": "task_block",
+          "label": "iv.",
+          "level": 2,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "The " },
+              { "type": "term", "id": "product", "display": "product" },
+              { "type": "plain", "text": " of two " },
+              { "type": "term", "id": "rational_number", "display": "rational numbers" },
+              { "type": "plain", "text": " is rational." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ikkita " },
+              { "type": "term", "id": "rational_number", "display": "ratsional son" },
+              { "type": "plain", "text": "ning " },
+              { "type": "term", "id": "product", "display": "ko'paytmasi" },
+              { "type": "plain", "text": " ratsional bo'ladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "" },
+              { "type": "term", "id": "product", "display": "Произведение" },
+              { "type": "plain", "text": " двух " },
+              { "type": "term", "id": "rational_number", "display": "рациональных чисел" },
+              { "type": "plain", "text": " рационально." }
+            ]
+          }
+        },
+        {
+          "type": "task_block",
+          "label": "v.",
+          "level": 2,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "The product of a nonzero rational number and an " },
+              { "type": "term", "id": "irrational_number", "display": "irrational number" },
+              { "type": "plain", "text": " is irrational." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Nolga teng bo'lmagan ratsional son va " },
+              { "type": "term", "id": "irrational_number", "display": "irratsional son" },
+              { "type": "plain", "text": "ning ko'paytmasi irratsional bo'ladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Произведение ненулевого рационального числа и " },
+              { "type": "term", "id": "irrational_number", "display": "иррационального числа" },
+              { "type": "plain", "text": " иррационально." }
+            ]
+          }
+        },
+        {
+          "type": "task_block",
+          "label": "vi.",
+          "level": 2,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "The product of two " },
+              { "type": "term", "id": "irrational_number", "display": "irrational numbers" },
+              { "type": "plain", "text": " is irrational." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ikkita " },
+              { "type": "term", "id": "irrational_number", "display": "irratsional son" },
+              { "type": "plain", "text": "ning ko'paytmasi irratsional bo'ladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Произведение двух " },
+              { "type": "term", "id": "irrational_number", "display": "иррациональных чисел" },
+              { "type": "plain", "text": " иррационально." }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_03",
+      "type": "lesson_concept",
+      "title": {
+        "en": "Using Properties of Radicals",
+        "uz": "Radikallar xossalaridan foydalanish",
+        "ru": "Использование свойств радикалов"
+      },
+      "margin_content": [
+        {
+          "type": "vocabulary_box",
+          "icon": "az_vocab",
+          "title": {
+            "en": "Vocabulary",
+            "uz": "Atamalar",
+            "ru": "Словарь"
+          },
+          "terms": [
+            {
+              "term": {
+                "en": "radical expression",
+                "uz": "radikal ifoda",
+                "ru": "радикальное выражение"
+              },
+              "reference": "p. 470"
+            },
+            {
+              "term": {
+                "en": "simplest form of a radical",
+                "uz": "radikalning eng sodda shakli",
+                "ru": "простейший вид радикала"
+              },
+              "reference": "p. 470"
+            },
+            {
+              "term": {
+                "en": "rationalizing the denominator",
+                "uz": "kasr maxrajini irratsionallikdan qutqarish",
+                "ru": "избавление от иррациональности в знаменателе"
+              },
+              "reference": "p. 471"
+            },
+            {
+              "term": {
+                "en": "like radicals",
+                "uz": "o'xshash radikallar",
+                "ru": "подобные радикалы"
+              },
+              "reference": "p. 472"
+            }
+          ]
+        }
+      ],
+      "body": [
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "radical_expression", "display": "Radical expression" }
+                ]
+              },
+              { "type": "plain", "text": " is an expression that contains a " },
+              { "type": "term", "id": "radical", "display": "radical" },
+              { "type": "plain", "text": ". An expression involving a radical with " },
+              { "type": "term", "id": "index_math", "display": "index" },
+              { "type": "plain", "text": " " },
+              { "type": "math", "latex": "n" },
+              { "type": "plain", "text": " is in " },
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "simplest_form_of_a_radical", "display": "simplest form" }
+                ]
+              },
+              { "type": "plain", "text": " when these three conditions are met:" }
+            ],
+            "uz": [
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "radical_expression", "display": "Radikal ifoda" }
+                ]
+              },
+              { "type": "plain", "text": " — bu tarkibida " },
+              { "type": "term", "id": "radical", "display": "ildiz (radikal)" },
+              { "type": "plain", "text": " bo'lgan ifodadir. Ko'rsatkichi " },
+              { "type": "math", "latex": "n" },
+              { "type": "plain", "text": " bo'lgan ildizli ifoda quyidagi uchta shart bajarilganda " },
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "simplest_form_of_a_radical", "display": "eng sodda shaklda" }
+                ]
+              },
+              { "type": "plain", "text": " bo'ladi:" }
+            ],
+            "ru": [
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "radical_expression", "display": "Радикальное выражение" }
+                ]
+              },
+              { "type": "plain", "text": " — это выражение, содержащее " },
+              { "type": "term", "id": "radical", "display": "радикал" },
+              { "type": "plain", "text": ". Выражение, включающее радикал с " },
+              { "type": "term", "id": "index_math", "display": "показателем" },
+              { "type": "plain", "text": " " },
+              { "type": "math", "latex": "n" },
+              { "type": "plain", "text": ", находится в " },
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "simplest_form_of_a_radical", "display": "простейшем виде" }
+                ]
+              },
+              { "type": "plain", "text": ", если выполняются следующие три условия:" }
+            ]
+          }
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            {
+              "en": [
+                { "type": "plain", "text": "No " },
+                { "type": "term", "id": "radicand", "display": "radicands" },
+                { "type": "plain", "text": " have perfect " },
+                { "type": "math", "latex": "n" },
+                { "type": "plain", "text": "th powers as factors other than 1." }
+              ],
+              "uz": [
+                { "type": "plain", "text": "Ildiz ostidagi ifodalarda 1 dan farqli to'liq " },
+                { "type": "math", "latex": "n" },
+                { "type": "plain", "text": "-darajali ko'paytuvchilar bo'lmaydi." }
+              ],
+              "ru": [
+                { "type": "plain", "text": "Подрадикальные выражения не имеют сомножителей в точной " },
+                { "type": "math", "latex": "n" },
+                { "type": "plain", "text": "-й степени, отличных от 1." }
+              ]
+            },
+            {
+              "en": [
+                { "type": "plain", "text": "No " },
+                { "type": "term", "id": "radicand", "display": "radicands" },
+                { "type": "plain", "text": " contain fractions." }
+              ],
+              "uz": [
+                { "type": "plain", "text": "Ildiz ostidagi ifodalar kasrlarni o'z ichiga olmaydi." }
+              ],
+              "ru": [
+                { "type": "plain", "text": "Подрадикальные выражения не содержат дробей." }
+              ]
+            },
+            {
+              "en": [
+                { "type": "plain", "text": "No " },
+                { "type": "term", "id": "radical", "display": "radicals" },
+                { "type": "plain", "text": " appear in the " },
+                { "type": "term", "id": "denominator", "display": "denominator" },
+                { "type": "plain", "text": " of a fraction." }
+              ],
+              "uz": [
+                { "type": "plain", "text": "Kasrning maxrajida " },
+                { "type": "term", "id": "radical", "display": "ildizlar (radikallar)" },
+                { "type": "plain", "text": " qatnashmaydi." }
+              ],
+              "ru": [
+                { "type": "plain", "text": "" },
+                { "type": "term", "id": "radical", "display": "Радикалы" },
+                { "type": "plain", "text": " не появляются в " },
+                { "type": "term", "id": "denominator", "display": "знаменателе" },
+                { "type": "plain", "text": " дроби." }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              { "type": "plain", "text": "You can use the properties below to simplify " },
+              { "type": "term", "id": "radical_expression", "display": "radical expressions" },
+              { "type": "plain", "text": " involving " },
+              { "type": "term", "id": "square_root", "display": "square roots" },
+              { "type": "plain", "text": "." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Kvadrat ildiz qatnashgan " },
+              { "type": "term", "id": "radical_expression", "display": "radikal ifodalarni" },
+              { "type": "plain", "text": " soddalashtirish uchun quyidagi xossalardan foydalanishingiz mumkin." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Вы можете использовать приведенные ниже свойства для упрощения " },
+              { "type": "term", "id": "radical_expression", "display": "радикальных выражений" },
+              { "type": "plain", "text": ", содержащих " },
+              { "type": "term", "id": "square_root", "display": "квадратные корни" },
+              { "type": "plain", "text": "." }
+            ]
+          }
+        },
+        {
+          "type": "key_ideas_box",
+          "style": "lightbulb_container",
+          "title": {
+            "en": "KEY IDEAS",
+            "uz": "ASOSIY G'OYALAR",
+            "ru": "ОСНОВНЫЕ ИДЕИ"
+          },
+          "concepts": [
+            {
+              "subtitle": {
+                "en": "Product Property of Square Roots",
+                "uz": "Kvadrat ildizning ko'paytma xossasi",
+                "ru": "Свойство произведения квадратных корней"
+              },
+              "matrix": [
+                {
+                  "label": { "en": "Words", "uz": "So'zlar", "ru": "Слова" },
+                  "text": {
+                    "en": [
+                      { "type": "plain", "text": "The " },
+                      { "type": "term", "id": "square_root", "display": "square root" },
+                      { "type": "plain", "text": " of a " },
+                      { "type": "term", "id": "product", "display": "product" },
+                      { "type": "plain", "text": " equals the " },
+                      { "type": "term", "id": "product", "display": "product" },
+                      { "type": "plain", "text": " of the " },
+                      { "type": "term", "id": "square_root", "display": "square roots" },
+                      { "type": "plain", "text": " of the factors." }
+                    ],
+                    "uz": [
+                      { "type": "plain", "text": "Ko'paytmaning " },
+                      { "type": "term", "id": "square_root", "display": "kvadrat ildizi" },
+                      { "type": "plain", "text": " ko'paytuvchilar kvadrat ildizlarining " },
+                      { "type": "term", "id": "product", "display": "ko'paytmasiga" },
+                      { "type": "plain", "text": " teng." }
+                    ],
+                    "ru": [
+                      { "type": "plain", "text": "" },
+                      { "type": "term", "id": "square_root", "display": "Квадратный корень" },
+                      { "type": "plain", "text": " из " },
+                      { "type": "term", "id": "product", "display": "произведения" },
+                      { "type": "plain", "text": " равен произведению квадратных корней из сомножителей." }
+                    ]
+                  }
+                },
+                {
+                  "label": { "en": "Numbers", "uz": "Sonlar", "ru": "Числа" },
+                  "latex": "\\sqrt{9 \\cdot 5} = \\sqrt{9} \\cdot \\sqrt{5} = 3\\sqrt{5}"
+                },
+                {
+                  "label": { "en": "Algebra", "uz": "Algebra", "ru": "Алгебра" },
+                  "translations": {
+                    "en": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ where } a \\ge 0 \\text{ and } b \\ge 0" },
+                    "uz": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ bunda } a \\ge 0 \\text{ va } b \\ge 0" },
+                    "ru": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ где } a \\ge 0 \\text{ и } b \\ge 0" }
+                  }
+                }
+              ]
+            },
+            {
+              "subtitle": {
+                "en": "Quotient Property of Square Roots",
+                "uz": "Kvadrat ildizning bo'linma xossasi",
+                "ru": "Свойство частного квадратных корней"
+              },
+              "matrix": [
+                {
+                  "label": { "en": "Words", "uz": "So'zlar", "ru": "Слова" },
+                  "text": {
+                    "en": [
+                      { "type": "plain", "text": "The " },
+                      { "type": "term", "id": "square_root", "display": "square root" },
+                      { "type": "plain", "text": " of a " },
+                      { "type": "term", "id": "quotient", "display": "quotient" },
+                      { "type": "plain", "text": " equals the " },
+                      { "type": "term", "id": "quotient", "display": "quotient" },
+                      { "type": "plain", "text": " of the " },
+                      { "type": "term", "id": "square_root", "display": "square roots" },
+                      { "type": "plain", "text": " of the numerator and denominator." }
+                    ],
+                    "uz": [
+                      { "type": "plain", "text": "Bo'linmaning " },
+                      { "type": "term", "id": "square_root", "display": "kvadrat ildizi" },
+                      { "type": "plain", "text": " surat va maxraj kvadrat ildizlarining " },
+                      { "type": "term", "id": "quotient", "display": "bo'linmasiga" },
+                      { "type": "plain", "text": " teng." }
+                    ],
+                    "ru": [
+                      { "type": "plain", "text": "" },
+                      { "type": "term", "id": "square_root", "display": "Квадратный корень" },
+                      { "type": "plain", "text": " из " },
+                      { "type": "term", "id": "quotient", "display": "частного" },
+                      { "type": "plain", "text": " равен частному квадратных корней из числителя и знаменателя." }
+                    ]
+                  }
+                },
+                {
+                  "label": { "en": "Numbers", "uz": "Sonlar", "ru": "Числа" },
+                  "latex": "\\sqrt{\\frac{3}{4}} = \\frac{\\sqrt{3}}{\\sqrt{4}} = \\frac{\\sqrt{3}}{2}"
+                },
+                {
+                  "label": { "en": "Algebra", "uz": "Algebra", "ru": "Алгебра" },
+                  "translations": {
+                    "en": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ where } a \\ge 0 \\text{ and } b > 0" },
+                    "uz": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ bunda } a \\ge 0 \\text{ va } b > 0" },
+                    "ru": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ где } a \\ge 0 \\text{ и } b > 0" }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              { "type": "plain", "text": "There can be more than one way to factor a " },
+              { "type": "term", "id": "radicand", "display": "radicand" },
+              { "type": "plain", "text": ". An efficient method is to find the greatest perfect square factor." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ildiz ostidagi ifodani ko'paytuvchilarga ajratishning bir necha usuli bo'lishi mumkin. Eng samarali usul — eng katta to'liq kvadrat bo'lgan ko'paytuvchini topishdir." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Существует несколько способов разложения " },
+              { "type": "term", "id": "radicand", "display": "подрадикального выражения" },
+              { "type": "plain", "text": " на множители. Эффективный метод — найти наибольший точный квадратный множитель." }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_06",
+      "type": "example_block",
+      "has_video": true,
+      "label": { "en": "EXAMPLE 2", "uz": "2-MYSOL", "ru": "ПРИМЕР 2" },
+      "title": {
+        "en": "Using Properties of Cube Roots",
+        "uz": "Kub ildiz xossalaridan foydalanish",
+        "ru": "Использование свойств кубических корней"
+      },
+      "body": [
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              { "type": "plain", "text": "You can extend the Product and Quotient Properties of " },
+              { "type": "term", "id": "square_root", "display": "Square Roots" },
+              { "type": "plain", "text": " to other " },
+              { "type": "term", "id": "radical", "display": "radicals" },
+              { "type": "plain", "text": ", such as " },
+              { "type": "term", "id": "cube_root", "display": "cube roots" },
+              { "type": "plain", "text": ". When using these " },
+              {
+                "type": "italic",
+                "text": [
+                  { "type": "plain", "text": "properties of " },
+                  { "type": "term", "id": "cube_root", "display": "cube roots" }
+                ]
+              },
+              { "type": "plain", "text": ", the " },
+              { "type": "term", "id": "radicand", "display": "radicands" },
+              { "type": "plain", "text": " can contain negative numbers." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Siz kvadrat ildizlarning ko'paytma va bo'linma xossalarini boshqa radikallarga, masalan, " },
+              { "type": "term", "id": "cube_root", "display": "kub ildizlarga" },
+              { "type": "plain", "text": " ham tatbiq etishingiz mumkin. Kub ildizlarning ushbu xossalaridan foydalanganda, ildiz ostidagi ifodalar manfiy sonlarni o'z ichiga olishi mumkin." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Вы можете распространить свойства произведения и частного квадратных корней на другие радикалы, такие как " },
+              { "type": "term", "id": "cube_root", "display": "кубические корни" },
+              { "type": "plain", "text": ". При использовании этих свойств кубических корней подрадикальные выражения могут содержать отрицательные числа." }
+            ]
+          }
+        },
+        {
+          "type": "worked_solutions",
+          "steps": [
+            {
+              "label": "a.",
+              "expression": "\\sqrt[3]{-128}",
+              "work": [
+                {
+                  "line": "= \\sqrt[3]{-64 \\cdot 2}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Factor using the greatest perfect cube factor." } ],
+                    "uz": [ { "type": "plain", "text": "Eng katta to'liq kub bo'lgan ko'paytuvchini topib, ko'paytuvchilarga ajrating." } ],
+                    "ru": [ { "type": "plain", "text": "Разложите на множители, используя наибольший точный кубический множитель." } ]
+                  }
+                },
+                {
+                  "line": "= \\sqrt[3]{-64} \\cdot \\sqrt[3]{2}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Product Property of Cube Roots" } ],
+                    "uz": [ { "type": "plain", "text": "Kub ildizning ko'paytma xossasi" } ],
+                    "ru": [ { "type": "plain", "text": "Свойство произведения кубических корней" } ]
+                  }
+                },
+                {
+                  "line": "= -4\\sqrt[3]{2}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "b.",
+              "expression": "\\sqrt[3]{\\frac{9}{216}}",
+              "work": [
+                {
+                  "line": "= \\frac{\\sqrt[3]{9}}{\\sqrt[3]{216}}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Quotient Property of Cube Roots" } ],
+                    "uz": [ { "type": "plain", "text": "Kub ildizning bo'linma xossasi" } ],
+                    "ru": [ { "type": "plain", "text": "Свойство частного кубических корней" } ]
+                  }
+                },
+                {
+                  "line": "= \\frac{\\sqrt[3]{9}}{6}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec_07_self_assessment",
+      "type": "self_assessment_block",
+      "title": {
+        "en": "SELF-ASSESSMENT",
+        "uz": "O'Z-O'ZINI BAHOLASH",
+        "ru": "САМООЦЕНКА"
+      },
+      "rating_scale": [
+        { "value": 1, "text": { "en": "I don’t understand yet.", "uz": "Hali tushunmadim.", "ru": "Я пока не понимаю." } },
+        { "value": 2, "text": { "en": "I can do it with help.", "uz": "Yordam bilan bajara olaman.", "ru": "Я могу сделать это с помощью." } },
+        { "value": 3, "text": { "en": "I can do it on my own.", "uz": "Mustaqil bajara olaman.", "ru": "Я могу сделать это самостоятельно." } },
+        { "value": 4, "text": { "en": "I can teach someone else.", "uz": "Boshqalarga o'rgata olaman.", "ru": "Я могу научить кого-то другого." } }
+      ],
+      "body": [
+        {
+          "type": "instruction_text",
+          "text": {
+            "en": [ { "type": "plain", "text": "Simplify the expression." } ],
+            "uz": [ { "type": "plain", "text": "Ifodani soddalashtiring." } ],
+            "ru": [ { "type": "plain", "text": "Упростите выражение." } ]
+          }
+        },
+        {
+          "type": "question_grid",
+          "columns": 2,
+          "items": [
+            { "id": "sa_q1", "label": "1.", "latex": "\\sqrt{24}" },
+            { "id": "sa_q2", "label": "2.", "latex": "-\\sqrt{\\frac{17}{100}}" },
+            { "id": "sa_q3", "label": "3.", "latex": "\\sqrt[3]{54}" },
+            { "id": "sa_q4", "label": "4.", "latex": "\\sqrt[3]{\\frac{27}{8}}" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec_08_rationalizing",
+      "type": "lesson_concept",
+      "title": {
+        "en": "Rationalizing the Denominator",
+        "uz": "Kasr maxrajini irratsionallikdan qutqarish",
+        "ru": "Избавление от иррациональности в знаменателе"
+      },
+      "body": [
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              { "type": "plain", "text": "When a " },
+              { "type": "term", "id": "radical", "display": "radical" },
+              { "type": "plain", "text": " is in the " },
+              { "type": "term", "id": "denominator", "display": "denominator" },
+              { "type": "plain", "text": " of a fraction, you can multiply the fraction by an appropriate form of 1 to eliminate the " },
+              { "type": "term", "id": "radical", "display": "radical" },
+              { "type": "plain", "text": " from the denominator. This process is called " },
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "rationalizing_the_denominator", "display": "rationalizing the denominator" }
+                ]
+              },
+              { "type": "plain", "text": "." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Kasrning maxrajida " },
+              { "type": "term", "id": "radical", "display": "ildiz (radikal)" },
+              { "type": "plain", "text": " bo'lganda, maxrajdagi ildizni yo'qotish uchun kasrni 1 ning tegishli shakliga ko'paytirishingiz mumkin. Bu jarayon " },
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "rationalizing_the_denominator", "display": "kasr maxrajini irratsionallikdan qutqarish" }
+                ]
+              },
+              { "type": "plain", "text": " deb ataladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Если в " },
+              { "type": "term", "id": "denominator", "display": "знаменателе" },
+              { "type": "plain", "text": " дроби находится " },
+              { "type": "term", "id": "radical", "display": "радикал" },
+              { "type": "plain", "text": ", вы можете умножить дробь на соответствующую форму единицы, чтобы исключить радикал из знаменателя. Этот процесс называется " },
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "rationalizing_the_denominator", "display": "избавлением от иррациональности в знаменателе" }
+                ]
+              },
+              { "type": "plain", "text": "." }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_09_example3",
+      "type": "example_block",
+      "has_video": true,
+      "label": { "en": "EXAMPLE 3", "uz": "3-MYSOL", "ru": "ПРИМЕР 3" },
+      "title": {
+        "en": "Rationalizing the Denominator",
+        "uz": "Kasr maxrajini irratsionallikdan qutqarish",
+        "ru": "Избавление от иррациональности в знаменателе"
+      },
+      "margin_content": [
+        {
+          "type": "study_tip_box",
+          "icon": "lightbulb",
+          "title": {
+            "en": "STUDY TIP",
+            "uz": "O'RGANISH UCHUN MASLAHAT",
+            "ru": "СОВЕТ ДЛЯ ИЗУЧЕНИЯ"
+          },
+          "text": {
+            "en": [
+              { "type": "plain", "text": "Rationalizing the denominator works because you multiply the numerator and " },
+              { "type": "term", "id": "denominator", "display": "denominator" },
+              { "type": "plain", "text": " by the same nonzero number " },
+              { "type": "math", "latex": "a" },
+              { "type": "plain", "text": ", which is the same as multiplying by " },
+              { "type": "math", "latex": "\\frac{a}{a}" },
+              { "type": "plain", "text": ", or 1." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Kasr maxrajini irratsionallikdan qutqarish shuning uchun ham to'g'ri natija beradiki, siz kasrning surat va maxrajini noldan farqli bir xil " },
+              { "type": "math", "latex": "a" },
+              { "type": "plain", "text": " soniga ko'paytirasiz, bu esa kasrni " },
+              { "type": "math", "latex": "\\frac{a}{a}" },
+              { "type": "plain", "text": " yoki 1 ga ko'paytirish bilan bir xil demakdir." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Избавление от иррациональности в знаменателе работает потому, что вы умножаете числитель и знаменатель на одно и то же ненулевое число " },
+              { "type": "math", "latex": "a" },
+              { "type": "plain", "text": ", что равносильно умножению на " },
+              { "type": "math", "latex": "\\frac{a}{a}" },
+              { "type": "plain", "text": " или 1." }
+            ]
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "worked_solutions",
+          "steps": [
+            {
+              "label": "a.",
+              "expression": "\\frac{5}{\\sqrt{6}}",
+              "work": [
+                {
+                  "line": "= \\frac{5 \\cdot \\sqrt{6}}{\\sqrt{6} \\cdot \\sqrt{6}}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Multiply by " }, { "type": "math", "latex": "\\frac{\\sqrt{6}}{\\sqrt{6}}" }, { "type": "plain", "text": "." } ],
+                    "uz": [ { "type": "plain", "text": "" }, { "type": "math", "latex": "\\frac{\\sqrt{6}}{\\sqrt{6}}" }, { "type": "plain", "text": " ga ko'paytiring." } ],
+                    "ru": [ { "type": "plain", "text": "Умножьте на " }, { "type": "math", "latex": "\\frac{\\sqrt{6}}{\\sqrt{6}}" }, { "type": "plain", "text": "." } ]
+                  }
+                },
+                {
+                  "line": "= \\frac{5\\sqrt{6}}{6}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "b.",
+              "expression": "\\frac{2}{\\sqrt[3]{9}}",
+              "work": [
+                {
+                  "line": "= \\frac{2 \\cdot \\sqrt[3]{3}}{\\sqrt[3]{9} \\cdot \\sqrt[3]{3}}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Multiply by " }, { "type": "math", "latex": "\\frac{\\sqrt[3]{3}}{\\sqrt[3]{3}}" }, { "type": "plain", "text": "." } ],
+                    "uz": [ { "type": "plain", "text": "" }, { "type": "math", "latex": "\\frac{\\sqrt[3]{3}}{\\sqrt[3]{3}}" }, { "type": "plain", "text": " ga ko'paytiring." } ],
+                    "ru": [ { "type": "plain", "text": "Умножьте на " }, { "type": "math", "latex": "\\frac{\\sqrt[3]{3}}{\\sqrt[3]{3}}" }, { "type": "plain", "text": "." } ]
+                  }
+                },
+                {
+                  "line": "= \\frac{2\\sqrt[3]{3}}{\\sqrt[3]{27}}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Product Property of Cube Roots" } ],
+                    "uz": [ { "type": "plain", "text": "Kub ildizning ko'paytma xossasi" } ],
+                    "ru": [ { "type": "plain", "text": "Свойство произведения кубических корней" } ]
+                  }
+                },
+                {
+                  "line": "= \\frac{2\\sqrt[3]{3}}{3}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec_10_self_assessment",
+      "type": "self_assessment_block",
+      "title": {
+        "en": "SELF-ASSESSMENT",
+        "uz": "O'Z-O'ZINI BAHOLASH",
+        "ru": "САМООЦЕНКА"
+      },
+      "rating_scale": [
+        { "value": 1, "text": { "en": "I don’t understand yet.", "uz": "Hali tushunmadim.", "ru": "Я пока не понимаю." } },
+        { "value": 2, "text": { "en": "I can do it with help.", "uz": "Yordam bilan bajara olaman.", "ru": "Я могу сделать это с помощью." } },
+        { "value": 3, "text": { "en": "I can do it on my own.", "uz": "Mustaqil bajara olaman.", "ru": "Я могу сделать это самостоятельно." } },
+        { "value": 4, "text": { "en": "I can teach someone else.", "uz": "Boshqalarga o'rgata olaman.", "ru": "Я могу научить кого-то другого." } }
+      ],
+      "body": [
+        {
+          "type": "instruction_text",
+          "text": {
+            "en": [ { "type": "plain", "text": "Simplify the expression." } ],
+            "uz": [ { "type": "plain", "text": "Ifodani soddalashtiring." } ],
+            "ru": [ { "type": "plain", "text": "Упростите выражение." } ]
+          }
+        },
+        {
+          "type": "question_grid",
+          "columns": 2,
+          "items": [
+            { "id": "sa_q5", "label": "5.", "latex": "\\frac{1}{\\sqrt{5}}" },
+            { "id": "sa_q6", "label": "6.", "latex": "\\frac{2}{\\sqrt[3]{25}}" },
+            { "id": "sa_q7", "label": "7.", "latex": "\\frac{\\sqrt{10}}{\\sqrt{32}}" },
+            { "id": "sa_q8", "label": "8.", "latex": "\\frac{5}{\\sqrt[3]{3}}" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "lesson_concept",
+      "title": {
+        "en": "Performing Operations with Radicals",
+        "uz": "Radikallar bilan amallar bajarish",
+        "ru": "Выполнение действий с радикалами"
+      },
+      "body": [
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              { "type": "plain", "text": "Radicals with the same " },
+              { "type": "term", "id": "index_math", "display": "index" },
+              { "type": "plain", "text": " and " },
+              { "type": "term", "id": "radicand", "display": "radicand" },
+              { "type": "plain", "text": " are called " },
+              { "type": "term", "id": "like_radicals", "display": "like radicals" },
+              { "type": "plain", "text": ". You can add and subtract like radicals the same way you combine like terms by using the " },
+              { "type": "term", "id": "distributive_property", "display": "Distributive Property" },
+              { "type": "plain", "text": "." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ko'rsatkichi va ildiz ostidagi ifodasi bir xil bo'lgan radikallar " },
+              { "type": "term", "id": "like_radicals", "display": "o'xshash radikallar" },
+              { "type": "plain", "text": " deyiladi. O'xshash radikallarni xuddi o'xshash hadlarni birlashtirgan kabi qo'shish va ayirish mumkin, buning uchun " },
+              { "type": "term", "id": "distributive_property", "display": "Taqsimot xossasi" },
+              { "type": "plain", "text": " dan foydalaniladi." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Радикалы с одинаковым показателем и подрадикальным выражением называются " },
+              { "type": "term", "id": "like_radicals", "display": "подобными радикалами" },
+              { "type": "plain", "text": ". Вы можете складывать и вычитать подобные радикалы так же, как вы объединяете подобные члены, используя " },
+              { "type": "term", "id": "distributive_property", "display": "распределительное свойство" },
+              { "type": "plain", "text": "." }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "example_block",
+      "has_video": false,
+      "label": { "en": "EXAMPLE 4", "uz": "4-MYSOL", "ru": "ПРИМЕР 4" },
+      "title": {
+        "en": "Adding and Subtracting Radicals",
+        "uz": "Radikallarni qo'shish va ayirish",
+        "ru": "Сложение и вычитание радикалов"
+      },
+      "margin_content": [
+        {
+          "type": "study_tip_box",
+          "icon": "lightbulb",
+          "title": {
+            "en": "STUDY TIP",
+            "uz": "MASLAHAT",
+            "ru": "СОВЕТ"
+          },
+          "text": {
+            "en": [
+              { "type": "plain", "text": "Do not assume that " },
+              { "type": "term", "id": "radical", "display": "radicals" },
+              { "type": "plain", "text": " with different " },
+              { "type": "term", "id": "radicand", "display": "radicands" },
+              { "type": "plain", "text": " cannot be added or subtracted. Always check to see whether you can simplify the radicals. In some cases, the radicals can be written as " },
+              { "type": "term", "id": "like_radicals", "display": "like radicals" },
+              { "type": "plain", "text": "." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Turli xil ildiz ostidagi ifodalarga ega radikallarni qo'shish yoki ayirish mumkin emas deb o'ylamang. Har doim ularni soddalashtirish mumkinligini tekshiring. Ba'zi hollarda ularni " },
+              { "type": "term", "id": "like_radicals", "display": "o'xshash radikallar" },
+              { "type": "plain", "text": " ko'rinishida yozish mumkin." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Не думайте, что радикалы с разными подрадикальными выражениями нельзя складывать или вычитать. Всегда проверяйте, можно ли упростить радикалы. В некоторых случаях их можно записать как " },
+              { "type": "term", "id": "like_radicals", "display": "подобные радикалы" },
+              { "type": "plain", "text": "." }
+            ]
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "worked_solutions",
+          "steps": [
+            {
+              "label": "a.",
+              "expression": "5\\sqrt{7} - 8\\sqrt{7}",
+              "work": [
+                {
+                  "line": "= (5 - 8)\\sqrt{7}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "distributive_property", "display": "Distributive Property" } ],
+                    "uz": [ { "type": "term", "id": "distributive_property", "display": "Taqsimot xossasi" } ],
+                    "ru": [ { "type": "term", "id": "distributive_property", "display": "Распределительное свойство" } ]
+                  }
+                },
+                {
+                  "line": "= -3\\sqrt{7}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Subtract." } ],
+                    "uz": [ { "type": "plain", "text": "Ayiring." } ],
+                    "ru": [ { "type": "plain", "text": "Вычтите." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "b.",
+              "expression": "10\\sqrt{5} + \\sqrt{20}",
+              "work": [
+                {
+                  "line": "= 10\\sqrt{5} + 2\\sqrt{5}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                },
+                {
+                  "line": "= (10 + 2)\\sqrt{5}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "distributive_property", "display": "Distributive Property" } ],
+                    "uz": [ { "type": "term", "id": "distributive_property", "display": "Taqsimot xossasi" } ],
+                    "ru": [ { "type": "term", "id": "distributive_property", "display": "Распределительное свойство" } ]
+                  }
+                },
+                {
+                  "line": "= 12\\sqrt{5}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Add." } ],
+                    "uz": [ { "type": "plain", "text": "Qo'shing." } ],
+                    "ru": [ { "type": "plain", "text": "Сложите." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "c.",
+              "expression": "\\sqrt[3]{24} + \\sqrt[3]{192}",
+              "work": [
+                {
+                  "line": "= 2\\sqrt[3]{3} + 4\\sqrt[3]{3}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                },
+                {
+                  "line": "= (2 + 4)\\sqrt[3]{3}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "distributive_property", "display": "Distributive Property" } ],
+                    "uz": [ { "type": "term", "id": "distributive_property", "display": "Taqsimot xossasi" } ],
+                    "ru": [ { "type": "term", "id": "distributive_property", "display": "Распределительное свойство" } ]
+                  }
+                },
+                {
+                  "line": "= 6\\sqrt[3]{3}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Add." } ],
+                    "uz": [ { "type": "plain", "text": "Qo'shing." } ],
+                    "ru": [ { "type": "plain", "text": "Сложите." } ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "example_block",
+      "has_video": false,
+      "label": { "en": "EXAMPLE 5", "uz": "5-MYSOL", "ru": "ПРИМЕР 5" },
+      "title": {
+        "en": "Multiplying Radicals",
+        "uz": "Radikallarni ko'paytirish",
+        "ru": "Умножение радикалов"
+      },
+      "margin_content": [
+        {
+          "type": "mtr_badge",
+          "id": 2,
+          "badge": "MTR HELP A",
+          "prompt": {
+            "en": [
+              { "type": "plain", "text": "In part (a), help a classmate use properties of " },
+              { "type": "term", "id": "radical", "display": "radicals" },
+              { "type": "plain", "text": " to verify that " },
+              { "type": "math", "latex": "\\sqrt{126} = 3\\sqrt{14}" },
+              { "type": "plain", "text": "." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "(a) qismda sinfdoshingizga radikallarning xossalaridan foydalanib, " },
+              { "type": "math", "latex": "\\sqrt{126} = 3\\sqrt{14}" },
+              { "type": "plain", "text": " ekanligini tekshirishda yordam bering." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "В пункте (a) помогите однокласснику, используя свойства радикалов, проверить, что " },
+              { "type": "math", "latex": "\\sqrt{126} = 3\\sqrt{14}" },
+              { "type": "plain", "text": "." }
+            ]
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "worked_solutions",
+          "steps": [
+            {
+              "label": "a.",
+              "expression": "\\sqrt{6} \\cdot \\sqrt{21}",
+              "work": [
+                {
+                  "line": "= \\sqrt{6 \\cdot 21}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "product_property_of_square_roots", "display": "Product Property of Square Roots" } ],
+                    "uz": [ { "type": "term", "id": "product_property_of_square_roots", "display": "Kvadrat ildizning ko'paytma xossasi" } ],
+                    "ru": [ { "type": "term", "id": "product_property_of_square_roots", "display": "Свойство произведения квадратных корней" } ]
+                  }
+                },
+                {
+                  "line": "= \\sqrt{126}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Multiply." } ],
+                    "uz": [ { "type": "plain", "text": "Ko'paytiring." } ],
+                    "ru": [ { "type": "plain", "text": "Умножьте." } ]
+                  }
+                },
+                {
+                  "line": "= 3\\sqrt{14}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "b.",
+              "expression": "\\sqrt[3]{9} \\cdot \\sqrt[3]{5}",
+              "work": [
+                {
+                  "line": "= \\sqrt[3]{9 \\cdot 5}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "product_property_of_cube_roots", "display": "Product Property of Cube Roots" } ],
+                    "uz": [ { "type": "term", "id": "product_property_of_cube_roots", "display": "Kub ildizning ko'paytma xossasi" } ],
+                    "ru": [ { "type": "term", "id": "product_property_of_cube_roots", "display": "Свойство произведения кубических корней" } ]
+                  }
+                },
+                {
+                  "line": "= \\sqrt[3]{45}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Multiply." } ],
+                    "uz": [ { "type": "plain", "text": "Ko'paytiring." } ],
+                    "ru": [ { "type": "plain", "text": "Умножьте." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "c.",
+              "expression": "\\sqrt[3]{4} \\cdot \\left( -2\\sqrt[3]{3} \\right)",
+              "work": [
+                {
+                  "line": "= -2\\left( \\sqrt[3]{4} \\cdot \\sqrt[3]{3} \\right)",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "commutative_property_of_multiplication", "display": "Commutative Property of Multiplication" } ],
+                    "uz": [ { "type": "term", "id": "commutative_property_of_multiplication", "display": "Ko'paytirishning o'rin almashtirish xossasi" } ],
+                    "ru": [ { "type": "term", "id": "commutative_property_of_multiplication", "display": "Переместительное свойство умножения" } ]
+                  }
+                },
+                {
+                  "line": "= -2\\sqrt[3]{4 \\cdot 3}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "product_property_of_cube_roots", "display": "Product Property of Cube Roots" } ],
+                    "uz": [ { "type": "term", "id": "product_property_of_cube_roots", "display": "Kub ildizning ko'paytma xossasi" } ],
+                    "ru": [ { "type": "term", "id": "product_property_of_cube_roots", "display": "Свойство произведения кубических корней" } ]
+                  }
+                },
+                {
+                  "line": "= -2\\sqrt[3]{12}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Multiply." } ],
+                    "uz": [ { "type": "plain", "text": "Ko'paytiring." } ],
+                    "ru": [ { "type": "plain", "text": "Умножьте." } ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "self_assessment_block",
+      "title": {
+        "en": "SELF-ASSESSMENT",
+        "uz": "O'Z-O'ZINI BAHOLASH",
+        "ru": "САМООЦЕНКА"
+      },
+      "rating_scale": [
+        { "value": 1, "text": { "en": "I don't understand yet.", "uz": "Hali tushunmadim.", "ru": "Я пока не понимаю." } },
+        { "value": 2, "text": { "en": "I can do it with help.", "uz": "Yordam bilan bajara olaman.", "ru": "Я могу сделать это с помощью." } },
+        { "value": 3, "text": { "en": "I can do it on my own.", "uz": "Mustaqil bajara olaman.", "ru": "Я могу сделать это самостоятельно." } },
+        { "value": 4, "text": { "en": "I can teach someone else.", "uz": "Boshqalarga o'rgata olaman.", "ru": "Я могу научить кого-то другого." } }
+      ],
+      "body": [
+        {
+          "type": "instruction_text",
+          "text": {
+            "en": [ { "type": "plain", "text": "Simplify the expression." } ],
+            "uz": [ { "type": "plain", "text": "Ifodani soddalashtiring." } ],
+            "ru": [ { "type": "plain", "text": "Упростите выражение." } ]
+          }
+        },
+        {
+          "type": "question_grid",
+          "columns": 1,
+          "items": [
+            { "id": "q9", "label": "9.", "latex": "3\\sqrt{2} + 10\\sqrt{2}" },
+            { "id": "q10", "label": "10.", "latex": "4\\sqrt{7} - 6\\sqrt{63}" },
+            { "id": "q11", "label": "11.", "latex": "\\sqrt{11} \\cdot \\sqrt{2}" },
+            { "id": "q12", "label": "12.", "latex": "-\\sqrt[3]{10} \\cdot \\left( -\\sqrt[3]{4} \\right)" },
+            { "id": "q13", "label": "13.", "latex": "\\text{WHICH ONE DOESN'T BELONG? } -\\frac{1}{3}\\sqrt{6}, \\; \\frac{1}{6\\sqrt{3}}, \\; 6\\sqrt{3}, \\; -3\\sqrt{3}" },
+            { "id": "q14", "label": "14.", "latex": "\\text{Then find it and justify your answer. } 2\\sqrt[3]{-24} \\cdot \\sqrt[3]{\\Box} = 12" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "example_block",
+      "has_video": false,
+      "label": { "en": "EXAMPLE 6", "uz": "6-MYSOL", "ru": "ПРИМЕР 6" },
+      "title": {
+        "en": "Dividing Radicals",
+        "uz": "Radikallarni bo'lish",
+        "ru": "Деление радикалов"
+      },
+      "body": [
+        {
+          "type": "worked_solutions",
+          "steps": [
+            {
+              "label": "a.",
+              "expression": "\\sqrt{10} \\div \\sqrt{2}",
+              "work": [
+                {
+                  "line": "= \\sqrt{10 \\div 2}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "quotient_property_of_square_roots", "display": "Quotient Property of Square Roots" } ],
+                    "uz": [ { "type": "term", "id": "quotient_property_of_square_roots", "display": "Kvadrat ildizning bo'linma xossasi" } ],
+                    "ru": [ { "type": "term", "id": "quotient_property_of_square_roots", "display": "Свойство частного квадратных корней" } ]
+                  }
+                },
+                {
+                  "line": "= \\sqrt{5}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Divide." } ],
+                    "uz": [ { "type": "plain", "text": "Bo'ling." } ],
+                    "ru": [ { "type": "plain", "text": "Разделите." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "b.",
+              "expression": "\\sqrt[3]{-48} \\div \\sqrt[3]{6}",
+              "work": [
+                {
+                  "line": "= \\sqrt[3]{-48 \\div 6}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "quotient_property_of_cube_roots", "display": "Quotient Property of Cube Roots" } ],
+                    "uz": [ { "type": "term", "id": "quotient_property_of_cube_roots", "display": "Kub ildizning bo'linma xossasi" } ],
+                    "ru": [ { "type": "term", "id": "quotient_property_of_cube_roots", "display": "Свойство частного кубических корней" } ]
+                  }
+                },
+                {
+                  "line": "= \\sqrt[3]{-8}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Divide." } ],
+                    "uz": [ { "type": "plain", "text": "Bo'ling." } ],
+                    "ru": [ { "type": "plain", "text": "Разделите." } ]
+                  }
+                },
+                {
+                  "line": "= -2",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "c.",
+              "expression": "\\sqrt{160} \\div \\sqrt{5}",
+              "work": [
+                {
+                  "line": "= \\sqrt{160 \\div 5}",
+                  "explanation": {
+                    "en": [ { "type": "term", "id": "quotient_property_of_square_roots", "display": "Quotient Property of Square Roots" } ],
+                    "uz": [ { "type": "term", "id": "quotient_property_of_square_roots", "display": "Kvadrat ildizning bo'linma xossasi" } ],
+                    "ru": [ { "type": "term", "id": "quotient_property_of_square_roots", "display": "Свойство частного квадратных корней" } ]
+                  }
+                },
+                {
+                  "line": "= \\sqrt{32}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Divide." } ],
+                    "uz": [ { "type": "plain", "text": "Bo'ling." } ],
+                    "ru": [ { "type": "plain", "text": "Разделите." } ]
+                  }
+                },
+                {
+                  "line": "= 4\\sqrt{2}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "self_assessment_block",
+      "title": {
+        "en": "SELF-ASSESSMENT",
+        "uz": "O'Z-O'ZINI BAHOLASH",
+        "ru": "САМООЦЕНКА"
+      },
+      "rating_scale": [
+        { "value": 1, "text": { "en": "I don't understand yet.", "uz": "Hali tushunmadim.", "ru": "Я пока не понимаю." } },
+        { "value": 2, "text": { "en": "I can do it with help.", "uz": "Yordam bilan bajara olaman.", "ru": "Я могу сделать это с помощью." } },
+        { "value": 3, "text": { "en": "I can do it on my own.", "uz": "Mustaqil bajara olaman.", "ru": "Я могу сделать это самостоятельно." } },
+        { "value": 4, "text": { "en": "I can teach someone else.", "uz": "Boshqalarga o'rgata olaman.", "ru": "Я могу научить кого-то другого." } }
+      ],
+      "body": [
+        {
+          "type": "instruction_text",
+          "text": {
+            "en": [ { "type": "plain", "text": "Simplify the expression." } ],
+            "uz": [ { "type": "plain", "text": "Ifodani soddalashtiring." } ],
+            "ru": [ { "type": "plain", "text": "Упростите выражение." } ]
+          }
+        },
+        {
+          "type": "question_grid",
+          "columns": 2,
+          "items": [
+            { "id": "q15", "label": "15.", "latex": "\\sqrt{26} \\div \\sqrt{13}" },
+            { "id": "q16", "label": "16.", "latex": "\\sqrt[3]{16} \\div \\sqrt[3]{4}" },
+            { "id": "q17", "label": "17.", "latex": "\\sqrt{252} \\div \\left( -\\sqrt{7} \\right)" },
+            { "id": "q18", "label": "18.", "latex": "\\sqrt[3]{-24} \\div 2\\sqrt[3]{54}" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "lesson_concept",
+      "title": {
+        "en": "Solving Real-Life Problems",
+        "uz": "Haqiqiy hayotiy masalalarni yechish",
+        "ru": "Решение реальных задач"
+      },
+      "body": [
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              { "type": "plain", "text": "" },
+              { "type": "term", "id": "radical", "display": "Radicals" },
+              { "type": "plain", "text": " are often used in formulas that describe real‑world situations. In the next example, you’ll use a " },
+              { "type": "term", "id": "radical", "display": "radical" },
+              { "type": "plain", "text": " " },
+              { "type": "term", "id": "equation", "display": "equation" },
+              { "type": "plain", "text": " to model the distance to the horizon." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "" },
+              { "type": "term", "id": "radical", "display": "Radikallar" },
+              { "type": "plain", "text": " ko'pincha haqiqiy hayotdagi holatlarni ifodalovchi formulalarda ishlatiladi. Keyingi misolda siz ufqqacha bo'lgan masofani modellashtirish uchun " },
+              { "type": "term", "id": "radical", "display": "radikal" },
+              { "type": "plain", "text": " " },
+              { "type": "term", "id": "equation", "display": "tenglamadan" },
+              { "type": "plain", "text": " foydalanasiz." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "" },
+              { "type": "term", "id": "radical", "display": "Радикалы" },
+              { "type": "plain", "text": " часто используются в формулах, описывающих реальные ситуации. В следующем примере вы будете использовать " },
+              { "type": "term", "id": "radical", "display": "радикальное" },
+              { "type": "plain", "text": " " },
+              { "type": "term", "id": "equation", "display": "уравнение" },
+              { "type": "plain", "text": " для моделирования расстояния до горизонта." }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "example_block",
+      "has_video": false,
+      "label": { "en": "EXAMPLE 7", "uz": "7-MYSOL", "ru": "ПРИМЕР 7" },
+      "title": {
+        "en": "Modeling Real Life",
+        "uz": "Haqiqiy hayotni modellashtirish",
+        "ru": "Моделирование реальной жизни"
+      },
+      "body": [
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [
+              { "type": "plain", "text": "The distance " },
+              { "type": "math", "latex": "d" },
+              { "type": "plain", "text": " (in miles) that you can see to the horizon with your eye level " },
+              { "type": "math", "latex": "h" },
+              { "type": "plain", "text": " feet above the water is given by " },
+              { "type": "math", "latex": "d = \\frac{\\sqrt{3h}}{\\sqrt{2}}" },
+              { "type": "plain", "text": ". Estimate how far you can see when your eye level is 5 feet above the water." }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Ko'z darajangiz suvdan " },
+              { "type": "math", "latex": "h" },
+              { "type": "plain", "text": " fut balandlikda bo'lganda, ufqqacha ko'rishingiz mumkin bo'lgan masofa " },
+              { "type": "math", "latex": "d" },
+              { "type": "plain", "text": " (milyalarda) " },
+              { "type": "math", "latex": "d = \\frac{\\sqrt{3h}}{\\sqrt{2}}" },
+              { "type": "plain", "text": " formula bilan berilgan. Ko'z darajangiz suvdan 5 fut balandlikda bo'lganda qancha uzoqlikni ko'rishingizni baholang." }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Расстояние " },
+              { "type": "math", "latex": "d" },
+              { "type": "plain", "text": " (в милях), которое вы можете видеть до горизонта при уровне глаз " },
+              { "type": "math", "latex": "h" },
+              { "type": "plain", "text": " футов над водой, задаётся формулой " },
+              { "type": "math", "latex": "d = \\frac{\\sqrt{3h}}{\\sqrt{2}}" },
+              { "type": "plain", "text": ". Оцените, как далеко вы можете видеть, когда уровень ваших глаз находится на высоте 5 футов над водой." }
+            ]
+          }
+        },
+        {
+          "type": "worked_solutions",
+          "steps": [
+            {
+              "label": "SOLUTION",
+              "expression": "",
+              "work": [
+                {
+                  "line": "d = \\frac{\\sqrt{3(5)}}{\\sqrt{2}}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Substitute 5 for " }, { "type": "math", "latex": "h" }, { "type": "plain", "text": "." } ],
+                    "uz": [ { "type": "plain", "text": "" }, { "type": "math", "latex": "h" }, { "type": "plain", "text": " o'rniga 5 qo'ying." } ],
+                    "ru": [ { "type": "plain", "text": "Подставьте 5 вместо " }, { "type": "math", "latex": "h" }, { "type": "plain", "text": "." } ]
+                  }
+                },
+                {
+                  "line": "= \\frac{\\sqrt{15}}{\\sqrt{2}}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Multiply." } ],
+                    "uz": [ { "type": "plain", "text": "Ko'paytiring." } ],
+                    "ru": [ { "type": "plain", "text": "Умножьте." } ]
+                  }
+                },
+                {
+                  "line": "= \\frac{\\sqrt{15}}{\\sqrt{2}} \\cdot \\frac{\\sqrt{2}}{\\sqrt{2}}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Multiply by " }, { "type": "math", "latex": "\\frac{\\sqrt{2}}{\\sqrt{2}}" }, { "type": "plain", "text": "." } ],
+                    "uz": [ { "type": "plain", "text": "" }, { "type": "math", "latex": "\\frac{\\sqrt{2}}{\\sqrt{2}}" }, { "type": "plain", "text": " ga ko'paytiring." } ],
+                    "ru": [ { "type": "plain", "text": "Умножьте на " }, { "type": "math", "latex": "\\frac{\\sqrt{2}}{\\sqrt{2}}" }, { "type": "plain", "text": "." } ]
+                  }
+                },
+                {
+                  "line": "= \\frac{\\sqrt{30}}{2}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Simplify." } ],
+                    "uz": [ { "type": "plain", "text": "Soddalashtiring." } ],
+                    "ru": [ { "type": "plain", "text": "Упростите." } ]
+                  }
+                },
+                {
+                  "line": "\\text{You can see } \\frac{\\sqrt{30}}{2} \\approx 2.7 \\text{ miles.}",
+                  "explanation": {
+                    "en": [ { "type": "plain", "text": "Final answer." } ],
+                    "uz": [ { "type": "plain", "text": "Yakuniy javob." } ],
+                    "ru": [ { "type": "plain", "text": "Окончательный ответ." } ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "self_assessment_block",
+      "title": {
+        "en": "SELF-ASSESSMENT",
+        "uz": "O'Z-O'ZINI BAHOLASH",
+        "ru": "САМООЦЕНКА"
+      },
+      "rating_scale": [
+        { "value": 1, "text": { "en": "I don't understand yet.", "uz": "Hali tushunmadim.", "ru": "Я пока не понимаю." } },
+        { "value": 2, "text": { "en": "I can do it with help.", "uz": "Yordam bilan bajara olaman.", "ru": "Я могу сделать это с помощью." } },
+        { "value": 3, "text": { "en": "I can do it on my own.", "uz": "Mustaqil bajara olaman.", "ru": "Я могу сделать это самостоятельно." } },
+        { "value": 4, "text": { "en": "I can teach someone else.", "uz": "Boshqalarga o'rgata olaman.", "ru": "Я могу научить кого-то другого." } }
+      ],
+      "body": [
+        {
+          "type": "instruction_text",
+          "text": {
+            "en": [ { "type": "plain", "text": "Answer the questions." } ],
+            "uz": [ { "type": "plain", "text": "Savollarga javob bering." } ],
+            "ru": [ { "type": "plain", "text": "Ответьте на вопросы." } ]
+          }
+        },
+        {
+          "type": "task_block",
+          "label": "19.",
+          "level": 1,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "WHAT IF? In Example 7, how far can you see when your eye level is 35 feet above the water?" }
+            ],
+            "uz": [
+              { "type": "plain", "text": "AGAR? 7-misolda, ko'z darajangiz suvdan 35 fut balandlikda bo'lsa, qancha uzoqlikni ko'rishingiz mumkin?" }
+            ],
+            "ru": [
+              { "type": "plain", "text": "ЧТО ЕСЛИ? В Примере 7, как далеко вы можете видеть, когда уровень глаз находится на высоте 35 футов над водой?" }
+            ]
+          },
+          "content": []
+        },
+        {
+          "type": "task_block",
+          "label": "20.",
+          "level": 1,
+          "instruction": {
+            "en": [
+              { "type": "plain", "text": "The velocity " },
+              { "type": "math", "latex": "v" },
+              { "type": "plain", "text": " (in feet per second) of a dropped object is given by " },
+              { "type": "math", "latex": "v = \\sqrt{64d}" },
+              { "type": "plain", "text": ", where " },
+              { "type": "math", "latex": "d" },
+              { "type": "plain", "text": " is the distance the object falls before hitting the ground. Panorama Tower in Miami is 868 feet tall. What is the maximum velocity of an object dropped from the top of Panorama Tower?" }
+            ],
+            "uz": [
+              { "type": "plain", "text": "Qo'yib yuborilgan jismning tezligi " },
+              { "type": "math", "latex": "v" },
+              { "type": "plain", "text": " (fut/soniyada) " },
+              { "type": "math", "latex": "v = \\sqrt{64d}" },
+              { "type": "plain", "text": " formula bilan berilgan, bu yerda " },
+              { "type": "math", "latex": "d" },
+              { "type": "plain", "text": " — jismning yerga tushguncha o'tgan masofasi. Mayamidagi Panorama minorasi 868 fut balandlikda. Minoraning tepasidan qo'yib yuborilgan jismning maksimal tezligi qancha?" }
+            ],
+            "ru": [
+              { "type": "plain", "text": "Скорость " },
+              { "type": "math", "latex": "v" },
+              { "type": "plain", "text": " (в футах в секунду) падающего объекта задаётся формулой " },
+              { "type": "math", "latex": "v = \\sqrt{64d}" },
+              { "type": "plain", "text": ", где " },
+              { "type": "math", "latex": "d" },
+              { "type": "plain", "text": " — расстояние, которое объект пролетает до удара о землю. Башня Panorama в Майами имеет высоту 868 футов. Какова максимальная скорость объекта, сброшенного с вершины башни?" }
+            ]
+          },
+          "content": []
+        }
+      ]
+    }
+  ]
+}

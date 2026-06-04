@@ -1,0 +1,847 @@
+{
+    "id": "9.1",
+    "title": {
+        "en": "Properties of Radicals",
+        "uz": "Ildizlarning xossalari",
+        "ru": "Свойства радикалов"
+    },
+    "blocks": [
+        {
+            "type": "learning_target",
+            "content": {
+                "target": {
+                    "en": "Write and solve <Word id='equation'>equations</Word> with <Word id='variable'>variables</Word> on both sides.",
+                    "uz": "Ikkala tomonida ham <Word id='variable'>o'zgaruvchilar</Word> bo'lgan <Word id='equation'>tenglamalarni</Word> yozing va yeching.",
+                    "ru": "Запишите и решите <Word id='equation'>уравнения</Word> с <Word id='variable'>переменными</Word> по обе стороны."
+                },
+                "success_criteria": {
+                    "en": [
+                        "I can apply properties of <Word id='equality'>equality</Word> using <Word id='variable'>variable</Word> <Word id='term'>terms</Word>.",
+                        "I can solve <Word id='equation'>equations</Word> with <Word id='variable'>variables</Word> on both sides.",
+                        "I can recognize when an <Word id='equation'>equation</Word> has zero, one, or infinitely many <Word id='solution'>solutions</Word>."
+                    ],
+                    "uz": [
+                        "Men <Word id='variable'>o'zgaruvchili</Word> <Word id='term'>hadlar</Word> yordamida <Word id='equality'>tenglik</Word> xossalarini qo'llay olaman.",
+                        "Men ikkala tomonida ham <Word id='variable'>o'zgaruvchilar</Word> bo'lgan <Word id='equation'>tenglamalarni</Word> yecha olaman.",
+                        "Men <Word id='equation'>tenglama</Word> nol, bitta yoki cheksiz ko'p <Word id='solution'>yechimga</Word> ega bo'lgan holatlarni aniqlay olaman."
+                    ],
+                    "ru": [
+                        "Я могу применять свойства <Word id='equality'>равенства</Word> используя <Word id='variable'>переменные</Word> <Word id='term'>члены</Word>.",
+                        "Я могу решать <Word id='equation'>уравнения</Word> с <Word id='variable'>переменными</Word> по обе стороны.",
+                        "Я могу определить, когда <Word id='equation'>уравнение</Word> имеет ноль, одно или бесконечно много <Word id='solution'>решений</Word>."
+                    ]
+                }
+            }
+        },
+        {
+            "type": "explore_it",
+            "header": {
+                "title": {
+                    "en": "Performing Operations with Square Roots"
+                }
+            },
+            "margin_content": [
+                {
+                    "type": "mtr_badge",
+                    "id": 1,
+                    "badge": "ANALYZE A PROBLEM",
+                    "prompt": {
+                        "en": "What types of values of <Word id='var_a'>a</Word> and <Word id='var_b'>b</Word> make the expressions easier to evaluate?"
+                    }
+                },
+                {
+                    "type": "image",
+                    "src": "/assets/graphics/student_thinking_cutout.png",
+                    "style": "transparent_cutout",
+                    "alt": {
+                        "en": "A student sitting on the floor with a notebook, thinking."
+                    }
+                }
+            ],
+            "body": [
+                {
+                    "type": "instruction_text",
+                    "text": {
+                        "en": "<strong>Work with a partner.</strong>"
+                    }
+                },
+                {
+                    "type": "task_block",
+                    "label": "a.",
+                    "level": 1,
+                    "instruction": {
+                        "en": "Determine which of the following are general rules by choosing various values for a and b. Use what you know about radicals and rational exponents to justify your answer."
+                    },
+                    "content": [
+                        {
+                            "type": "equation_grid",
+                            "columns": 1,
+                            "align": "left",
+                            "items": [
+                                {
+                                    "id": "a_i",
+                                    "latex": "\\text{i. } \\sqrt{a} + \\sqrt{b} \\stackrel{?}{=} \\sqrt{a + b}"
+                                },
+                                {
+                                    "id": "a_ii",
+                                    "latex": "\\text{ii. } \\sqrt{a} \\cdot \\sqrt{b} \\stackrel{?}{=} \\sqrt{a \\cdot b}"
+                                },
+                                {
+                                    "id": "a_iii",
+                                    "latex": "\\text{iii. } \\sqrt{a} - \\sqrt{b} \\stackrel{?}{=} \\sqrt{a - b}"
+                                },
+                                {
+                                    "id": "a_iv",
+                                    "latex": "\\text{iv. } \\frac{\\sqrt{a}}{\\sqrt{b}} \\stackrel{?}{=} \\sqrt{\\frac{a}{b}}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "task_block",
+                    "label": "b.",
+                    "level": 1,
+                    "instruction": {
+                        "en": "Explain in your own words how to add, subtract, multiply, and divide square roots."
+                    },
+                    "content": []
+                },
+                {
+                    "type": "task_block",
+                    "label": "c.",
+                    "level": 1,
+                    "instruction": {
+                        "en": "Consider the list of rational and irrational numbers shown. Add two more rational numbers and two more irrational numbers to the list."
+                    },
+                    "content": [
+                        {
+                            "type": "card_tiles",
+                            "tiles": [
+                                {
+                                    "id": "t1",
+                                    "latex": "2"
+                                },
+                                {
+                                    "id": "t2",
+                                    "latex": "\\frac{1}{4}"
+                                },
+                                {
+                                    "id": "t3",
+                                    "latex": "0"
+                                },
+                                {
+                                    "id": "t4",
+                                    "latex": "\\sqrt{3}"
+                                },
+                                {
+                                    "id": "t5",
+                                    "latex": "-\\sqrt{3}"
+                                },
+                                {
+                                    "id": "t6",
+                                    "latex": "\\frac{1}{\\sqrt{3}}"
+                                },
+                                {
+                                    "id": "t7",
+                                    "latex": "\\pi"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": {
+                                "en": "Experiment with sums and products of two numbers from the list to determine whether each statement is <em>always</em>, <em>sometimes</em>, or <em>never</em> true. Explain your reasoning."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "task_block",
+                    "label": "i.",
+                    "level": 2,
+                    "instruction": {
+                        "en": "The sum of two rational numbers is rational."
+                    }
+                },
+                {
+                    "type": "task_block",
+                    "label": "ii.",
+                    "level": 2,
+                    "instruction": {
+                        "en": "The sum of a rational number and an irrational number is irrational."
+                    }
+                },
+                {
+                    "type": "task_block",
+                    "label": "iii.",
+                    "level": 2,
+                    "instruction": {
+                        "en": "The sum of two irrational numbers is irrational."
+                    }
+                },
+                {
+                    "type": "task_block",
+                    "label": "iv.",
+                    "level": 2,
+                    "instruction": {
+                        "en": "The product of two rational numbers is rational."
+                    }
+                },
+                {
+                    "type": "task_block",
+                    "label": "v.",
+                    "level": 2,
+                    "instruction": {
+                        "en": "The product of a nonzero rational number and an irrational number is irrational."
+                    }
+                },
+                {
+                    "type": "task_block",
+                    "label": "vi.",
+                    "level": 2,
+                    "instruction": {
+                        "en": "The product of two irrational numbers is irrational."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "sec_03",
+            "type": "lesson_concept",
+            "title": {
+                "en": "Using Properties of Radicals",
+                "uz": "Radikallar xossalaridan foydalanish",
+                "ru": "Использование свойств радикалов"
+            },
+            "margin_content": [
+                {
+                    "type": "vocabulary_box",
+                    "icon": "az_vocab",
+                    "title": {
+                        "en": "Vocabulary",
+                        "uz": "Atamalar",
+                        "ru": "Словарь"
+                    },
+                    "terms": [
+                        {
+                            "term": {
+                                "en": "radical expression",
+                                "uz": "radikal ifoda",
+                                "ru": "радикальное выражение"
+                            },
+                            "reference": "p. 470"
+                        },
+                        {
+                            "term": {
+                                "en": "simplest form of a radical",
+                                "uz": "radikalning eng sodda shakli",
+                                "ru": "простейший вид радикала"
+                            },
+                            "reference": "p. 470"
+                        },
+                        {
+                            "term": {
+                                "en": "rationalizing the denominator",
+                                "uz": "kasr maxrajini irratsionallikdan qutqarish",
+                                "ru": "избавление от иррациональности в знаменателе"
+                            },
+                            "reference": "p. 471"
+                        },
+                        {
+                            "term": {
+                                "en": "like radicals",
+                                "uz": "o'xshash radikallar",
+                                "ru": "подобные радикалы"
+                            },
+                            "reference": "p. 472"
+                        }
+                    ]
+                }
+            ],
+            "body": [
+                {
+                    "type": "paragraph",
+                    "text": {
+                        "en": "A <mark>radical expression</mark> is an expression that contains a radical. An expression involving a radical with index $n$ is in <mark>simplest form</mark> when these three conditions are met:",
+                        "uz": "<mark>Radikal ifoda</mark> — bu tarkibida ildiz (radikal) bo'lgan ifodadir. Ko'rsatkichi $n$ bo'lgan ildizli ifoda quyidagi uchta shart bajarilganda <mark>eng sodda shaklda</mark> bo'ladi:",
+                        "ru": "<mark>Радикальное выражение</mark> — это выражение, содержащее радикал. Выражение, включающее радикал с показателем $n$, находится в <mark>простейшем виде</mark>, если выполняются следующие три условия:"
+                    }
+                },
+                {
+                    "type": "bullet_list",
+                    "items": [
+                        {
+                            "en": "No radicands have perfect $n$th powers as factors other than 1.",
+                            "uz": "Ildiz ostidagi ifodalarda 1 dan farqli to'liq $n$-darajali ko'paytuvchilar bo'lmaydi.",
+                            "ru": "Подрадикальные выражения не имеют сомножителей в точной $n$-й степени, отличных от 1."
+                        },
+                        {
+                            "en": "No radicands contain fractions.",
+                            "uz": "Ildiz ostidagi ifodalar kasrlarni o'z ichiga olmaydi.",
+                            "ru": "Подрадикальные выражения не содержат дробей."
+                        },
+                        {
+                            "en": "No radicals appear in the denominator of a fraction.",
+                            "uz": "Kasrning maxrajida ildizlar (radikallar) qatnashmaydi.",
+                            "ru": "Радикалы не появляются в знаменателе дроби."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": {
+                        "en": "You can use the properties below to simplify radical expressions involving square roots.",
+                        "uz": "Kvadrat ildiz qatnashgan radikal ifodalarni soddalashtirish uchun quyidagi xossalardan foydalanishingiz mumkin.",
+                        "ru": "Вы можете использовать приведенные ниже свойства для упрощения радикальных выражений, содержащих квадратные корни."
+                    }
+                },
+                {
+                    "type": "key_ideas_box",
+                    "style": "lightbulb_container",
+                    "title": {
+                        "en": "KEY IDEAS",
+                        "uz": "ASOSIY G'OYALAR",
+                        "ru": "ОСНОВНЫЕ ИДЕИ"
+                    },
+                    "concepts": [
+                        {
+                            "subtitle": {
+                                "en": "Product Property of Square Roots",
+                                "uz": "Kvadrat ildizning ko'paytma xossasi",
+                                "ru": "Свойство произведения квадратных корней"
+                            },
+                            "matrix": [
+                                {
+                                    "label": {
+                                        "en": "Words",
+                                        "uz": "So'zlar",
+                                        "ru": "Слова"
+                                    },
+                                    "text": {
+                                        "en": "The square root of a product equals the product of the square roots of the factors.",
+                                        "uz": "Ko'paytmaning kvadrat ildizi ko'paytuvchilar kvadrat ildizlarining ko'paytmasiga teng.",
+                                        "ru": "Квадратный корень из произведения равен произведению квадратных корней из сомножителей."
+                                    }
+                                },
+                                {
+                                    "label": {
+                                        "en": "Numbers",
+                                        "uz": "Sonlar",
+                                        "ru": "Числа"
+                                    },
+                                    "latex": "\\sqrt{9 \\cdot 5} = \\sqrt{9} \\cdot \\sqrt{5} = 3\\sqrt{5}"
+                                },
+                                {
+                                    "label": {
+                                        "en": "Algebra",
+                                        "uz": "Algebra",
+                                        "ru": "Алгебра"
+                                    },
+                                    "translations": {
+                                        "en": {
+                                            "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ where } a \\ge 0 \\text{ and } b \\ge 0"
+                                        },
+                                        "uz": {
+                                            "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ bunda } a \\ge 0 \\text{ va } b \\ge 0"
+                                        },
+                                        "ru": {
+                                            "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ где } a \\ge 0 \\text{ и } b \\ge 0"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "subtitle": {
+                                "en": "Quotient Property of Square Roots",
+                                "uz": "Kvadrat ildizning bo'linma xossasi",
+                                "ru": "Свойство частного квадратных корней"
+                            },
+                            "matrix": [
+                                {
+                                    "label": {
+                                        "en": "Words",
+                                        "uz": "So'zlar",
+                                        "ru": "Слова"
+                                    },
+                                    "text": {
+                                        "en": "The square root of a quotient equals the quotient of the square roots of the numerator and denominator.",
+                                        "uz": "Bo'linmaning kvadrat ildizi surat va maxraj kvadrat ildizlarining bo'linmasiga teng.",
+                                        "ru": "Квадратный корень из частного равен частному квадратных корней из числителя и знаменателя."
+                                    }
+                                },
+                                {
+                                    "label": {
+                                        "en": "Numbers",
+                                        "uz": "Sonlar",
+                                        "ru": "Числа"
+                                    },
+                                    "latex": "\\sqrt{\\frac{3}{4}} = \\frac{\\sqrt{3}}{\\sqrt{4}} = \\frac{\\sqrt{3}}{2}"
+                                },
+                                {
+                                    "label": {
+                                        "en": "Algebra",
+                                        "uz": "Algebra",
+                                        "ru": "Алгебра"
+                                    },
+                                    "translations": {
+                                        "en": {
+                                            "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ where } a \\ge 0 \\text{ and } b > 0"
+                                        },
+                                        "uz": {
+                                            "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}, \\text{ bunda } a \\ge 0 \\text{ va } b > 0"
+                                        },
+                                        "ru": {
+                                            "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ где } a \\ge 0 \\text{ и } b > 0"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": {
+                        "en": "There can be more than one way to factor a radicand. An efficient method is to find the greatest perfect square factor.",
+                        "uz": "Ildiz ostidagi ifodani ko'paytuvchilarga ajratishning bir necha usuli bo'lishi mumkin. Eng samarali usul — eng katta to'liq kvadrat bo'lgan ko'paytuvchini topishdir.",
+                        "ru": "Существует несколько способов разложения подрадикального выражения на множители. Эффективный метод — найти наибольший точный квадратный множитель."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "sec_06",
+            "type": "example_block",
+            "has_video": true,
+            "label": {
+                "en": "EXAMPLE 2",
+                "uz": "2-MYSOL",
+                "ru": "ПРИМЕР 2"
+            },
+            "title": {
+                "en": "Using Properties of Cube Roots",
+                "uz": "Kub ildiz xossalaridan foydalanish",
+                "ru": "Использование свойств кубических корней"
+            },
+            "body": [
+                {
+                    "type": "paragraph",
+                    "text": {
+                        "en": "You can extend the Product and Quotient Properties of Square Roots to other radicals, such as cube roots. When using these <em>properties of cube roots</em>, the radicands can contain negative numbers.",
+                        "uz": "Siz kvadrat ildizlarning ko'paytma va bo'linma xossalarini boshqa radikallarga, masalan, kub ildizlarga ham tatbiq etishingiz mumkin. Kub ildizlarning ushbu xossalaridan foydalanganda, ildiz ostidagi ifodalar manfiy sonlarni o'z ichiga olishi mumkin.",
+                        "ru": "Вы можете распространить свойства произведения и частного квадратных корней на другие радикалы, такие как кубические корни. При использовании этих свойств кубических корней подрадикальные выражения могут содержать отрицательные числа."
+                    }
+                },
+                {
+                    "type": "worked_solutions",
+                    "steps": [
+                        {
+                            "label": "a.",
+                            "expression": "\\sqrt[3]{-128}",
+                            "work": [
+                                {
+                                    "line": "= \\sqrt[3]{-64 \\cdot 2}",
+                                    "explanation": {
+                                        "en": "Factor using the greatest perfect cube factor.",
+                                        "uz": "Eng katta to'liq kub bo'lgan ko'paytuvchini topib, ko'paytuvchilarga ajrating.",
+                                        "ru": "Разложите на множители, используя наибольший точный кубический множитель."
+                                    }
+                                },
+                                {
+                                    "line": "= \\sqrt[3]{-64} \\cdot \\sqrt[3]{2}",
+                                    "explanation": {
+                                        "en": "Product Property of Cube Roots",
+                                        "uz": "Kub ildizning ko'paytma xossasi",
+                                        "ru": "Свойство произведения кубических корней"
+                                    }
+                                },
+                                {
+                                    "line": "= -4\\sqrt[3]{2}",
+                                    "explanation": {
+                                        "en": "Simplify.",
+                                        "uz": "Soddalashtiring.",
+                                        "ru": "Упростите."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "label": "b.",
+                            "expression": "\\sqrt[3]{\\frac{9}{216}}",
+                            "work": [
+                                {
+                                    "line": "= \\frac{\\sqrt[3]{9}}{\\sqrt[3]{216}}",
+                                    "explanation": {
+                                        "en": "Quotient Property of Cube Roots",
+                                        "uz": "Kub ildizning bo'linma xossasi",
+                                        "ru": "Свойство частного кубических корней"
+                                    }
+                                },
+                                {
+                                    "line": "= \\frac{\\sqrt[3]{9}}{6}",
+                                    "explanation": {
+                                        "en": "Simplify.",
+                                        "uz": "Soddalashtiring.",
+                                        "ru": "Упростите."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "en": "You can extend the Product and Quotient Properties of Square Roots to other radicals, such as cube roots. When using these <em>properties of cube roots</em>, the radicands can contain negative numbers.",
+            "uz": "Siz kvadrat ildizlarning ko'paytma va bo'linma xossalarini boshqa radikallarga, masalan, kub ildizlarga ham tatbiq etishingiz mumkin. Kub ildizlarning ushbu xossalaridan foydalandanda, ildiz ostidagi ifodalar manfiy sonlarni o'z ichiga olishi mumkin.",
+            "ru": "Вы можете распространить свойства произведения и частного квадратных корней на другие радикалы, такие как кубические корни. При использовании этих свойств кубических корней подрадикальные выражения могут содержать отрицательные числа."
+          }
+        },
+        {
+            "id": "sec_06_example2",
+            "type": "example_block",
+            "has_video": true,
+            "label": {
+                "en": "EXAMPLE 2",
+                "uz": "2-MYSOL",
+                "ru": "ПРИМЕР 2"
+            },
+            "title": {
+                "en": "Using Properties of Cube Roots",
+                "uz": "Kub ildiz xossalaridan foydalanish",
+                "ru": "Использование свойств кубических корней"
+            },
+            "body": [
+        
+                {
+                    "type": "worked_solutions",
+                    "steps": [
+                        {
+                            "label": "a.",
+                            "expression": "\\sqrt[3]{-128}",
+                            "work": [
+                                {
+                                    "line": "= \\sqrt[3]{-64 \\cdot 2}",
+                                    "explanation": {
+                                        "en": "Factor using the greatest perfect cube factor.",
+                                        "uz": "Eng katta to'liq kub bo'lgan ko'paytuvchiga ajrating.",
+                                        "ru": "Разложите на множители, используя наибольший полный кубический множитель."
+                                    }
+                                },
+                                {
+                                    "line": "= \\sqrt[3]{-64} \\cdot \\sqrt[3]{2}",
+                                    "explanation": {
+                                        "en": "Product Property of Cube Roots",
+                                        "uz": "Kub ildizning ko'paytma xossasi",
+                                        "ru": "Свойство произведения кубических корней"
+                                    }
+                                },
+                                {
+                                    "line": "= -4\\sqrt[3]{2}",
+                                    "explanation": {
+                                        "en": "Simplify.",
+                                        "uz": "Soddalashtiring.",
+                                        "ru": "Упростите."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "label": "b.",
+                            "expression": "\\frac{\\sqrt[3]{9}}{\\sqrt[3]{216}}",
+                            "work": [
+                                {
+                                    "line": "= \\sqrt[3]{\\frac{9}{216}}",
+                                    "explanation": {
+                                        "en": "Quotient Property of Cube Roots",
+                                        "uz": "Kub ildizning bo'linma xossasi",
+                                        "ru": "Свойство частного кубических корней"
+                                    }
+                                },
+                                {
+                                    "line": "= \\frac{\\sqrt[3]{9}}{6}",
+                                    "explanation": {
+                                        "en": "Simplify.",
+                                        "uz": "Soddalashtiring.",
+                                        "ru": "Упростите."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sec_07_self_assessment",
+            "type": "self_assessment_block",
+            "title": {
+                "en": "SELF-ASSESSMENT",
+                "uz": "O'Z-O'ZINI BAHOLASH",
+                "ru": "САМООЦЕНКА"
+            },
+            "rating_scale": [
+                {
+                    "value": 1,
+                    "text": {
+                        "en": "I don’t understand yet.",
+                        "uz": "Hali tushunmadim.",
+                        "ru": "Я пока не понимаю."
+                    }
+                },
+                {
+                    "value": 2,
+                    "text": {
+                        "en": "I can do it with help.",
+                        "uz": "Yordam bilan bajara olaman.",
+                        "ru": "Я могу сделать это с помощью."
+                    }
+                },
+                {
+                    "value": 3,
+                    "text": {
+                        "en": "I can do it on my own.",
+                        "uz": "Mustaqil bajara olaman.",
+                        "ru": "Я могу сделать это самостоятельно."
+                    }
+                },
+                {
+                    "value": 4,
+                    "text": {
+                        "en": "I can teach someone else.",
+                        "uz": "Boshqalarga o'rgata olaman.",
+                        "ru": "Я могу научить кого-то другого."
+                    }
+                }
+            ],
+            "body": [
+                {
+                    "type": "instruction_text",
+                    "text": {
+                        "en": "Simplify the expression.",
+                        "uz": "Ifodani soddalashtiring.",
+                        "ru": "Упростите выражение."
+                    }
+                },
+                {
+                    "type": "question_grid",
+                    "columns": 2,
+                    "items": [
+                        {
+                            "id": "sa_q1",
+                            "label": "1.",
+                            "latex": "\\sqrt{24}"
+                        },
+                        {
+                            "id": "sa_q2",
+                            "label": "2.",
+                            "latex": "-\\sqrt{\\frac{17}{100}}"
+                        },
+                        {
+                            "id": "sa_q3",
+                            "label": "3.",
+                            "latex": "\\sqrt[3]{54}"
+                        },
+                        {
+                            "id": "sa_q4",
+                            "label": "4.",
+                            "latex": "\\sqrt[3]{\\frac{27}{8}}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sec_08_rationalizing",
+            "type": "lesson_concept",
+            "title": {
+                "en": "Rationalizing the Denominator",
+                "uz": "Kasr maxrajini irratsionallikdan qutqarish",
+                "ru": "Избавление от иррациональности в знаменателе"
+            },
+            "body": [
+                {
+                    "type": "paragraph",
+                    "text": {
+                        "en": "When a radical is in the denominator of a fraction, you can multiply the fraction by an appropriate form of 1 to eliminate the radical from the denominator. This process is called <mark>rationalizing the denominator</mark>.",
+                        "uz": "Kasrning maxrajida ildiz (radikal) bo'lganda, maxrajdagi ildizni yo'qotish uchun kasrni 1 ning tegishli shakliga ko'paytirishingiz mumkin. Bu jarayon <mark>kasr maxrajini irratsionallikdan qutqarish</mark> deb ataladi.",
+                        "ru": "Если в знаменателе дроби находится радикал, вы можете умножить дробь на соответствующую форму единицы, чтобы исключить радикал из знаменателя. Этот процесс называется <mark>избавлением от иррациональности в знаменателе</mark>."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "sec_09_example3",
+            "type": "example_block",
+            "has_video": true,
+            "label": {
+                "en": "EXAMPLE 3",
+                "uz": "3-MYSOL",
+                "ru": "ПРИМЕР 3"
+            },
+            "title": {
+                "en": "Rationalizing the Denominator",
+                "uz": "Kasr maxrajini irratsionallikdan qutqarish",
+                "ru": "Избавление от иррациональности в знаменателе"
+            },
+            "margin_content": [
+                {
+                    "type": "study_tip_box",
+                    "icon": "lightbulb",
+                    "title": {
+                        "en": "STUDY TIP",
+                        "uz": "O'RGANISH UCHUN MASLAHAT",
+                        "ru": "СОВЕТ ДЛЯ ИЗУЧЕНИЯ"
+                    },
+                    "text": {
+                        "en": "Rationalizing the denominator works because you multiply the numerator and denominator by the same nonzero number $a$, which is the same as multiplying by $\\frac{a}{a}$, or 1.",
+                        "uz": "Kasr maxrajini irratsionallikdan qutqarish shuning uchun ham to'g'ri natija beradiki, siz kasrning surat va maxrajini noldan farqli bir xil $a$ soniga ko'paytirasiz, bu esa kasrni $\\frac{a}{a}$ yoki 1 ga ko'paytirish bilan bir xil demakdir.",
+                        "ru": "Избавление от иррациональности в знаменателе работает потому, что вы умножаете числитель и знаменатель на одно и то же ненулевое число $a$, что равносильно умножению на $\\frac{a}{a}$ или 1."
+                    }
+                }
+            ],
+            "body": [
+                {
+                    "type": "worked_solutions",
+                    "steps": [
+                        {
+                            "label": "a.",
+                            "expression": "\\frac{5}{\\sqrt{6}}",
+                            "work": [
+                                {
+                                    "line": "= \\frac{5 \\cdot \\sqrt{6}}{\\sqrt{6} \\cdot \\sqrt{6}}",
+                                    "explanation": {
+                                        "en": "Multiply by $\\frac{\\sqrt{6}}{\\sqrt{6}}$.",
+                                        "uz": "$\\frac{\\sqrt{6}}{\\sqrt{6}}$ ga ko'paytiring.",
+                                        "ru": "Умножьте на $\\frac{\\sqrt{6}}{\\sqrt{6}}$."
+                                    }
+                                },
+                                {
+                                    "line": "= \\frac{5\\sqrt{6}}{6}",
+                                    "explanation": {
+                                        "en": "Simplify.",
+                                        "uz": "Soddalashtiring.",
+                                        "ru": "Упростите."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "label": "b.",
+                            "expression": "\\frac{2}{\\sqrt[3]{9}}",
+                            "work": [
+                                {
+                                    "line": "= \\frac{2 \\cdot \\sqrt[3]{3}}{\\sqrt[3]{9} \\cdot \\sqrt[3]{3}}",
+                                    "explanation": {
+                                        "en": "Multiply by $\\frac{\\sqrt[3]{3}}{\\sqrt[3]{3}}$.",
+                                        "uz": "$\\frac{\\sqrt[3]{3}}{\\sqrt[3]{3}}$ ga ko'paytiring.",
+                                        "ru": "Умножьте на $\\frac{\\sqrt[3]{3}}{\\sqrt[3]{3}}$."
+                                    }
+                                },
+                                {
+                                    "line": "= \\frac{2\\sqrt[3]{3}}{\\sqrt[3]{27}}",
+                                    "explanation": {
+                                        "en": "Product Property of Cube Roots",
+                                        "uz": "Kub ildizning ko'paytma xossasi",
+                                        "ru": "Свойство произведения кубических корней"
+                                    }
+                                },
+                                {
+                                    "line": "= \\frac{2\\sqrt[3]{3}}{3}",
+                                    "explanation": {
+                                        "en": "Simplify.",
+                                        "uz": "Soddalashtiring.",
+                                        "ru": "Упростите."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sec_10_self_assessment",
+            "type": "self_assessment_block",
+            "title": {
+                "en": "SELF-ASSESSMENT",
+                "uz": "O'Z-O'ZINI BAHOLASH",
+                "ru": "САМООЦЕНКА"
+            },
+            "rating_scale": [
+                {
+                    "value": 1,
+                    "text": {
+                        "en": "I don’t understand yet.",
+                        "uz": "Hali tushunmadim.",
+                        "ru": "Я пока не понимаю."
+                    }
+                },
+                {
+                    "value": 2,
+                    "text": {
+                        "en": "I can do it with help.",
+                        "uz": "Yordam bilan bajara olaman.",
+                        "ru": "Я могу сделать это с помощью."
+                    }
+                },
+                {
+                    "value": 3,
+                    "text": {
+                        "en": "I can do it on my own.",
+                        "uz": "Mustaqil bajara olaman.",
+                        "ru": "Я могу сделать это самостоятельно."
+                    }
+                },
+                {
+                    "value": 4,
+                    "text": {
+                        "en": "I can teach someone else.",
+                        "uz": "Boshqalarga o'rgata olaman.",
+                        "ru": "Я могу научить кого-то другого."
+                    }
+                }
+            ],
+            "body": [
+                {
+                    "type": "instruction_text",
+                    "text": {
+                        "en": "Simplify the expression.",
+                        "uz": "Ifodani soddalashtiring.",
+                        "ru": "Упростите выражение."
+                    }
+                },
+                {
+                    "type": "question_grid",
+                    "columns": 2,
+                    "items": [
+                        {
+                            "id": "sa_q5",
+                            "label": "5.",
+                            "latex": "\\frac{1}{\\sqrt{5}}"
+                        },
+                        {
+                            "id": "sa_q6",
+                            "label": "6.",
+                            "latex": "\\frac{2}{\\sqrt[3]{25}}"
+                        },
+                        {
+                            "id": "sa_q7",
+                            "label": "7.",
+                            "latex": "\\frac{\\sqrt{10}}{\\sqrt{32}}"
+                        },
+                        {
+                            "id": "sa_q8",
+                            "label": "8.",
+                            "latex": "\\frac{5}{\\sqrt[3]{3}}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

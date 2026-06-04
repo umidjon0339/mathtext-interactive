@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Lesson Viewer | MD3</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<style>
+/* MATERIAL DESIGN 3 DESIGN TOKENS (2026 standard)
+*/
+:root {
+    /* Color Roles */
+    --md-sys-color-primary: #0061a4;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #d1e4ff;
+    --md-sys-color-on-primary-container: #001d36;
+    
+    --md-sys-color-secondary-container: #dce2f9;
+    --md-sys-color-on-secondary-container: #131c2b;
+    
+    --md-sys-color-tertiary-container: #c4eccf;
+    --md-sys-color-on-tertiary-container: #00210f;
+    
+    --md-sys-color-surface: #fdfbff;
+    --md-sys-color-on-surface: #1a1c1e;
+    --md-sys-color-surface-container: #f1f4f9;
+    --md-sys-color-surface-variant: #dfe2eb;
+    --md-sys-color-on-surface-variant: #43474e;
+    
+    --md-sys-color-outline: #73777f;
+
+    /* Elevation */
+    --md-elevation-1: 0px 1px 3px 1px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.30);
+    --md-elevation-3: 0px 4px 8px 3px rgba(0,0,0,0.15), 0px 1px 3px 0px rgba(0,0,0,0.30);
+
+    /* Shapes */
+    --md-shape-corner-extra-large: 28px;
+    --md-shape-corner-large: 16px;
+    --md-shape-corner-medium: 12px;
+    --md-shape-corner-small: 8px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* TOP APP BAR */
+.topbar {
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.topbar-title {
+    font-size: 22px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.md-icon-button {
+    background: transparent;
+    border: none;
+    color: var(--md-sys-color-on-surface-variant);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.md-icon-button:hover {
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 840px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* MD3 CARDS */
+.md-card {
+    border-radius: var(--md-shape-corner-large);
+    padding: 24px;
+    box-shadow: var(--md-elevation-1);
+}
+
+/* LEARNING TARGET (Tertiary Container) */
+.card-learning {
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+}
+
+.card-learning h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+.card-learning h4 {
+    margin: 20px 0 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-learning ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* EXPLORE IT (Primary Container) */
+.card-explore {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.card-explore .section-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* TASK BLOCK (Surface) */
+.card-task {
+    background-color: var(--md-sys-color-surface);
+    display: flex;
+    gap: 16px;
+}
+
+.task-label {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--md-sys-color-primary);
+    min-width: 24px;
+}
+
+/* WORD HIGHLIGHT (Interactive text) */
+.word {
+    color: var(--md-sys-color-primary);
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 2px dotted var(--md-sys-color-primary);
+    transition: background-color 0.2s;
+    border-radius: 4px;
+    padding: 0 2px;
+}
+
+.word:hover {
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+/* MD3 DIALOGS / OVERLAYS */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+.md-dialog {
+    background-color: var(--md-sys-color-surface-container);
+    width: 90%;
+    max-width: 400px;
+    border-radius: var(--md-shape-corner-extra-large);
+    padding: 24px;
+    box-shadow: var(--md-elevation-3);
+    transform: scale(0.95);
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.overlay.show .md-dialog {
+    transform: scale(1);
+}
+
+.dialog-title {
+    font-size: 24px;
+    margin: 0 0 16px 0;
+    font-weight: 400;
+}
+
+/* CUSTOM WORD CARD */
+.word-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.word-card-header h2 {
+    margin: 0;
+    font-size: 28px;
+    color: var(--md-sys-color-primary);
+}
+
+.language-chips {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chip span {
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-weight: 700;
+}
+
+.definition-box {
+    background-color: var(--md-sys-color-surface);
+    padding: 16px;
+    border-radius: var(--md-shape-corner-medium);
+    border: 1px solid var(--md-sys-color-outline);
+    margin-bottom: 24px;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* BUTTONS */
+.md-btn-text {
+    background: transparent;
+    border: none;
+    color: var(--md-sys-color-primary);
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.md-btn-text:hover {
+    background-color: rgba(0, 97, 164, 0.08);
+}
+
+.md-btn-filled {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, opacity 0.2s;
+}
+
+.md-btn-filled:hover {
+    box-shadow: var(--md-elevation-1);
+    opacity: 0.9;
+}
+
+/* DICTIONARY LIST */
+.dict-list {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.dict-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--md-sys-color-surface-variant);
+}
+
+.dict-item:last-child {
+    border-bottom: none;
+}
+
+.dict-item b {
+    color: var(--md-sys-color-primary);
+    font-size: 16px;
+}
+
+.dict-item p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="topbar-title">
+        <span class="material-symbols-outlined">menu_book</span>
+        Math Lesson
+    </div>
+    <button class="md-icon-button" onclick="openDictionary()" title="Open Dictionary">
+        <span class="material-symbols-outlined">translate</span>
+    </button>
+</header>
+
+<main class="container" id="lesson">
+    </main>
+
+<div class="overlay" id="wordOverlay" onclick="handleOverlayClick(event, 'wordOverlay')">
+    <div class="md-dialog" onclick="event.stopPropagation()">
+        <div class="word-card-header">
+            <h2 id="wc-title"></h2>
+            <button class="md-icon-button" onclick="playCurrentWordAudio()" style="background-color: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container);">
+                <span class="material-symbols-outlined">volume_up</span>
+            </button>
+        </div>
+        
+        <div class="language-chips">
+            <div class="chip"><span>UZ</span> <div id="wc-uz"></div></div>
+            <div class="chip"><span>RU</span> <div id="wc-ru"></div></div>
+        </div>
+
+        <div class="definition-box" id="wc-def"></div>
+        
+        <div class="dialog-actions">
+            <button class="md-btn-filled" onclick="closeModal('wordOverlay')">Got it</button>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" id="dictOverlay" onclick="handleOverlayClick(event, 'dictOverlay')">
+    <div class="md-dialog" onclick="event.stopPropagation()">
+        <h2 class="dialog-title">Dictionary</h2>
+        <div class="dict-list" id="dictList"></div>
+        <div class="dialog-actions" style="margin-top: 16px;">
+            <button class="md-btn-text" onclick="closeModal('dictOverlay')">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let lessonData = null;
+let dictionary = null;
+let currentWordAudio = "";
+
+/* LOAD JSON FILES */
+async function loadData(){
+    try {
+        lessonData = await fetch("9.1.json").then(r => r.json());
+        dictionary = await fetch("dictionary.json").then(r => r.json());
+        renderLesson();
+    } catch (e) {
+        console.warn("Could not load local JSON files. Make sure you are running a local web server.", e);
+        document.getElementById("lesson").innerHTML = `
+            <div class="md-card card-explore" style="background-color: #ffdad6; color: #410002;">
+                <b>Error Loading Data</b><br>
+                Browsers restrict loading local JSON files. Please run this via a local server (e.g. VS Code Live Server).
+            </div>`;
+    }
+}
+
+/* PARSE WORDS LIKE {{id|text}} */
+function parse(text){
+    if(!text) return "";
+    return text.replace(/{{(.*?)\|(.*?)}}/g, (m, id, word) => {
+        return `<span class="word" onclick="showWordCard('${id}')">${word}</span>`;
+    });
+}
+
+/* RENDER LESSON */
+function renderLesson(){
+    const c = document.getElementById("lesson");
+    c.innerHTML = "";
+
+    lessonData.blocks.forEach(b => {
+        // LEARNING TARGET
+        if(b.type === "learning_target"){
+            const div = document.createElement("div");
+            div.className = "md-card card-learning";
+            
+            const targetText = b.content.target?.en || b.content.target || "";
+            const successItems = b.content.success_criteria?.en || b.content.success_criteria || [];
+
+            div.innerHTML = `
+                <h3>Learning Target</h3>
+                <p style="font-size: 18px;">${parse(targetText)}</p>
+
+                <h4>Success Criteria</h4>
+                <ul>
+                    ${successItems.map(i => `<li>${parse(i)}</li>`).join("")}
+                </ul>
+            `;
+            c.appendChild(div);
+        }
+
+        // TASK BLOCK
+        if(b.type === "task_block"){
+            const div = document.createElement("div");
+            div.className = "md-card card-task";
+
+            const instructionText = b.instruction?.en || b.instruction || "";
+
+            div.innerHTML = `
+                <div class="task-label">${b.label || "•"}</div>
+                <div>${parse(instructionText)}</div>
+            `;
+            c.appendChild(div);
+        }
+
+        // EXPLORE IT
+        if(b.type === "explore_it"){
+            const div = document.createElement("div");
+            div.className = "md-card card-explore";
+
+            let bodyContent = "";
+            if(b.body && Array.isArray(b.body)) {
+                bodyContent = b.body.map(x => {
+                    const text = x.text?.en || x.text || "";
+                    return `<p>${parse(text)}</p>`;
+                }).join("");
+            }
+
+            div.innerHTML = `
+                <div class="section-title">
+                    <span class="material-symbols-outlined">explore</span> 
+                    Explore It
+                </div>
+                <div>
+                    ${bodyContent}
+                </div>
+            `;
+            c.appendChild(div);
+        }
+    });
+}
+
+/* WORD CARD LOGIC (Replaces Alert) */
+function showWordCard(id){
+    if(!dictionary) return;
+    const w = dictionary.find(d => d.id === id);
+    if(!w) return;
+
+    // Set UI Data
+    document.getElementById("wc-title").innerText = w.word.en;
+    document.getElementById("wc-uz").innerText = w.word.uz || "N/A";
+    document.getElementById("wc-ru").innerText = w.word.ru || "N/A";
+    document.getElementById("wc-def").innerHTML = w.definition.en;
+    
+    // Setup Audio
+    currentWordAudio = w.word.en;
+
+    // Show Modal
+    const overlay = document.getElementById("wordOverlay");
+    overlay.classList.add("show");
+
+    // Auto-play audio gracefully
+    playCurrentWordAudio();
+}
+
+function playCurrentWordAudio() {
+    if(!currentWordAudio) return;
+    window.speechSynthesis.cancel(); // cancel any ongoing speech
+    const speech = new SpeechSynthesisUtterance(currentWordAudio);
+    window.speechSynthesis.speak(speech);
+}
+
+/* DICTIONARY MODAL LOGIC */
+function openDictionary(){
+    if(!dictionary) return;
+    const d = document.getElementById("dictList");
+    d.innerHTML = dictionary.map(w => `
+        <div class="dict-item">
+            <b>${w.word.en}</b>
+            <p>${w.definition.en}</p>
+        </div>
+    `).join("");
+
+    document.getElementById("dictOverlay").classList.add("show");
+}
+
+/* SHARED MODAL CLOSING LOGIC */
+function closeModal(overlayId){
+    document.getElementById(overlayId).classList.remove("show");
+    window.speechSynthesis.cancel();
+}
+
+function handleOverlayClick(event, overlayId) {
+    // If they click the semi-transparent background, close it
+    if (event.target.id === overlayId) {
+        closeModal(overlayId);
+    }
+}
+
+// Initialize application
+loadData();
+</script>
+
+</body>
+</html>
