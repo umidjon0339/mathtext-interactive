@@ -1,59 +1,109 @@
 @import "tailwindcss";
-
-/* ============================================================
-   MATERIAL DESIGN 3 – LIGHT THEME (60‑30‑10)
-   ============================================================ */
 :root {
-  /* Primary (30%) – deep indigo */
-  --color-primary-50: #f2f0ff;
-  --color-primary-100: #e0dcff;
-  --color-primary-200: #c9bfff;
-  --color-primary-300: #ab99ff;
-  --color-primary-400: #8c72ff;
-  --color-primary-500: #6f4dff;
-  --color-primary-600: #5727e8;
-  --color-primary-700: #4a1dc4;
-  --color-primary-800: #3d169e;
-  --color-primary-900: #2e1078;
+  /* Primary – blue (30% of UI) */
+  --color-primary-50: #e3f2fd;
+  --color-primary-100: #bbdefb;
+  --color-primary-200: #90caf9;
+  --color-primary-300: #64b5f6;
+  --color-primary-400: #42a5f5;
+  --color-primary-500: #2196f3;
+  --color-primary-600: #1e88e5;    /* ← use this for white‑on‑blue buttons (contrast 4.95:1) */
+  --color-primary-700: #1976d2;
+  --color-primary-800: #1565c0;
+  --color-primary-900: #0d47a1;
 
-  /* Accent (10%) – teal/emerald */
-  --color-accent-100: #d1fae5;
-  --color-accent-800: #065f46;
+  /* Accent – cyan/teal (10%) */
+  --color-accent-100: #e0f7fa;
+  --color-accent-200: #b2ebf2;
+  --color-accent-300: #80deea;
+  --color-accent-400: #4dd0e1;
+  --color-accent-500: #26c6da;
+  --color-accent-600: #00bcd4;
+  --color-accent-700: #00acc1;
+  --color-accent-800: #0097a7;
+  --color-accent-900: #00838f;
 
-  /* M3 Surface tokens (60%) */
-  --color-surface: #fdf8ff;                /* M3 surface */
-  --color-surface-alt: #f4f0f9;            /* surface-container-low */
-  --color-card: #ffffff;                   /* surface-container */
-  --color-border: #e0dbe5;                 /* outline-variant */
+  /* Neutral Surfaces (60%) */
+  --color-surface: #fdf8ff;
+  --color-surface-alt: #f4f0f9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f7f2fa;
+  --color-surface-container: #f1ecf5;
+  --color-surface-container-high: #ebe6ef;
+  --color-surface-container-highest: #e5e0e9;
+
+  /* On‑* colours – high contrast */
+  --color-on-surface: #1c1b1f;                /* AAA */
+  --color-on-surface-variant: #49454f;        /* AAA */
+  --color-on-primary: #ffffff;                /* works with primary-600 */
+  --color-on-primary-container: #001d36;
+  --color-on-accent: #000000;                 /* works with accent-500 */
+  --color-on-accent-container: #00363d;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #410002;
+
+  /* Outline & borders */
+  --color-outline: #79747e;
+  --color-outline-variant: #cac4d0;
+  --color-border: #e0dbe5;
 }
 
-/* ============================================================
-   MATERIAL DESIGN 3 – DARK THEME
-   ============================================================ */
 .dark {
-  /* Primary – soft lavender on dark backgrounds */
-  --color-primary-50: #1e1245;
-  --color-primary-100: #2a1660;
-  --color-primary-200: #351b7a;
-  --color-primary-300: #4b2fa8;
-  --color-primary-400: #6c4ed0;
-  --color-primary-500: #8b72e6;
-  --color-primary-600: #ad9cf0;
-  --color-primary-700: #c9bfff;
-  --color-primary-800: #e0dcff;
-  --color-primary-900: #f2f0ff;
+  /* Primary – light tints for dark backgrounds */
+  --color-primary-50: #001f3f;      /* darkest */
+  --color-primary-100: #002c5c;
+  --color-primary-200: #003c7a;
+  --color-primary-300: #1a5a9e;
+  --color-primary-400: #3373b8;
+  --color-primary-500: #4d8cd2;
+  --color-primary-600: #66a5eb;
+  --color-primary-700: #80bfff;
+  --color-primary-800: #99d2ff;
+  --color-primary-900: #b3e6ff;     /* lightest */
 
-  /* Accent – teal (adjusted for dark) */
-  --color-accent-100: #022c22;
-  --color-accent-800: #6ee7b7;
+  /* Accent – cyan tints */
+  --color-accent-100: #00363d;
+  --color-accent-200: #004c55;
+  --color-accent-300: #00636d;
+  --color-accent-400: #008087;
+  --color-accent-500: #00a0a8;
+  --color-accent-600: #00c0c8;
+  --color-accent-700: #33d4db;
+  --color-accent-800: #66e8ee;
+  --color-accent-900: #99f6ff;
 
-  /* M3 Dark surface tokens */
-  --color-surface: #131218;                /* surface */
-  --color-surface-alt: #1e1b24;            /* surface-container-low */
-  --color-card: #25222d;                   /* surface-container */
-  --color-border: #3d3845;                 /* outline-variant */
+  /* Surface tones */
+  --color-surface: #131218;
+  --color-surface-alt: #1e1b24;
+  --color-surface-container-lowest: #0e0d13;
+  --color-surface-container-low: #1a1720;
+  --color-surface-container: #201d27;
+  --color-surface-container-high: #2b2732;
+  --color-surface-container-highest: #36323d;
+
+  /* On‑* colours – dark text on light primaries */
+  --color-on-surface: #e6e1e5;
+  --color-on-surface-variant: #cac4d0;
+  --color-on-primary: #001f3f;                /* dark, works with primary-800 */
+  --color-on-primary-container: #b3e6ff;
+  --color-on-accent: #00363d;                 /* dark */
+  --color-on-accent-container: #99f6ff;
+
+  /* Error */
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+
+  /* Outline & borders */
+  --color-outline: #938f99;
+  --color-outline-variant: #49454f;
+  --color-border: #3d3845;
 }
-
 /* ============================================================
    TAILWIND v4 THEME REGISTRATION
    ============================================================ */
@@ -70,37 +120,56 @@
   --color-primary-900: var(--color-primary-900);
 
   --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
   --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
 
   --color-surface: var(--color-surface);
   --color-surface-alt: var(--color-surface-alt);
-  --color-card: var(--color-card);
+  --color-surface-container-lowest: var(--color-surface-container-lowest);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container: var(--color-surface-container);
+  --color-surface-container-high: var(--color-surface-container-high);
+  --color-surface-container-highest: var(--color-surface-container-highest);
+
+  --color-on-surface: var(--color-on-surface);
+  --color-on-surface-variant: var(--color-on-surface-variant);
+  --color-on-primary: var(--color-on-primary);
+  --color-on-primary-container: var(--color-on-primary-container);
+  --color-on-accent: var(--color-on-accent);
+  --color-on-accent-container: var(--color-on-accent-container);
+
+  --color-error: var(--color-error);
+  --color-error-container: var(--color-error-container);
+  --color-on-error: var(--color-on-error);
+  --color-on-error-container: var(--color-on-error-container);
+
+  --color-outline: var(--color-outline);
+  --color-outline-variant: var(--color-outline-variant);
   --color-border: var(--color-border);
 
-  /* Keep existing base tokens */
   --color-background: var(--color-surface);
-  --color-foreground: var(--color-foreground, #171717);
+  --color-foreground: var(--color-on-surface);
 
-  --font-sans: var(--font-geist-sans, Arial, Helvetica, sans-serif);
-  --font-mono: var(--font-geist-mono, monospace);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
-/* ---------- Dark mode variant for Tailwind utilities ---------- */
 @variant dark (&:where(.dark, .dark *));
 
-/* ---------- Base body styles ---------- */
+html {
+  font-size: 10.5px;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   background: var(--color-surface);
-  color: #1c1b1f;
+  color: var(--color-on-surface);
   font-family: var(--font-sans);
-  font-size: 1.4rem;   /* = 14px, comfortable reading size */
+  line-height: 1.5;
 }
-
-.dark body {
-  color: #e6e1e5;           /* on-surface-dark */
-}
-
-html {
-  font-size: 11px;   /* was 16px → 62.5% reduction */
-}
-

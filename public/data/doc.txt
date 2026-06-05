@@ -1,4 +1,4 @@
-K-12 DIGITAL BOOK JSON STRUCTURE SPECIFICATION (v2.0)
+K-12 DIGITAL BOOK JSON STRUCTURE SPECIFICATION (v2.1)
 =========================================================
 
 This is a universal, stack-agnostic JSON structure for a multilingual
@@ -231,26 +231,29 @@ Step-by-step worked example.
 
 5.8 key_ideas_box
 ------------------
-Highlighted box with key mathematical properties.
+Highlighted box with key mathematical properties. Concepts can contain
+either a simple `matrix` of rows (for quick property tables) or a rich
+`content` array (for mixing property matrices, paragraphs, bullet lists, etc.).
+
+Using `matrix` (simple, backward-compatible):
 {
   "type": "key_ideas_box",
-  "style": "lightbulb_container",           // Visual theme hint
   "title": { Multilingual string },
   "concepts": [
     {
       "subtitle": { Multilingual string },
-      "matrix": [                           // Array of rows
+      "matrix": [
         {
-          "label": { Multilingual },         // e.g. "Words"
-          "text": [ Inline array ]           // OR "latex": "..." for math
+          "label": { Multilingual },
+          "text": [ Inline array ]           // OR "latex": "..."
         },
         {
-          "label": { Multilingual },         // "Numbers"
+          "label": { Multilingual },
           "latex": "..."
         },
         {
-          "label": { Multilingual },         // "Algebra"
-          "translations": {                  // One latex per language
+          "label": { Multilingual },
+          "translations": {
             "en": { "latex": "..." },
             "uz": { "latex": "..." },
             "ru": { "latex": "..." }
@@ -260,6 +263,26 @@ Highlighted box with key mathematical properties.
     }
   ]
 }
+
+Using `content` (flexible, can embed any block types):
+{
+  "type": "key_ideas_box",
+  "title": { Multilingual string },
+  "concepts": [
+    {
+      "subtitle": { Multilingual string },
+      "content": [
+        { "type": "property_matrix", "rows": [ ... ] },
+        { "type": "paragraph", "text": [ Inline array ] },
+        { "type": "bullet_list", "items": [ ... ] }
+      ]
+    }
+  ]
+}
+
+* A concept may have either `matrix` or `content`, but not both.
+* When `content` is present, it takes precedence.
+* `property_matrix` is a new block type (see §5.15) used within `content`.
 
 5.9 vocabulary_box
 -------------------
@@ -319,9 +342,39 @@ Used inside explore_it or anywhere to present a step-by-step task.
 {
   "type": "task_block",
   "label": "a.",                           // Optional letter/number
-  "level": 1,                              // Indentation level (1,2,3)
+  "level": 1,                              // Nesting depth: 1 = top-level, 2 = sub-task, etc.
   "instruction": [ Inline array ],
   "content": [ ... ]                       // Optional sub-blocks (equation_grid, card_tiles, etc.)
+}
+
+* For proper indentation, a task with "level": 2 (or higher) should be placed
+  inside the "content" array of its parent task. The renderer uses CSS nesting to
+  automatically align labels and text at the correct depth.
+
+5.15 property_matrix
+---------------------
+A compact table of mathematical properties (Words, Numbers, Algebra).
+Used inside key_ideas_box "content" arrays or anywhere a property list is needed.
+{
+  "type": "property_matrix",
+  "rows": [
+    {
+      "label": { Multilingual },            // e.g. "Words"
+      "text": [ Inline array ]              // inline text (or use "latex" / "translations")
+    },
+    {
+      "label": { Multilingual },            // e.g. "Numbers"
+      "latex": "\\sqrt{9 \\cdot 5} = 3\\sqrt{5}"
+    },
+    {
+      "label": { Multilingual },            // e.g. "Algebra"
+      "translations": {
+        "en": { "latex": "..." },
+        "uz": { "latex": "..." },
+        "ru": { "latex": "..." }
+      }
+    }
+  ]
 }
 
 ---------------------------------------------------------
@@ -409,7 +462,19 @@ the "math" inline node. Render using KaTeX, MathJax, or native library.
       ],
       "body": [
         { "type": "paragraph", "text": { "en": [ ... ] } },
-        { "type": "key_ideas_box", ... }
+        { 
+          "type": "key_ideas_box",
+          "title": { "en": "KEY IDEAS" },
+          "concepts": [
+            {
+              "subtitle": { "en": "Product Property of Square Roots" },
+              "content": [
+                { "type": "property_matrix", "rows": [ ... ] },
+                { "type": "paragraph", "text": { "en": [ ... ] } }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -461,6 +526,14 @@ If you have existing JSON with `{{...}}` or `<Word id="...">...</Word>` markup:
 - For each block, switch on "type" and render the corresponding UI component.
 - For inline arrays, iterate and render each node according to its type.
 - Maintain a global glossary map and make "term" nodes interactive.
+- Task blocks with "level" > 1 must be nested inside the parent's "content" 
+  to achieve correct indentation – the renderer relies on DOM nesting, not 
+  explicit margins.
+- key_ideas_box concepts may use either "matrix" (simple) or "content" 
+  (flexible). If "content" is present, render its blocks directly; otherwise 
+  render "matrix" rows as a table.
+- property_matrix rows can contain inline text, a LaTeX string, or language-
+  specific LaTeX translations.
 - Adapt layout (margins, columns) based on screen size but keep the logical 
   order intact.
 

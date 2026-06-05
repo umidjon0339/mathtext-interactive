@@ -174,7 +174,7 @@
           "content": [
             {
               "type": "equation_grid",
-              "columns": 1,
+              "columns": 2,
               "align": "left",
               "items": [
                 { "id": "a_i", "latex": "\\text{i. } \\sqrt{a} + \\sqrt{b} \\stackrel{?}{=} \\sqrt{a + b}" },
@@ -303,10 +303,8 @@
                   { "type": "plain", "text": " верным. Объясните свои рассуждения." }
                 ]
               }
-            }
-          ]
-        },
-        {
+            },
+            {
           "type": "task_block",
           "label": "i.",
           "level": 2,
@@ -449,6 +447,8 @@
               { "type": "plain", "text": " иррационально." }
             ]
           }
+        }
+          ]
         }
       ]
     },
@@ -658,118 +658,135 @@
           }
         },
         {
-          "type": "key_ideas_box",
-          "style": "lightbulb_container",
-          "title": {
-            "en": "KEY IDEAS",
-            "uz": "ASOSIY G'OYALAR",
-            "ru": "ОСНОВНЫЕ ИДЕИ"
-          },
-          "concepts": [
+  "type": "key_ideas_box",
+  "title": {
+    "en": "KEY IDEAS",
+    "uz": "ASOSIY G'OYALAR",
+    "ru": "ОСНОВНЫЕ ИДЕИ"
+  },
+  "concepts": [
+    {
+      "subtitle": {
+        "en": "Product Property of Square Roots",
+        "uz": "Kvadrat ildizning ko'paytma xossasi",
+        "ru": "Свойство произведения квадратных корней"
+      },
+      "content": [
+        {
+          "type": "property_matrix",
+          "rows": [
             {
-              "subtitle": {
-                "en": "Product Property of Square Roots",
-                "uz": "Kvadrat ildizning ko'paytma xossasi",
-                "ru": "Свойство произведения квадратных корней"
-              },
-              "matrix": [
-                {
-                  "label": { "en": "Words", "uz": "So'zlar", "ru": "Слова" },
-                  "text": {
-                    "en": [
-                      { "type": "plain", "text": "The " },
-                      { "type": "term", "id": "square_root", "display": "square root" },
-                      { "type": "plain", "text": " of a " },
-                      { "type": "term", "id": "product", "display": "product" },
-                      { "type": "plain", "text": " equals the " },
-                      { "type": "term", "id": "product", "display": "product" },
-                      { "type": "plain", "text": " of the " },
-                      { "type": "term", "id": "square_root", "display": "square roots" },
-                      { "type": "plain", "text": " of the factors." }
-                    ],
-                    "uz": [
-                      { "type": "plain", "text": "Ko'paytmaning " },
-                      { "type": "term", "id": "square_root", "display": "kvadrat ildizi" },
-                      { "type": "plain", "text": " ko'paytuvchilar kvadrat ildizlarining " },
-                      { "type": "term", "id": "product", "display": "ko'paytmasiga" },
-                      { "type": "plain", "text": " teng." }
-                    ],
-                    "ru": [
-                      { "type": "plain", "text": "" },
-                      { "type": "term", "id": "square_root", "display": "Квадратный корень" },
-                      { "type": "plain", "text": " из " },
-                      { "type": "term", "id": "product", "display": "произведения" },
-                      { "type": "plain", "text": " равен произведению квадратных корней из сомножителей." }
-                    ]
-                  }
-                },
-                {
-                  "label": { "en": "Numbers", "uz": "Sonlar", "ru": "Числа" },
-                  "latex": "\\sqrt{9 \\cdot 5} = \\sqrt{9} \\cdot \\sqrt{5} = 3\\sqrt{5}"
-                },
-                {
-                  "label": { "en": "Algebra", "uz": "Algebra", "ru": "Алгебра" },
-                  "translations": {
-                    "en": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ where } a \\ge 0 \\text{ and } b \\ge 0" },
-                    "uz": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ bunda } a \\ge 0 \\text{ va } b \\ge 0" },
-                    "ru": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ где } a \\ge 0 \\text{ и } b \\ge 0" }
-                  }
-                }
-              ]
+              "label": { "en": "Words", "uz": "So'zlar", "ru": "Слова" },
+              "text": {
+                "en": [
+                  { "type": "plain", "text": "The " },
+                  { "type": "term", "id": "square_root", "display": "square root" },
+                  { "type": "plain", "text": " of a " },
+                  { "type": "term", "id": "product", "display": "product" },
+                  { "type": "plain", "text": " equals the " },
+                  { "type": "term", "id": "product", "display": "product" },
+                  { "type": "plain", "text": " of the " },
+                  { "type": "term", "id": "square_root", "display": "square roots" },
+                  { "type": "plain", "text": " of the factors." }
+                ],
+                "uz": [
+                  { "type": "plain", "text": "Ko'paytmaning " },
+                  { "type": "term", "id": "square_root", "display": "kvadrat ildizi" },
+                  { "type": "plain", "text": " ko'paytuvchilar kvadrat ildizlarining " },
+                  { "type": "term", "id": "product", "display": "ko'paytmasiga" },
+                  { "type": "plain", "text": " teng." }
+                ],
+                "ru": [
+                  { "type": "plain", "text": "" },
+                  { "type": "term", "id": "square_root", "display": "Квадратный корень" },
+                  { "type": "plain", "text": " из " },
+                  { "type": "term", "id": "product", "display": "произведения" },
+                  { "type": "plain", "text": " равен произведению квадратных корней из сомножителей." }
+                ]
+              }
             },
             {
-              "subtitle": {
-                "en": "Quotient Property of Square Roots",
-                "uz": "Kvadrat ildizning bo'linma xossasi",
-                "ru": "Свойство частного квадратных корней"
-              },
-              "matrix": [
-                {
-                  "label": { "en": "Words", "uz": "So'zlar", "ru": "Слова" },
-                  "text": {
-                    "en": [
-                      { "type": "plain", "text": "The " },
-                      { "type": "term", "id": "square_root", "display": "square root" },
-                      { "type": "plain", "text": " of a " },
-                      { "type": "term", "id": "quotient", "display": "quotient" },
-                      { "type": "plain", "text": " equals the " },
-                      { "type": "term", "id": "quotient", "display": "quotient" },
-                      { "type": "plain", "text": " of the " },
-                      { "type": "term", "id": "square_root", "display": "square roots" },
-                      { "type": "plain", "text": " of the numerator and denominator." }
-                    ],
-                    "uz": [
-                      { "type": "plain", "text": "Bo'linmaning " },
-                      { "type": "term", "id": "square_root", "display": "kvadrat ildizi" },
-                      { "type": "plain", "text": " surat va maxraj kvadrat ildizlarining " },
-                      { "type": "term", "id": "quotient", "display": "bo'linmasiga" },
-                      { "type": "plain", "text": " teng." }
-                    ],
-                    "ru": [
-                      { "type": "plain", "text": "" },
-                      { "type": "term", "id": "square_root", "display": "Квадратный корень" },
-                      { "type": "plain", "text": " из " },
-                      { "type": "term", "id": "quotient", "display": "частного" },
-                      { "type": "plain", "text": " равен частному квадратных корней из числителя и знаменателя." }
-                    ]
-                  }
-                },
-                {
-                  "label": { "en": "Numbers", "uz": "Sonlar", "ru": "Числа" },
-                  "latex": "\\sqrt{\\frac{3}{4}} = \\frac{\\sqrt{3}}{\\sqrt{4}} = \\frac{\\sqrt{3}}{2}"
-                },
-                {
-                  "label": { "en": "Algebra", "uz": "Algebra", "ru": "Алгебра" },
-                  "translations": {
-                    "en": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ where } a \\ge 0 \\text{ and } b > 0" },
-                    "uz": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ bunda } a \\ge 0 \\text{ va } b > 0" },
-                    "ru": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ где } a \\ge 0 \\text{ и } b > 0" }
-                  }
-                }
-              ]
+              "label": { "en": "Numbers", "uz": "Sonlar", "ru": "Числа" },
+              "latex": "\\sqrt{9 \\cdot 5} = \\sqrt{9} \\cdot \\sqrt{5} = 3\\sqrt{5}"
+            },
+            {
+              "label": { "en": "Algebra", "uz": "Algebra", "ru": "Алгебра" },
+              "translations": {
+                "en": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ where } a \\ge 0 \\text{ and } b \\ge 0" },
+                "uz": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ bunda } a \\ge 0 \\text{ va } b \\ge 0" },
+                "ru": { "latex": "\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}, \\text{ где } a \\ge 0 \\text{ и } b \\ge 0" }
+              }
             }
           ]
         },
+        {
+          "type": "paragraph",
+          "text": {
+            "en": [ { "type": "plain", "text": "This property is very useful when simplifying radical expressions." } ],
+            "uz": [ { "type": "plain", "text": "Bu xossa radikal ifodalarni soddalashtirishda juda foydalidir." } ],
+            "ru": [ { "type": "plain", "text": "Это свойство очень полезно при упрощении радикальных выражений." } ]
+          }
+        }
+      ]
+    },
+    {
+      "subtitle": {
+        "en": "Quotient Property of Square Roots",
+        "uz": "Kvadrat ildizning bo'linma xossasi",
+        "ru": "Свойство частного квадратных корней"
+      },
+      "content": [
+        {
+          "type": "property_matrix",
+          "rows": [
+            {
+              "label": { "en": "Words", "uz": "So'zlar", "ru": "Слова" },
+              "text": {
+                "en": [
+                  { "type": "plain", "text": "The " },
+                  { "type": "term", "id": "square_root", "display": "square root" },
+                  { "type": "plain", "text": " of a " },
+                  { "type": "term", "id": "quotient", "display": "quotient" },
+                  { "type": "plain", "text": " equals the " },
+                  { "type": "term", "id": "quotient", "display": "quotient" },
+                  { "type": "plain", "text": " of the " },
+                  { "type": "term", "id": "square_root", "display": "square roots" },
+                  { "type": "plain", "text": " of the numerator and denominator." }
+                ],
+                "uz": [
+                  { "type": "plain", "text": "Bo'linmaning " },
+                  { "type": "term", "id": "square_root", "display": "kvadrat ildizi" },
+                  { "type": "plain", "text": " surat va maxraj kvadrat ildizlarining " },
+                  { "type": "term", "id": "quotient", "display": "bo'linmasiga" },
+                  { "type": "plain", "text": " teng." }
+                ],
+                "ru": [
+                  { "type": "plain", "text": "" },
+                  { "type": "term", "id": "square_root", "display": "Квадратный корень" },
+                  { "type": "plain", "text": " из " },
+                  { "type": "term", "id": "quotient", "display": "частного" },
+                  { "type": "plain", "text": " равен частному квадратных корней из числителя и знаменателя." }
+                ]
+              }
+            },
+            {
+              "label": { "en": "Numbers", "uz": "Sonlar", "ru": "Числа" },
+              "latex": "\\sqrt{\\frac{3}{4}} = \\frac{\\sqrt{3}}{\\sqrt{4}} = \\frac{\\sqrt{3}}{2}"
+            },
+            {
+              "label": { "en": "Algebra", "uz": "Algebra", "ru": "Алгебра" },
+              "translations": {
+                "en": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ where } a \\ge 0 \\text{ and } b > 0" },
+                "uz": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ bunda } a \\ge 0 \\text{ va } b > 0" },
+                "ru": { "latex": "\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}, \\text{ где } a \\ge 0 \\text{ и } b > 0" }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
         {
           "type": "paragraph",
           "text": {
@@ -1145,7 +1162,13 @@
               { "type": "plain", "text": " and " },
               { "type": "term", "id": "radicand", "display": "radicand" },
               { "type": "plain", "text": " are called " },
-              { "type": "term", "id": "like_radicals", "display": "like radicals" },
+              {
+                "type": "highlight",
+                "text": [
+                  { "type": "term", "id": "like_radicals", "display": "like radicals" }
+                ]
+              },
+             
               { "type": "plain", "text": ". You can add and subtract like radicals the same way you combine like terms by using the " },
               { "type": "term", "id": "distributive_property", "display": "Distributive Property" },
               { "type": "plain", "text": "." }
