@@ -1,0 +1,74 @@
+{
+  "id": "1.1",
+  "title": {
+    "en": "Solving Simple Equations",
+    "uz": "Oddiy tenglamalarni yechish",
+    "ru": "Решение простых уравнений"
+  },
+  "langs": ["en", "uz", "ru"],
+  "blocks": [
+    {
+      "type": "learning_target",
+      "target": {
+        "en": [
+          { "type": "plain", "text": "Write and solve " },
+          { "type": "term", "id": "one_step_linear_equation", "display": "one-step linear equations" },
+          { "type": "plain", "text": "." }
+        ],
+        "uz": [
+          { "type": "plain", "text": "Bir qadamli chiziqli tenglamalarni yozing va yeching." }
+        ],
+        "ru": [
+          { "type": "plain", "text": "Записывайте и решайте " },
+          { "type": "term", "id": "one_step_linear_equation", "display": "одношаговые линейные уравнения" },
+          { "type": "plain", "text": "." }
+        ]
+      },
+      "success_criteria": {
+        "en": [
+          [
+            { "type": "plain", "text": "I can apply " },
+            { "type": "term", "id": "properties_of_equality", "display": "properties of equality" },
+            { "type": "plain", "text": " to produce " },
+            { "type": "term", "id": "equivalent_equations", "display": "equivalent equations" },
+            { "type": "plain", "text": "." }
+          ],
+          [
+            { "type": "plain", "text": "I can solve " },
+            { "type": "term", "id": "linear_equation", "display": "linear equations" },
+            { "type": "plain", "text": " using addition, subtraction, multiplication, or division." }
+          ],
+          [
+            { "type": "plain", "text": "I can write " },
+            { "type": "term", "id": "linear_equation", "display": "linear equations" },
+            { "type": "plain", "text": " that model " },
+            { "type": "term", "id": "real_life_situation", "display": "real-life situations" },
+            { "type": "plain", "text": "." }
+          ]
+        ],
+        "uz": [
+          [
+            { "type": "plain", "text": "Tenglik xossalarini qo'llab, teng kuchli tenglamalar hosil qila olaman." }
+          ],
+          [
+            { "type": "plain", "text": "Chiziqli tenglamalarni qo'shish, ayirish, ko'paytirish yoki bo'lish orqali yecha olaman." }
+          ],
+          [
+            { "type": "plain", "text": "Haqiqiy hayotiy vaziyatlarni modellashtiruvchi chiziqli tenglamalar yoza olaman." }
+          ]
+        ],
+        "ru": [
+          [
+            { "type": "plain", "text": "Я могу применять свойства равенств для получения равносильных уравнений." }
+          ],
+          [
+            { "type": "plain", "text": "Я могу решать линейные уравнения с помощью сложения, вычитания, умножения или деления." }
+          ],
+          [
+            { "type": "plain", "text": "Я могу записывать линейные уравнения, моделирующие реальные ситуации." }
+          ]
+        ]
+      }
+    }
+  ]
+}
