@@ -188,7 +188,13 @@ export default function PhoneticsPage() {
       cells: row.cells.map((cell) => {
         const vLessActive = langFilter === "all" || (cell.voiceless && cell.voiceless.exists[langFilter as keyof Existence]);
         const vActive = langFilter === "all" || (cell.voiced && cell.voiced.exists[langFilter as keyof Existence]);
-        return { ...cell, voicelessActive: vLessActive, voicedActive: vActive, hasAnyActive: vLessActive || vActive };
+        return { 
+          ...cell, 
+          voicelessActive: vLessActive, 
+          voicedActive: vActive, 
+          hasAnyActive: vLessActive || vActive,
+          highlight: false // <--- ADD THIS LINE
+        };
       }),
     }));
   }, [matrixData, langFilter]);
