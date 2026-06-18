@@ -14,8 +14,9 @@ TOKEN = os.getenv("BOT_TOKEN")
 # We use int() because IDs are numbers, but env variables come in as text strings
 ADMIN_USER_ID = int(os.getenv("ADMIN_ID", 0))
 
-# Adjust this path based on where library_books.json is relative to the api folder
-JSON_FILE_PATH = 'library_books.json' 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Navigate one level up to get to the project root (where the json file is)
+JSON_FILE_PATH = os.path.join(BASE_DIR, '..', 'library_books.json')
 
 # Load Language Dictionary (Trimmed for space, use your full dictionary from before)
 LANG = {
