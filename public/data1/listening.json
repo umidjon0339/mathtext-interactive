@@ -1,0 +1,33 @@
+{
+  "test_id": "cambridge_v18_listening_1",
+  "test_title": "Listening Practice Test 1",
+  "module": "listening",
+  "total_time_minutes": 30,
+  "total_questions": 40,
+  "parts": [
+   
+    {
+  "id": "listening_part_1_accommodation",
+  "module": "listening",
+  "part_number": 1,
+  "title": "Accommodation Agency",
+  "context": "You will hear a telephone conversation between a customer and an agent at an accommodation agency.",
+  "audio_url": "/assets/audio/listening_test_1_part_1.mp3",
+  "transcript": [
+    {
+      "speaker": "Agent",
+      "text": "Good morning, City Accommodation. How can I help you?",
+      "time_stamp": "00:01"
+    },
+    {
+      "speaker": "Customer",
+      "text": "Hello, I'm ringing to see if you have any flats to rent...",
+      "time_stamp": "00:04"
+    }
+  ],
+  "questions": [
+    // Question blocks go here (same structure as Reading!)
+  ]
+}
+  ]
+}

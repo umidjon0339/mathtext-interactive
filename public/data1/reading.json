@@ -1,0 +1,568 @@
+{
+  "test_id": "cambridge_v18_test_1",
+  "test_title": "Academic Reading Practice Test 1",
+  "module": "reading",
+  "total_time_minutes": 60,
+  "total_questions": 40,
+  "passages": [
+    {
+  "id": "passage_green_roofs",
+  "module": "reading",
+  "passage_number": 1,
+  "title": "Green roofs",
+  "subtitle": "",
+  "instruction": "You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1 below.",
+  "word_count": 836,
+  "difficulty": "medium",
+  "blocks": [
+    {
+      "type": "text",
+      "label": "A",
+      "content": "Rooftops covered with grass, vegetable gardens and lush foliage are now a common sight in many cities around the world. More and more private companies and city authorities are investing in green roofs, drawn to their wide-ranging benefits. Among the benefits are saving on energy costs, mitigating the risk of floods, making habitats for urban wildlife, tackling air pollution and even growing food. These increasingly radical urban designs can help cities adapt to the monumental problems they face, such as access to resources and a lack of green space due to development. But the involvement of city authorities, businesses and other institutions is crucial to ensuring their success – as is research investigating different options to suit the variety of rooftop spaces found in cities. The UK is relatively new to developing green roofs, and local governments and institutions are playing a major role in spreading the practice. London is home to much of the UK's green roof market, mainly due to forward-thinking policies such as the London Plan, which has paved the way to more than doubling the area of green roofs in the capital."
+    },
+    {
+      "type": "text",
+      "label": "B",
+      "content": "Ongoing research is showcasing how green roofs in cities can integrate with ‘living walls’: environmentally friendly walls which are partially or completely covered with greenery, including a growing medium, such as soil or water. Research also indicates that green roofs can be integrated with drainage systems on the ground, such as street trees, so that the water is managed better and the built environment is made more sustainable. There is also evidence to demonstrate the social value of green roofs. Doctors are increasingly prescribing time spent gardening outdoors for patients dealing with anxiety and depression. And research has found that access to even the most basic green spaces can provide a better quality of life for dementia sufferers and help people avoid obesity."
+    },
+    {
+      "type": "text",
+      "label": "C",
+      "content": "In North America, green roofs have become mainstream, with a wide array of expansive, accessible and food-producing roofs installed in buildings. Again, city leaders and authorities have helped push the movement forward – only recently, San Francisco, USA, created a policy requiring new buildings to have green roofs. Toronto, Canada, has policies dating from the 1990s, encouraging the development of urban farms on rooftops. These countries also benefit from having newer buildings than in many parts of the world, which makes it easier to install green roofs. Being able to keep enough water at roof height and distribute it right across the rooftop is crucial to maintaining the plants on any green roof – especially on ‘edible roofs’ where fruit and vegetables are farmed. And it’s much easier to do this in newer buildings, which can typically hold greater weight, than to retro-fit old ones. Having a stronger roof also makes it easier to grow a greater variety of plants, since the soil can be deeper."
+    },
+    {
+      "type": "text",
+      "label": "D",
+      "content": "For green roofs to become the norm for new developments, there needs to be support from public authorities and private investors. Those responsible for maintaining buildings may have to acquire new skills, such as landscaping, and in some cases, volunteers may be needed to help out. Other considerations include installing drainage paths, meeting health and safety requirements and perhaps allowing access for the public, as well as planning restrictions and disruption from regular activities in and around the buildings during installation. To convince investors and developers that installing green roofs is worthwhile, economic arguments are still the most important. The term ‘natural capital’ has been developed to explain the economic value of nature; for example, measuring the money saved by installing natural solutions to protect against flood damage, adapt to climate change or help people lead healthier and happier lives."
+    },
+    {
+      "type": "text",
+      "label": "E",
+      "content": "As the expertise about green roofs grows, official standards have been developed to ensure that they are designed, constructed and maintained properly, and function well. Improvements in the science and technology underpinning green roof development have also led to new variations in the concept. For example, ‘blue roofs’ enable buildings to hold water over longer periods of time, rather than draining it away quickly – crucial in times of heavier rainfall. There are also combinations of green roofs with solar panels, and ‘brown roofs’ which are wilder in nature and maximise biodiversity. If the trend continues, it could create new jobs and a more vibrant and sustainable local food economy – alongside many other benefits. There are still barriers to overcome, but the evidence so far indicates that green roofs have the potential to transform cities and help them function sustainably long into the future. The success stories need to be studied and replicated elsewhere, to make green, blue, brown and food-producing roofs the norm in cities around the world."
+    }
+  ],
+  "questions": [
+    {
+  "type": "matching_headings",
+  "start_question": 5,
+  "end_question": 8,
+  "instructions": "Choose the correct heading for paragraphs A-D from the list below. Write the correct roman numeral, i-vi, in boxes 5-8.",
+  "options": [
+    { "id": "i", "text": "Description of the rooftop farm" },
+    { "id": "ii", "text": "Future potential of urban farming" },
+    { "id": "iii", "text": "Criticism of soil-free methods" },
+    { "id": "iv", "text": "Background of the engineer" },
+    { "id": "v", "text": "Environmental benefits" },
+    { "id": "vi", "text": "Comparison with traditional farming" }
+  ],
+  "questions": [
+    {
+      "question_number": 5,
+      "target_paragraph": "B",
+      "correct_answer": "iv"
+    },
+    {
+      "question_number": 6,
+      "target_paragraph": "C",
+      "correct_answer": "ii"
+    },
+    {
+      "question_number": 7,
+      "target_paragraph": "D",
+      "correct_answer": "v"
+    },
+    {
+      "question_number": 8,
+      "target_paragraph": "E",
+      "correct_answer": "vi"
+    }
+  ]
+},
+{
+  "type": "true_false_not_given",
+  "start_question": 10,
+  "end_question": 13,
+  "instructions": "Do the following statements agree with the claims of the writer in Reading Passage 2? In boxes 20–23 on your answer sheet, write",
+  "options": [
+    {
+      "label": "YES",
+      "description": "if the statement agrees with the claims of the writer"
+    },
+    {
+      "label": "NO",
+      "description": "if the statement contradicts the claims of the writer"
+    },
+    {
+      "label": "NOT GIVEN",
+      "description": "if it is impossible to say what the writer thinks about this"
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 10,
+      "statement": "Machines with the ability to make moral decisions may prevent us from promoting the interests of our communities.",
+      "correct_answer": "YES",
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 11,
+      "statement": "Silicon police would need to exist in large numbers in order to be effective.",
+      "correct_answer": "NOT GIVEN",
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 12,
+      "statement": "Many people are comfortable with the prospect of their independence being restricted by machines.",
+      "correct_answer": "NO",
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 13,
+      "statement": "If we want to ensure that machines act in our best interests, we all need to work together.",
+      "correct_answer": "YES",
+      "passage_reference": "D"
+    }
+  ]
+},
+{
+  "type": "matching_paragraph_information",
+  "start_question": 1,
+  "end_question": 4,
+  "instructions": "Reading Passage 1 has five paragraphs, A-E. Which paragraph contains the following information? Write the correct letter, A-E, in boxes 1-4 on your answer sheet. NB You may use any letter more than once.",
+  "options": ["A", "B", "C", "D", "E"],
+  "questions": [
+    {
+      "question_number": 1,
+      "statement": "a description of the mental health benefits of spending time in green spaces",
+      "correct_answer": "B"
+    },
+    {
+      "question_number": 2,
+      "statement": "an explanation of why newer buildings are better suited for farming on roofs",
+      "correct_answer": "C"
+    },
+    {
+      "question_number": 3,
+      "statement": "a reference to a forward-thinking policy that increased green spaces in a UK city",
+      "correct_answer": "A"
+    },
+    {
+      "question_number": 4,
+      "statement": "mention of the need for specific skills to maintain new rooftop developments",
+      "correct_answer": "D"
+    }
+  ]
+},
+{
+  "type": "summary_completion",
+  "start_question": 1,
+  "end_question": 3,
+  "instructions": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 1-3 on your answer sheet.",
+  "summary_title": "The Benefits of Green Roofs",
+  "summary_text": "Installing green roofs has become increasingly popular due to their numerous advantages. Environmentally, they help to reduce the risk of [1] during heavy rain and provide a habitat for urban wildlife. Furthermore, they have a positive impact on human health; time spent outdoors can alleviate symptoms of [2] and depression. Despite these benefits, city authorities and [3] must work together to ensure their long-term success.",
+  "options": null,
+  "questions": [
+    {
+      "question_number": 1,
+      "correct_answer": [
+        "floods"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 2,
+      "correct_answer": [
+        "anxiety"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 3,
+      "correct_answer": [
+        "private companies"
+      ],
+      "passage_reference": "A"
+    }
+  ]
+},
+{
+  "type": "summary_completion",
+  "start_question": 4,
+  "end_question": 6,
+  "instructions": "Complete the summary using the list of words, A-G, below. Write the correct letter, A-G, in boxes 4-6 on your answer sheet.",
+  "summary_title": "Challenges of Rooftop Farming",
+  "summary_text": "Growing food on roofs is more difficult in older buildings because they often cannot support the necessary [4]. To maintain healthy plants, particularly for edible crops, it is essential to manage the [5] effectively across the entire surface. If these technical barriers are overcome, urban farming could lead to the creation of new [6] and improve local food economies.",
+  "options": [
+    { "id": "A", "text": "drainage paths" },
+    { "id": "B", "text": "water" },
+    { "id": "C", "text": "weight" },
+    { "id": "D", "text": "natural capital" },
+    { "id": "E", "text": "jobs" },
+    { "id": "F", "text": "solar panels" },
+    { "id": "G", "text": "standards" }
+  ],
+  "questions": [
+    {
+      "question_number": 4,
+      "correct_answer": "C",
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 5,
+      "correct_answer": "B",
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 6,
+      "correct_answer": "E",
+      "passage_reference": "E"
+    }
+  ]
+},
+{
+  "type": "sentence_completion",
+  "start_question": 8,
+  "end_question": 10,
+  "instructions": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 8-10 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 8,
+      "sentence": "One of the main benefits of green roofs is their ability to reduce the risk of [8] during heavy rainfall.",
+      "correct_answer": [
+        "floods",
+        "flood waters"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 9,
+      "sentence": "Doctors are now recommending outdoor gardening to patients who suffer from [9] or depression.",
+      "correct_answer": [
+        "anxiety"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 10,
+      "sentence": "A major challenge for retrofitting old buildings is that they often cannot safely hold the additional [10] required for soil and plants.",
+      "correct_answer": [
+        "weight"
+      ],
+      "passage_reference": "C"
+    }
+  ]
+},
+{
+  "type": "multiple_choice",
+  "start_question": 11,
+  "end_question": 13,
+  "instructions": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 11-13 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 11,
+      "question_text": "What does the writer suggest about the London Plan in the first paragraph?",
+      "options": [
+        { "id": "A", "text": "It has failed to meet its original targets." },
+        { "id": "B", "text": "It was primarily driven by private companies." },
+        { "id": "C", "text": "It has significantly increased the amount of green roofs." },
+        { "id": "D", "text": "It is currently being copied by other UK cities." }
+      ],
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 12,
+      "question_text": "According to the second paragraph, what is one social benefit of green roofs?",
+      "options": [
+        { "id": "A", "text": "They encourage local communities to work together." },
+        { "id": "B", "text": "They can improve the physical health of dementia patients." },
+        { "id": "C", "text": "They help reduce rates of anxiety and depression." },
+        { "id": "D", "text": "They are highly valued by medical researchers." }
+      ],
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "B"
+    }
+  ]
+},
+{
+  "type": "list_selection",
+  "start_question": 18,
+  "end_question": 19,
+  "instructions": "Choose TWO letters, A-E. Write the correct letters in boxes 18 and 19 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 18,
+      "question_text": "Which TWO of the following benefits of green roofs are mentioned by the writer?",
+      "options": [
+        { "id": "A", "text": "They provide safe play areas for children." },
+        { "id": "B", "text": "They help to manage heavy rainfall." },
+        { "id": "C", "text": "They are cheaper to build than standard roofs." },
+        { "id": "D", "text": "They can alleviate mental health issues." },
+        { "id": "E", "text": "They eliminate the need for street trees." }
+      ],
+      "correct_answer": [
+        "B",
+        "D"
+      ],
+      "passage_reference": "B"
+    }
+  ]
+},
+{
+  "type": "matching_features",
+  "start_question": 1,
+  "end_question": 4,
+  "instructions": "Classify the following statements as referring to A, B, or C. Write the correct letter, A, B, or C, in boxes 1-4 on your answer sheet.",
+  "options": [
+    { "id": "A", "text": "City authorities" },
+    { "id": "B", "text": "Private investors" },
+    { "id": "C", "text": "Both city authorities and private investors" }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "statement": "They are primarily motivated by economic arguments.",
+      "correct_answer": [
+        "B"
+      ],
+      "passage_reference": "D"
+    },
+    {
+      "question_number": 2,
+      "statement": "They were responsible for introducing the London Plan.",
+      "correct_answer": [
+        "A"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 3,
+      "statement": "They need to collaborate to ensure long-term success.",
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 4,
+      "statement": "They might need to acquire new landscaping skills.",
+      "correct_answer": [
+        "B"
+      ],
+      "passage_reference": "D"
+    }
+  ]
+},
+{
+  "type": "matching_sentence_endings",
+  "start_question": 20,
+  "end_question": 22,
+  "instructions": "Complete each sentence with the correct ending, A-F, below. Write the correct letter, A-F, in boxes 20-22 on your answer sheet.",
+  "options": [
+    { "id": "A", "text": "can help cities adapt to monumental problems." },
+    { "id": "B", "text": "are easier to build on older structures." },
+    { "id": "C", "text": "require new skills such as landscaping." },
+    { "id": "D", "text": "have been largely rejected by private investors." },
+    { "id": "E", "text": "can alleviate symptoms of depression." },
+    { "id": "F", "text": "are only found in North America." }
+  ],
+  "questions": [
+    {
+      "question_number": 20,
+      "sentence_start": "Increasingly radical urban designs like green roofs",
+      "correct_answer": [
+        "A"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 21,
+      "sentence_start": "Doctors are increasingly prescribing outdoor gardening because it",
+      "correct_answer": [
+        "E"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 22,
+      "sentence_start": "Those responsible for maintaining new green building developments",
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "D"
+    }
+  ]
+},
+
+{
+  "type": "table_completion",
+  "start_question": 23,
+  "end_question": 25,
+  "instructions": "Complete the table below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 23-25 on your answer sheet.",
+  "table_title": "Types of Urban Roof Designs",
+  "options": null,
+  "headers": [
+    "Type of Roof",
+    "Main Benefit",
+    "Challenge"
+  ],
+  "rows": [
+    [
+      "Green Roof",
+      "Reduces the risk of [23]",
+      "Older buildings cannot support the [24]"
+    ],
+    [
+      "Blue Roof",
+      "Holds [25] for longer periods",
+      "Requires specific design standards"
+    ]
+  ],
+  "questions": [
+    {
+      "question_number": 23,
+      "correct_answer": [
+        "floods",
+        "flood damage"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 24,
+      "correct_answer": [
+        "weight"
+      ],
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 25,
+      "correct_answer": [
+        "water"
+      ],
+      "passage_reference": "E"
+    }
+  ]
+},
+{
+  "type": "flowchart_completion",
+  "start_question": 26,
+  "end_question": 28,
+  "instructions": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 26-28 on your answer sheet.",
+  "flowchart_title": "The Process of Installing a Green Roof",
+  "options": null,
+  "steps": [
+    "First, assess the building to ensure it can support the additional [26].",
+    "Next, lay down a waterproof membrane to prevent structural damage.",
+    "Install a specialized drainage layer to manage excess [27] during storms.",
+    "Finally, distribute the soil and plant the selected [28]."
+  ],
+  "questions": [
+    {
+      "question_number": 26,
+      "correct_answer": [
+        "weight",
+        "load"
+      ],
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 27,
+      "correct_answer": [
+        "water",
+        "rainfall"
+      ],
+      "passage_reference": "E"
+    },
+    {
+      "question_number": 28,
+      "correct_answer": [
+        "vegetation",
+        "plants"
+      ],
+      "passage_reference": "F"
+    }
+  ]
+},
+{
+  "type": "diagram_completion",
+  "start_question": 29,
+  "end_question": 31,
+  "instructions": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 29-31 on your answer sheet.",
+  "diagram_title": "Cross-section of a Green Roof",
+  "diagram_url": "/assets/images/green-roof-diagram.png",
+  "diagram_alt_text": "A cross-section diagram showing the different layers of a green roof, with labels corresponding to questions 29, 30, and 31.",
+  "options": null,
+  "questions": [
+    {
+      "question_number": 29,
+      "correct_answer": [
+        "vegetation",
+        "plants"
+      ],
+      "passage_reference": "F"
+    },
+    {
+      "question_number": 30,
+      "correct_answer": [
+        "drainage layer"
+      ],
+      "passage_reference": "E"
+    },
+    {
+      "question_number": 31,
+      "correct_answer": [
+        "waterproof membrane",
+        "membrane"
+      ],
+      "passage_reference": "D"
+    }
+  ]
+},
+{
+  "type": "short_answer",
+  "start_question": 32,
+  "end_question": 34,
+  "instructions": "Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 32-34 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 32,
+      "question_text": "What ecological hazard can green roofs mitigate during periods of intense rainfall?",
+      "correct_answer": [
+        "floods",
+        "flood damage"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 33,
+      "question_text": "Which psychological condition can be alleviated by participating in outdoor gardening?",
+      "correct_answer": [
+        "anxiety"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 34,
+      "question_text": "What structural constraint prevents older buildings from being retrofitted with green roofs?",
+      "correct_answer": [
+        "weight",
+        "excess weight"
+      ],
+      "passage_reference": "C"
+    }
+  ]
+}  
+  ]
+}
+   
+  ]
+}
+
+
+
+
+

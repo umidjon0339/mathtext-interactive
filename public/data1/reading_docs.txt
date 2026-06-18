@@ -1,0 +1,757 @@
+# IELTS Reading JSON Schema Documentation
+
+## Overview
+This document defines the JSON structure used to represent an IELTS Reading test. The schema is highly modular, separating the reading passage into distinct blocks and handling various IELTS question types within a unified `questions` array. 
+
+---
+
+## 1. Root Object: The Reading Passage
+The top level of the JSON object defines the metadata and the text of the reading passage itself, along with the array of questions.
+
+* **`id`** (string): A unique identifier for the passage (e.g., "passage_green_roofs").
+* **`module`** (string): The test module (e.g., "reading").
+* **`passage_number`** (integer): The standard IELTS passage number (1, 2, or 3).
+* **`title`** (string): The main title of the passage.
+* **`subtitle`** (string): The subtitle of the passage (can be empty `""`).
+* **`instruction`** (string): The overarching instruction for the passage (e.g., "You should spend about 20 minutes...").
+* **`word_count`** (integer): Total word count of the passage.
+* **`difficulty`** (string): Difficulty level (e.g., "easy", "medium", "hard").
+* **`blocks`** (array of objects): The reading passage text, split into paragraphs.
+    * `type` (string): The type of content (e.g., "text", "image", "table").
+    * `label` (string): The paragraph letter (e.g., "A", "B").
+    * `content` (string): The actual text of the paragraph.
+* **`questions`** (array of objects): An array containing different question blocks. Each block represents a specific IELTS question type.
+
+---
+
+## 2. Question Types
+
+Every question block in the `questions` array shares a few standard keys:
+* **`type`** (string): Defines the question format.
+* **`start_question`** (integer): The first question number in this block.
+* **`end_question`** (integer): The last question number in this block.
+* **`instructions`** (string): The specific instructions for this question block.
+
+Below are the specific structures for the supported question types.
+
+### Type A: Matching Headings (`"type": "matching_headings"`)
+Used when users must match Roman numeral headings to paragraphs.
+
+* **`options`** (array of objects): The list of available headings.
+    * `id` (string): The Roman numeral (e.g., "i", "ii").
+    * `text` (string): The text of the heading.
+* **`questions`** (array of objects): The items to evaluate.
+    * `question_number` (integer): The question number.
+    * `target_paragraph` (string): The paragraph label the user is evaluating (e.g., "B").
+    * `correct_answer` (string): The correct Roman numeral (e.g., "iv").
+
+### Type B: True / False / Not Given OR Yes / No / Not Given (`"type": "true_false_not_given"`)
+Used for evaluating statements against the text. Works for both TFNG and YNNG depending on how the `options` are populated.
+
+* **`options`** (array of objects): The three fixed choices.
+    * `label` (string): "TRUE", "FALSE", "NOT GIVEN" (or "YES", "NO").
+    * `description` (string): The explanation of the label (e.g., "if the statement agrees...").
+* **`questions`** (array of objects): The statements to evaluate.
+    * `question_number` (integer): The question number.
+    * `statement` (string): The sentence the user must evaluate.
+    * `correct_answer` (string): Must exactly match one of the option `label`s (e.g., "TRUE").
+    * `passage_reference` (string): The paragraph label where the answer is found.
+
+### Type C: Matching Paragraph Information (`"type": "matching_paragraph_information"`)
+Used when users must find which paragraph contains specific information. 
+
+* **`options`** (array of strings): A simple list of available paragraph letters (e.g., `["A", "B", "C", "D", "E"]`).
+* **`questions`** (array of objects): The information the user needs to locate.
+    * `question_number` (integer): The question number.
+    * `statement` (string): The piece of information to find.
+    * `correct_answer` (string): The exact paragraph letter (e.g., "C").
+
+### Type D: Summary Completion (`"type": "summary_completion"`)
+Used for fill-in-the-blank summaries. This schema seamlessly handles both "Direct Entry" (typing words) and "Word Bank" (choosing letters).
+
+* **`summary_title`** (string): The header text for the summary.
+* **`summary_text`** (string): The paragraph text. **Crucial:** Blanks are represented by brackets containing the question number (e.g., `[5]`, `[6]`).
+* **`options`** (null OR array of objects): 
+    * If **`null`**: This is a Direct Entry task.
+    * If **populated** (e.g., `[{"id": "A", "text": "jobs"}]`): This is a Word Bank task.
+* **`questions`** (array of objects): The answers for the blanks.
+    * `question_number` (integer): Matches the bracket in `summary_text`.
+    * `correct_answer` (array of strings): A list of all acceptable exact-match answers to accommodate IELTS grading rules (e.g., `["10%", "10 percent"]`). For single text answers or word bank letters, use an array with one item (e.g., `["floods"]` or `["C"]`).
+    * `passage_reference` (string): The paragraph label where the answer is sourced.
+
+### Type E: Sentence Completion (`"type": "sentence_completion"`)
+Used when users must complete standalone sentences using words directly from the text.
+
+* **`questions`** (array of objects): The sentences to complete.
+    * `question_number` (integer): The question number.
+    * `sentence` (string): The sentence text. **Crucial:** The blank is represented by brackets containing the question number (e.g., `[8]`).
+    * `correct_answer` (array of strings): A list of all acceptable exact-match answers (e.g., `["factory", "plant"]`). If there is only one acceptable answer, use an array with one item (e.g., `["weight"]`).
+    * `passage_reference` (string): The paragraph label where the answer is found.
+
+### Type F: Multiple Choice (`"type": "multiple_choice"`)
+Used for standard multiple-choice questions. Note that the `options` array is located *inside* each question object, rather than at the root level, because options vary per question.
+
+* **`questions`** (array of objects): The multiple-choice questions.
+    * `question_number` (integer): The question number.
+    * `question_text` (string): The actual question or incomplete sentence.
+    * `options` (array of objects): The specific choices for this question.
+        * `id` (string): The option letter (e.g., "A", "B", "C", "D").
+        * `text` (string): The text of the option.
+    * `correct_answer` (array of strings): The ID(s) of the correct choice(s). Formatted as an array to accommodate standard 1-answer questions (e.g., `["C"]`) as well as IELTS "Choose TWO letters" variations (e.g., `["A", "E"]`).
+    * `passage_reference` (string): The paragraph label where the answer is found.
+
+### Type H: List Selection (`"type": "list_selection"`)
+Used when users must select multiple options from a list for a single prompt (e.g., "Choose TWO letters, A-E"). Note that a single question object covers multiple question numbers (as defined by `start_question` and `end_question`).
+
+* **`questions`** (array of objects): The selection question block.
+    * `question_number` (integer): The starting question number for this specific prompt (e.g., 18).
+    * `question_text` (string): The prompt asking the user what to select.
+    * `options` (array of objects): The specific choices for this question.
+        * `id` (string): The option letter (e.g., "A", "B", "C", "D", "E").
+        * `text` (string): The text of the option.
+    * `correct_answer` (array of strings): The IDs of all the correct choices, formatted as an array (e.g., `["B", "D"]`). The number of items in this array corresponds to the number of choices the user needs to make.
+    * `passage_reference` (string): The paragraph label where the answers are found.
+
+### Type G: Matching Features / Classification (`"type": "matching_features"`)
+Used when users must categorize statements or match them to a shared list of options (e.g., Classifying information into Categories A, B, or C, or matching to a List of Researchers). 
+
+* **`options`** (array of objects): The shared categories or choices available for all questions in this block.
+    * `id` (string): The option letter (e.g., "A", "B", "C").
+    * `text` (string): The text of the category/option.
+* **`questions`** (array of objects): The statements the user must classify.
+    * `question_number` (integer): The question number.
+    * `statement` (string): The statement that needs to be categorized.
+    * `correct_answer` (array of strings): The ID of the correct category, formatted as an array (e.g., `["A"]`).
+    * `passage_reference` (string): The paragraph label where the connection is found in the text.
+
+### Type I: Matching Sentence Endings (`"type": "matching_sentence_endings"`)
+Used when users must complete a sentence by choosing the correct ending from a shared list of options. 
+
+* **`options`** (array of objects): The shared list of sentence endings available for all questions in this block.
+    * `id` (string): The option letter (e.g., "A", "B", "C").
+    * `text` (string): The text of the sentence ending.
+* **`questions`** (array of objects): The incomplete sentences the user must finish.
+    * `question_number` (integer): The question number.
+    * `sentence_start` (string): The first half of the sentence that needs an ending.
+    * `correct_answer` (array of strings): The ID of the correct ending, formatted as an array (e.g., `["A"]`).
+    * `passage_reference` (string): The paragraph label where the connection is found in the text.
+
+### Type J: Table Completion (`"type": "table_completion"`)
+Used when users must complete a grid/table by filling in blanks. This type supports both direct text entry and word banks.
+
+* **`table_title`** (string): The title/heading of the table (can be an empty string `""` if the table has no title).
+* **`options`** (null OR array of objects): 
+    * If **`null`**: Direct Entry task (user types the word).
+    * If **populated**: Word Bank task (user selects a letter ID).
+* **`headers`** (array of strings): The column titles for the table (e.g., `["Type", "Benefit", "Challenge"]`).
+* **`rows`** (array of arrays of strings): The data rows of the table. Each array represents one row. **Crucial:** Blanks within the cells are represented by brackets containing the question number (e.g., `[23]`).
+* **`questions`** (array of objects): The answers for the blanks.
+    * `question_number` (integer): Matches the bracket in the `rows` cell.
+    * `correct_answer` (array of strings): A list of all acceptable exact-match answers (e.g., `["floods", "flood damage"]`). If there is a Word Bank, this is an array containing the single correct letter ID (e.g., `["A"]`).
+    * `passage_reference` (string): The paragraph label where the answer is found.
+
+### Type K: Flow Chart Completion (`"type": "flowchart_completion"`)
+Used when users must complete a sequence of steps describing a process. This type supports both direct text entry and word banks.
+
+* **`flowchart_title`** (string): The title/heading of the flow chart (can be an empty string `""` if there is no title).
+* **`options`** (null OR array of objects): 
+    * If **`null`**: Direct Entry task (user types the word).
+    * If **populated**: Word Bank task (user selects a letter ID).
+* **`steps`** (array of striopulated**: Word Bank task (user selects a letter ID).
+* **`steps`** (array of stri
+    * `passage_reference` (string): The paragraph label where the answer is found.
+
+### Type L: Diagram Completion (`"type": "diagram_completion"`)
+Used when users must label parts of an image/diagram using words from the text. Note: In this format, the contextual text, lines, and pointers are assumed to be part of the image file itself.
+
+* **`diagram_title`** (string): The title of the diagram (can be `""` if there is no title).
+* **`diagram_url`** (string): The file path or URL to the diagram image that the front-end needs to render.
+* **`diagram_alt_text`** (string): Accessibility text describing the image.
+* **`options`** (null OR array of objects): 
+    * If **`null`**: Direct Entry task (user types the word).
+    * If **populated**: Word Bank task (user selects a letter ID).
+* **`questions`** (array of objects): The input requirements for the diagram. The front-end should render simple input fields mapped to these numbers alongside or below the image.
+    * `question_number` (integer): The question number that corresponds to a label in the diagram image.
+    * `correct_answer` (array of strings): A list of all acceptable exact-match answers (e.g., `["vegetation", "plants"]`). If there is a Word Bank, this is an array containing the single correct letter ID.
+    * `passage_reference` (string): The paragraph label where the answer is found.
+
+### Type M: Short Answer Questions (`"type": "short_answer"`)
+Used when users must write a short answer (extracted directly from the passage) to a direct question.
+
+* **`questions`** (array of objects): The list of direct questions.
+    * `question_number` (integer): The question number.
+    * `question_text` (string): The direct question being asked.
+    * `correct_answer` (array of strings): A list of all acceptable exact-match answers extracted from the text (e.g., `["floods", "flood damage"]`).
+    * `passage_reference` (string): The paragraph label where the answer is found.
+
+---
+
+## Instructions for LLM Generation
+When generating new IELTS reading passages and questions using this schema:
+1. Ensure `start_question` and `end_question` accurately reflect the `question_number` items within the block.
+2. Ensure continuous global question numbering across the entire test (e.g., Block 1 is 1-5, Block 2 is 6-9, etc.).
+3. Maintain exact string matching between `correct_answer` and the respective `options` IDs or Labels.
+4. For `summary_completion` and `sentence_completion`, ensure the bracketed numbers in the text strings (e.g., `[5]`) perfectly match the `question_number` in the `questions` array.
+5. Always format the `correct_answer` for completion types (Type D and Type E) as an **array of strings**, providing valid alternative formats or synonyms found strictly in the passage.
+
+
+
+{
+  "id": "passage_green_roofs",
+  "module": "reading",
+  "passage_number": 1,
+  "title": "Green roofs",
+  "subtitle": "",
+  "instruction": "You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1 below.",
+  "word_count": 836,
+  "difficulty": "medium",
+  "blocks": [
+    {
+      "type": "text",
+      "label": "A",
+      "content": "Rooftops covered with grass, vegetable gardens and lush foliage are now a common sight in many cities around the world. More and more private companies and city authorities are investing in green roofs, drawn to their wide-ranging benefits. Among the benefits are saving on energy costs, mitigating the risk of floods, making habitats for urban wildlife, tackling air pollution and even growing food. These increasingly radical urban designs can help cities adapt to the monumental problems they face, such as access to resources and a lack of green space due to development. But the involvement of city authorities, businesses and other institutions is crucial to ensuring their success – as is research investigating different options to suit the variety of rooftop spaces found in cities. The UK is relatively new to developing green roofs, and local governments and institutions are playing a major role in spreading the practice. London is home to much of the UK's green roof market, mainly due to forward-thinking policies such as the London Plan, which has paved the way to more than doubling the area of green roofs in the capital."
+    },
+    {
+      "type": "text",
+      "label": "B",
+      "content": "Ongoing research is showcasing how green roofs in cities can integrate with ‘living walls’: environmentally friendly walls which are partially or completely covered with greenery, including a growing medium, such as soil or water. Research also indicates that green roofs can be integrated with drainage systems on the ground, such as street trees, so that the water is managed better and the built environment is made more sustainable. There is also evidence to demonstrate the social value of green roofs. Doctors are increasingly prescribing time spent gardening outdoors for patients dealing with anxiety and depression. And research has found that access to even the most basic green spaces can provide a better quality of life for dementia sufferers and help people avoid obesity."
+    },
+    {
+      "type": "text",
+      "label": "C",
+      "content": "In North America, green roofs have become mainstream, with a wide array of expansive, accessible and food-producing roofs installed in buildings. Again, city leaders and authorities have helped push the movement forward – only recently, San Francisco, USA, created a policy requiring new buildings to have green roofs. Toronto, Canada, has policies dating from the 1990s, encouraging the development of urban farms on rooftops. These countries also benefit from having newer buildings than in many parts of the world, which makes it easier to install green roofs. Being able to keep enough water at roof height and distribute it right across the rooftop is crucial to maintaining the plants on any green roof – especially on ‘edible roofs’ where fruit and vegetables are farmed. And it’s much easier to do this in newer buildings, which can typically hold greater weight, than to retro-fit old ones. Having a stronger roof also makes it easier to grow a greater variety of plants, since the soil can be deeper."
+    },
+    {
+      "type": "text",
+      "label": "D",
+      "content": "For green roofs to become the norm for new developments, there needs to be support from public authorities and private investors. Those responsible for maintaining buildings may have to acquire new skills, such as landscaping, and in some cases, volunteers may be needed to help out. Other considerations include installing drainage paths, meeting health and safety requirements and perhaps allowing access for the public, as well as planning restrictions and disruption from regular activities in and around the buildings during installation. To convince investors and developers that installing green roofs is worthwhile, economic arguments are still the most important. The term ‘natural capital’ has been developed to explain the economic value of nature; for example, measuring the money saved by installing natural solutions to protect against flood damage, adapt to climate change or help people lead healthier and happier lives."
+    },
+    {
+      "type": "text",
+      "label": "E",
+      "content": "As the expertise about green roofs grows, official standards have been developed to ensure that they are designed, constructed and maintained properly, and function well. Improvements in the science and technology underpinning green roof development have also led to new variations in the concept. For example, ‘blue roofs’ enable buildings to hold water over longer periods of time, rather than draining it away quickly – crucial in times of heavier rainfall. There are also combinations of green roofs with solar panels, and ‘brown roofs’ which are wilder in nature and maximise biodiversity. If the trend continues, it could create new jobs and a more vibrant and sustainable local food economy – alongside many other benefits. There are still barriers to overcome, but the evidence so far indicates that green roofs have the potential to transform cities and help them function sustainably long into the future. The success stories need to be studied and replicated elsewhere, to make green, blue, brown and food-producing roofs the norm in cities around the world."
+    }
+  ],
+  "questions": [
+    {
+  "type": "matching_headings",
+  "start_question": 5,
+  "end_question": 8,
+  "instructions": "Choose the correct heading for paragraphs A-D from the list below. Write the correct roman numeral, i-vi, in boxes 5-8.",
+  "options": [
+    { "id": "i", "text": "Description of the rooftop farm" },
+    { "id": "ii", "text": "Future potential of urban farming" },
+    { "id": "iii", "text": "Criticism of soil-free methods" },
+    { "id": "iv", "text": "Background of the engineer" },
+    { "id": "v", "text": "Environmental benefits" },
+    { "id": "vi", "text": "Comparison with traditional farming" }
+  ],
+  "questions": [
+    {
+      "question_number": 5,
+      "target_paragraph": "B",
+      "correct_answer": "iv"
+    },
+    {
+      "question_number": 6,
+      "target_paragraph": "C",
+      "correct_answer": "ii"
+    },
+    {
+      "question_number": 7,
+      "target_paragraph": "D",
+      "correct_answer": "v"
+    },
+    {
+      "question_number": 8,
+      "target_paragraph": "E",
+      "correct_answer": "vi"
+    }
+  ]
+},
+{
+  "type": "true_false_not_given",
+  "start_question": 10,
+  "end_question": 13,
+  "instructions": "Do the following statements agree with the claims of the writer in Reading Passage 2? In boxes 20–23 on your answer sheet, write",
+  "options": [
+    {
+      "label": "YES",
+      "description": "if the statement agrees with the claims of the writer"
+    },
+    {
+      "label": "NO",
+      "description": "if the statement contradicts the claims of the writer"
+    },
+    {
+      "label": "NOT GIVEN",
+      "description": "if it is impossible to say what the writer thinks about this"
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 10,
+      "statement": "Machines with the ability to make moral decisions may prevent us from promoting the interests of our communities.",
+      "correct_answer": "YES",
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 11,
+      "statement": "Silicon police would need to exist in large numbers in order to be effective.",
+      "correct_answer": "NOT GIVEN",
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 12,
+      "statement": "Many people are comfortable with the prospect of their independence being restricted by machines.",
+      "correct_answer": "NO",
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 13,
+      "statement": "If we want to ensure that machines act in our best interests, we all need to work together.",
+      "correct_answer": "YES",
+      "passage_reference": "D"
+    }
+  ]
+},
+{
+  "type": "matching_paragraph_information",
+  "start_question": 1,
+  "end_question": 4,
+  "instructions": "Reading Passage 1 has five paragraphs, A-E. Which paragraph contains the following information? Write the correct letter, A-E, in boxes 1-4 on your answer sheet. NB You may use any letter more than once.",
+  "options": ["A", "B", "C", "D", "E"],
+  "questions": [
+    {
+      "question_number": 1,
+      "statement": "a description of the mental health benefits of spending time in green spaces",
+      "correct_answer": "B"
+    },
+    {
+      "question_number": 2,
+      "statement": "an explanation of why newer buildings are better suited for farming on roofs",
+      "correct_answer": "C"
+    },
+    {
+      "question_number": 3,
+      "statement": "a reference to a forward-thinking policy that increased green spaces in a UK city",
+      "correct_answer": "A"
+    },
+    {
+      "question_number": 4,
+      "statement": "mention of the need for specific skills to maintain new rooftop developments",
+      "correct_answer": "D"
+    }
+  ]
+},
+{
+  "type": "summary_completion",
+  "start_question": 1,
+  "end_question": 3,
+  "instructions": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 1-3 on your answer sheet.",
+  "summary_title": "The Benefits of Green Roofs",
+  "summary_text": "Installing green roofs has become increasingly popular due to their numerous advantages. Environmentally, they help to reduce the risk of [1] during heavy rain and provide a habitat for urban wildlife. Furthermore, they have a positive impact on human health; time spent outdoors can alleviate symptoms of [2] and depression. Despite these benefits, city authorities and [3] must work together to ensure their long-term success.",
+  "options": null,
+  "questions": [
+    {
+      "question_number": 1,
+      "correct_answer": [
+        "floods"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 2,
+      "correct_answer": [
+        "anxiety"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 3,
+      "correct_answer": [
+        "private companies"
+      ],
+      "passage_reference": "A"
+    }
+  ]
+},
+{
+  "type": "summary_completion",
+  "start_question": 4,
+  "end_question": 6,
+  "instructions": "Complete the summary using the list of words, A-G, below. Write the correct letter, A-G, in boxes 4-6 on your answer sheet.",
+  "summary_title": "Challenges of Rooftop Farming",
+  "summary_text": "Growing food on roofs is more difficult in older buildings because they often cannot support the necessary [4]. To maintain healthy plants, particularly for edible crops, it is essential to manage the [5] effectively across the entire surface. If these technical barriers are overcome, urban farming could lead to the creation of new [6] and improve local food economies.",
+  "options": [
+    { "id": "A", "text": "drainage paths" },
+    { "id": "B", "text": "water" },
+    { "id": "C", "text": "weight" },
+    { "id": "D", "text": "natural capital" },
+    { "id": "E", "text": "jobs" },
+    { "id": "F", "text": "solar panels" },
+    { "id": "G", "text": "standards" }
+  ],
+  "questions": [
+    {
+      "question_number": 4,
+      "correct_answer": "C",
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 5,
+      "correct_answer": "B",
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 6,
+      "correct_answer": "E",
+      "passage_reference": "E"
+    }
+  ]
+},
+{
+  "type": "sentence_completion",
+  "start_question": 8,
+  "end_question": 10,
+  "instructions": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 8-10 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 8,
+      "sentence": "One of the main benefits of green roofs is their ability to reduce the risk of [8] during heavy rainfall.",
+      "correct_answer": [
+        "floods",
+        "flood waters"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 9,
+      "sentence": "Doctors are now recommending outdoor gardening to patients who suffer from [9] or depression.",
+      "correct_answer": [
+        "anxiety"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 10,
+      "sentence": "A major challenge for retrofitting old buildings is that they often cannot safely hold the additional [10] required for soil and plants.",
+      "correct_answer": [
+        "weight"
+      ],
+      "passage_reference": "C"
+    }
+  ]
+},
+{
+  "type": "multiple_choice",
+  "start_question": 11,
+  "end_question": 13,
+  "instructions": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 11-13 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 11,
+      "question_text": "What does the writer suggest about the London Plan in the first paragraph?",
+      "options": [
+        { "id": "A", "text": "It has failed to meet its original targets." },
+        { "id": "B", "text": "It was primarily driven by private companies." },
+        { "id": "C", "text": "It has significantly increased the amount of green roofs." },
+        { "id": "D", "text": "It is currently being copied by other UK cities." }
+      ],
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 12,
+      "question_text": "According to the second paragraph, what is one social benefit of green roofs?",
+      "options": [
+        { "id": "A", "text": "They encourage local communities to work together." },
+        { "id": "B", "text": "They can improve the physical health of dementia patients." },
+        { "id": "C", "text": "They help reduce rates of anxiety and depression." },
+        { "id": "D", "text": "They are highly valued by medical researchers." }
+      ],
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "B"
+    }
+  ]
+},
+{
+  "type": "list_selection",
+  "start_question": 18,
+  "end_question": 19,
+  "instructions": "Choose TWO letters, A-E. Write the correct letters in boxes 18 and 19 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 18,
+      "question_text": "Which TWO of the following benefits of green roofs are mentioned by the writer?",
+      "options": [
+        { "id": "A", "text": "They provide safe play areas for children." },
+        { "id": "B", "text": "They help to manage heavy rainfall." },
+        { "id": "C", "text": "They are cheaper to build than standard roofs." },
+        { "id": "D", "text": "They can alleviate mental health issues." },
+        { "id": "E", "text": "They eliminate the need for street trees." }
+      ],
+      "correct_answer": [
+        "B",
+        "D"
+      ],
+      "passage_reference": "B"
+    }
+  ]
+},
+{
+  "type": "matching_features",
+  "start_question": 1,
+  "end_question": 4,
+  "instructions": "Classify the following statements as referring to A, B, or C. Write the correct letter, A, B, or C, in boxes 1-4 on your answer sheet.",
+  "options": [
+    { "id": "A", "text": "City authorities" },
+    { "id": "B", "text": "Private investors" },
+    { "id": "C", "text": "Both city authorities and private investors" }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "statement": "They are primarily motivated by economic arguments.",
+      "correct_answer": [
+        "B"
+      ],
+      "passage_reference": "D"
+    },
+    {
+      "question_number": 2,
+      "statement": "They were responsible for introducing the London Plan.",
+      "correct_answer": [
+        "A"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 3,
+      "statement": "They need to collaborate to ensure long-term success.",
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 4,
+      "statement": "They might need to acquire new landscaping skills.",
+      "correct_answer": [
+        "B"
+      ],
+      "passage_reference": "D"
+    }
+  ]
+},
+{
+  "type": "matching_sentence_endings",
+  "start_question": 20,
+  "end_question": 22,
+  "instructions": "Complete each sentence with the correct ending, A-F, below. Write the correct letter, A-F, in boxes 20-22 on your answer sheet.",
+  "options": [
+    { "id": "A", "text": "can help cities adapt to monumental problems." },
+    { "id": "B", "text": "are easier to build on older structures." },
+    { "id": "C", "text": "require new skills such as landscaping." },
+    { "id": "D", "text": "have been largely rejected by private investors." },
+    { "id": "E", "text": "can alleviate symptoms of depression." },
+    { "id": "F", "text": "are only found in North America." }
+  ],
+  "questions": [
+    {
+      "question_number": 20,
+      "sentence_start": "Increasingly radical urban designs like green roofs",
+      "correct_answer": [
+        "A"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 21,
+      "sentence_start": "Doctors are increasingly prescribing outdoor gardening because it",
+      "correct_answer": [
+        "E"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 22,
+      "sentence_start": "Those responsible for maintaining new green building developments",
+      "correct_answer": [
+        "C"
+      ],
+      "passage_reference": "D"
+    }
+  ]
+},
+
+{
+  "type": "table_completion",
+  "start_question": 23,
+  "end_question": 25,
+  "instructions": "Complete the table below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 23-25 on your answer sheet.",
+  "table_title": "Types of Urban Roof Designs",
+  "options": null,
+  "headers": [
+    "Type of Roof",
+    "Main Benefit",
+    "Challenge"
+  ],
+  "rows": [
+    [
+      "Green Roof",
+      "Reduces the risk of [23]",
+      "Older buildings cannot support the [24]"
+    ],
+    [
+      "Blue Roof",
+      "Holds [25] for longer periods",
+      "Requires specific design standards"
+    ]
+  ],
+  "questions": [
+    {
+      "question_number": 23,
+      "correct_answer": [
+        "floods",
+        "flood damage"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 24,
+      "correct_answer": [
+        "weight"
+      ],
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 25,
+      "correct_answer": [
+        "water"
+      ],
+      "passage_reference": "E"
+    }
+  ]
+},
+{
+  "type": "flowchart_completion",
+  "start_question": 26,
+  "end_question": 28,
+  "instructions": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 26-28 on your answer sheet.",
+  "flowchart_title": "The Process of Installing a Green Roof",
+  "options": null,
+  "steps": [
+    "First, assess the building to ensure it can support the additional [26].",
+    "Next, lay down a waterproof membrane to prevent structural damage.",
+    "Install a specialized drainage layer to manage excess [27] during storms.",
+    "Finally, distribute the soil and plant the selected [28]."
+  ],
+  "questions": [
+    {
+      "question_number": 26,
+      "correct_answer": [
+        "weight",
+        "load"
+      ],
+      "passage_reference": "C"
+    },
+    {
+      "question_number": 27,
+      "correct_answer": [
+        "water",
+        "rainfall"
+      ],
+      "passage_reference": "E"
+    },
+    {
+      "question_number": 28,
+      "correct_answer": [
+        "vegetation",
+        "plants"
+      ],
+      "passage_reference": "F"
+    }
+  ]
+},
+{
+  "type": "diagram_completion",
+  "start_question": 29,
+  "end_question": 31,
+  "instructions": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 29-31 on your answer sheet.",
+  "diagram_title": "Cross-section of a Green Roof",
+  "diagram_url": "/assets/images/green-roof-diagram.png",
+  "diagram_alt_text": "A cross-section diagram showing the different layers of a green roof, with labels corresponding to questions 29, 30, and 31.",
+  "options": null,
+  "questions": [
+    {
+      "question_number": 29,
+      "correct_answer": [
+        "vegetation",
+        "plants"
+      ],
+      "passage_reference": "F"
+    },
+    {
+      "question_number": 30,
+      "correct_answer": [
+        "drainage layer"
+      ],
+      "passage_reference": "E"
+    },
+    {
+      "question_number": 31,
+      "correct_answer": [
+        "waterproof membrane",
+        "membrane"
+      ],
+      "passage_reference": "D"
+    }
+  ]
+},
+{
+  "type": "short_answer",
+  "start_question": 32,
+  "end_question": 34,
+  "instructions": "Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 32-34 on your answer sheet.",
+  "questions": [
+    {
+      "question_number": 32,
+      "question_text": "What ecological hazard can green roofs mitigate during periods of intense rainfall?",
+      "correct_answer": [
+        "floods",
+        "flood damage"
+      ],
+      "passage_reference": "A"
+    },
+    {
+      "question_number": 33,
+      "question_text": "Which psychological condition can be alleviated by participating in outdoor gardening?",
+      "correct_answer": [
+        "anxiety"
+      ],
+      "passage_reference": "B"
+    },
+    {
+      "question_number": 34,
+      "question_text": "What structural constraint prevents older buildings from being retrofitted with green roofs?",
+      "correct_answer": [
+        "weight",
+        "excess weight"
+      ],
+      "passage_reference": "C"
+    }
+  ]
+}
+
+
+
+
+    
+  ]
+}
+

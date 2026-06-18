@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital IELTS Reading Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --surface: #ffffff;
+      --background: #f8f9fa;
+      --on-surface: #202124;
+      --on-surface-variant: #5f6368;
+      --outline: #dadce0;
+      --border-radius: 8px;
+      --spacing: 24px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      color: var(--on-surface);
+      background-color: var(--surface);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    /* Layout */
+    .pane {
+      flex: 1;
+      overflow-y: auto;
+      padding: 40px 5vw;
+      box-sizing: border-box;
+      height: 100%;
+    }
+    .left-pane {
+      background-color: var(--surface);
+      border-right: 1px solid var(--outline);
+    }
+    .right-pane {
+      background-color: var(--background);
+    }
+
+    /* Typography */
+    h1 { font-size: 2rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--on-surface); }
+    h2 { font-size: 1.5rem; font-weight: 500; margin: 2rem 0 1rem; }
+    h3 { font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--primary); }
+    h4 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+    
+    .meta-info { color: var(--on-surface-variant); font-size: 0.95rem; margin-bottom: 2rem; font-style: italic; }
+    .instruction-bar { 
+      background: #e8f0fe; 
+      padding: 16px 20px; 
+      border-radius: var(--border-radius); 
+      color: #1967d2;
+      font-weight: 500;
+      margin-bottom: var(--spacing);
+    }
+    
+    /* Passage */
+    .paragraph { margin-bottom: 24px; display: flex; gap: 20px; }
+    .paragraph-label { font-weight: 700; color: var(--primary); font-size: 1.2rem; min-width: 24px; }
+    .paragraph-content { text-align: justify; }
+
+    /* Question Blocks */
+    .q-block { 
+      background: var(--surface); 
+      padding: var(--spacing); 
+      border-radius: var(--border-radius); 
+      border: 1px solid var(--outline);
+      margin-bottom: var(--spacing); 
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .q-instructions { font-style: italic; color: var(--on-surface-variant); margin-bottom: 20px; font-size: 0.95rem; }
+    .q-item { margin-bottom: 16px; display: flex; gap: 16px; align-items: baseline; }
+    .q-number { 
+      font-weight: 700; 
+      background: var(--background); 
+      border: 1px solid var(--outline);
+      padding: 2px 8px; 
+      border-radius: 12px; 
+      font-size: 0.85rem;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* Options Box (Word Banks / Headings) */
+    .options-box {
+      border: 1px solid var(--outline);
+      padding: 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      background: var(--surface);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .options-box-item { flex: 1 1 45%; }
+    .options-box-item strong { margin-right: 8px; }
+
+    /* Inputs */
+    input[type="text"] {
+      border: none;
+      border-bottom: 2px solid var(--outline);
+      background: transparent;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 4px 8px;
+      color: var(--primary);
+      font-weight: 500;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-bottom-color: var(--primary);
+    }
+    .inline-input {
+      width: 80px;
+      margin: 0 8px;
+      text-align: center;
+      background: #f1f3f4;
+      border-radius: 4px 4px 0 0;
+    }
+
+    /* Radio / Checkbox */
+    .choice-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .choice-label:hover { background: var(--background); }
+    .choice-group { margin-left: 45px; margin-bottom: 24px; }
+
+    /* Tables & Flowcharts */
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.95rem; }
+    th, td { border: 1px solid var(--outline); padding: 12px; text-align: left; vertical-align: middle; line-height: 2; }
+    th { background: var(--background); font-weight: 500; }
+    
+    .flowchart-step {
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      padding: 16px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      position: relative;
+      text-align: center;
+      line-height: 2;
+    }
+    .flowchart-arrow { text-align: center; color: var(--outline); margin-bottom: 8px; }
+
+    /* Diagram */
+    .diagram-container { text-align: center; margin-bottom: 24px; border: 1px solid var(--outline); padding: 16px; border-radius: 4px; }
+    .diagram-container img { max-width: 100%; height: auto; }
+    
+    /* Error State */
+    #error-message {
+      padding: 40px;
+      color: #d93025;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pane left-pane" id="passage-pane"></div>
+  <div class="pane right-pane" id="questions-pane"></div>
+
+  <script>
+    // 1. Core Data Fetching Logic
+    async function loadIELTSData() {
+      try {
+        const response = await fetch('reading.json');
+        if (!response.ok) throw new Error('Failed to load reading.json');
+        
+        const data = await response.json();
+        renderPassage(data);
+        renderQuestions(data);
+      } catch (error) {
+        document.body.innerHTML = `
+          <div id="error-message">
+            <h1>Error Loading Data</h1>
+            <p>Could not fetch <strong>reading.json</strong>.</p>
+            <p style="color: var(--on-surface-variant);">If you are opening this HTML file directly from your computer (file://...), browsers will block the fetch request due to CORS policies. Please run a local development server (e.g., Live Server in VS Code, or <code>npx http-server</code>) to view this page.</p>
+          </div>
+        `;
+        console.error("Fetch error:", error);
+      }
+    }
+
+    // 2. Utility Render Helpers
+    const renderInputBox = (qNum) => `<input type="text" class="inline-input" placeholder="${qNum}" name="q${qNum}" autocomplete="off" />`;
+    const replaceBrackets = (text) => text.replace(/\[(\d+)\]/g, (match, p1) => renderInputBox(p1));
+    
+    const renderOptionsBox = (options) => {
+      if (!options || options.length === 0) return '';
+      let html = `<div class="options-box">`;
+      options.forEach(o => {
+        let label = o.id || o.label || o;
+        let text = o.text || o.description || '';
+        html += `<div class="options-box-item"><strong>${label}</strong> ${text}</div>`;
+      });
+      html += `</div>`;
+      return html;
+    };
+
+    // 3. Render Passage (Left Pane)
+    function renderPassage(data) {
+      const container = document.getElementById('passage-pane');
+      let html = `
+        <h1>${data.title}</h1>
+        ${data.subtitle ? `<div class="subtitle">${data.subtitle}</div>` : ''}
+        <div class="meta-info">Word count: ${data.word_count} | Difficulty: ${data.difficulty.charAt(0).toUpperCase() + data.difficulty.slice(1)}</div>
+      `;
+      
+      data.blocks.forEach(block => {
+        if (block.type === 'text') {
+          html += `
+            <div class="paragraph">
+              ${block.label ? `<div class="paragraph-label">${block.label}</div>` : ''}
+              <div class="paragraph-content">${block.content}</div>
+            </div>`;
+        }
+      });
+      container.innerHTML = html;
+    }
+
+    // 4. Render Questions (Right Pane)
+    function renderQuestions(data) {
+      const container = document.getElementById('questions-pane');
+      let html = `<div class="instruction-bar">${data.instruction}</div>`;
+
+      data.questions.forEach(block => {
+        html += `<div class="q-block">`;
+        html += `<h3>Questions ${block.start_question} - ${block.end_question}</h3>`;
+        html += `<div class="q-instructions">${block.instructions}</div>`;
+
+        switch (block.type) {
+          // Types A, G, I
+          case 'matching_headings':
+          case 'matching_features':
+          case 'matching_sentence_endings':
+            html += renderOptionsBox(block.options);
+            block.questions.forEach(q => {
+              let prompt = q.target_paragraph ? `Paragraph <strong>${q.target_paragraph}</strong>` : (q.statement || q.sentence_start);
+              html += `
+                <div class="q-item">
+                  <span class="q-number">${q.question_number}</span>
+                  <input type="text" style="width: 50px; text-align: center;" placeholder="..." autocomplete="off" />
+                  <span>${prompt}</span>
+                </div>`;
+            });
+            break;
+
+          // Type C
+          case 'matching_paragraph_information':
+            html += `<div class="q-instructions"><strong>Options:</strong> ${block.options.join(', ')}</div>`;
+            block.questions.forEach(q => {
+              html += `
+                <div class="q-item">
+                  <span class="q-number">${q.question_number}</span>
+                  <input type="text" style="width: 50px; text-align: center;" placeholder="..." autocomplete="off" />
+                  <span>${q.statement}</span>
+                </div>`;
+            });
+            break;
+
+          // Type B
+          case 'true_false_not_given':
+            html += renderOptionsBox(block.options);
+            block.questions.forEach(q => {
+              html += `
+                <div class="q-item">
+                  <span class="q-number">${q.question_number}</span>
+                  <span>${q.statement}</span>
+                </div>
+                <div class="choice-group">
+                  ${block.options.map(o => `
+                    <label class="choice-label"><input type="radio" name="q${q.question_number}" value="${o.label}"> ${o.label}</label>
+                  `).join('')}
+                </div>`;
+            });
+            break;
+
+          // Types D, E
+          case 'summary_completion':
+          case 'sentence_completion':
+            if (block.options) html += renderOptionsBox(block.options);
+            if (block.summary_title) html += `<h4>${block.summary_title}</h4>`;
+            
+            let textContent = block.summary_text || block.questions.map(q => `
+              <div class="q-item"><span class="q-number">${q.question_number}</span> ${q.sentence}</div>
+            `).join('');
+            
+            html += `<div style="line-height: 2.2;">${replaceBrackets(textContent)}</div>`;
+            break;
+
+          // Types F, H
+          case 'multiple_choice':
+          case 'list_selection':
+            block.questions.forEach(q => {
+              html += `
+                <div class="q-item" style="display:block;">
+                  <div style="margin-bottom: 12px;"><span class="q-number">${q.question_number}</span> ${q.question_text}</div>
+                  <div class="choice-group">
+                    ${q.options.map(opt => `
+                      <label class="choice-label">
+                        <input type="${block.type === 'list_selection' ? 'checkbox' : 'radio'}" name="q${q.question_number}" value="${opt.id}">
+                        <strong>${opt.id}</strong> ${opt.text}
+                      </label>
+                    `).join('')}
+                  </div>
+                </div>`;
+            });
+            break;
+
+          // Type J
+          case 'table_completion':
+            if (block.options) html += renderOptionsBox(block.options);
+            if (block.table_title) html += `<h4>${block.table_title}</h4>`;
+            html += `<table><thead><tr>`;
+            block.headers.forEach(h => html += `<th>${h}</th>`);
+            html += `</tr></thead><tbody>`;
+            block.rows.forEach(row => {
+              html += `<tr>`;
+              row.forEach(cell => html += `<td>${replaceBrackets(cell)}</td>`);
+              html += `</tr>`;
+            });
+            html += `</tbody></table>`;
+            break;
+
+          // Type K
+          case 'flowchart_completion':
+            if (block.options) html += renderOptionsBox(block.options);
+            if (block.flowchart_title) html += `<h4>${block.flowchart_title}</h4>`;
+            html += `<div style="max-width: 450px; margin: 0 auto;">`;
+            block.steps.forEach((step, index) => {
+              html += `<div class="flowchart-step">${replaceBrackets(step)}</div>`;
+              if (index < block.steps.length - 1) {
+                html += `<div class="flowchart-arrow">↓</div>`;
+              }
+            });
+            html += `</div>`;
+            break;
+
+          // Type L
+          case 'diagram_completion':
+            if (block.options) html += renderOptionsBox(block.options);
+            if (block.diagram_title) html += `<h4>${block.diagram_title}</h4>`;
+            html += `
+              <div class="diagram-container">
+                <img src="${block.diagram_url}" alt="${block.diagram_alt_text}">
+                <p style="color: var(--on-surface-variant); font-size: 0.9rem;">(Ensure asset exists at ${block.diagram_url})</p>
+              </div>`;
+            block.questions.forEach(q => {
+              html += `
+                <div class="q-item">
+                  <span class="q-number">${q.question_number}</span>
+                  <input type="text" placeholder="Label..." style="width: 200px;" autocomplete="off" />
+                </div>`;
+            });
+            break;
+
+          // Type M
+          case 'short_answer':
+            block.questions.forEach(q => {
+              html += `
+                <div class="q-item" style="display:block; margin-bottom: 24px;">
+                  <div style="margin-bottom: 12px;"><span class="q-number">${q.question_number}</span> ${q.question_text}</div>
+                  <input type="text" placeholder="Your answer" style="margin-left: 40px; width: 250px;" autocomplete="off" />
+                </div>`;
+            });
+            break;
+        }
+        html += `</div>`;
+      });
+      container.innerHTML = html;
+    }
+
+    // 5. Initialize application
+    document.addEventListener("DOMContentLoaded", () => {
+      loadIELTSData();
+    });
+  </script>
+</body>
+</html>
