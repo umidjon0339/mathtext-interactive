@@ -11,11 +11,11 @@ from telegram.ext import Application, MessageHandler, filters, ContextTypes
 # ==========================================
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-# Using your provided Token and Admin ID
-TOKEN = "8982458138:AAEb7ieSOfCCHAb5DtmdFNtfhmT4JyIWpDI" 
-ADMIN_USER_ID = 1560668553  
+# Fetching from Vercel Environment Variables
+TOKEN = os.getenv("BOT_TOKEN", "8982458138:AAEb7ieSOfCCHAb5DtmdFNtfhmT4JyIWpDI") 
+ADMIN_USER_ID = int(os.getenv("ADMIN_ID", "1560668553"))
 
-# Absolute path for Vercel to reliably find the database
+# Absolute path for Vercel
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_FILE_PATH = os.path.join(BASE_DIR, '..', 'library_books.json')
 
@@ -210,10 +210,14 @@ async def show_books(update: Update, context: ContextTypes.DEFAULT_TYPE, books: 
     book_btns = [b['title'].get(lang, b['title']['en']) for b in filtered_books]
     await update.message.reply_text(get_str('select_book', lang), reply_markup=build_keyboard(book_btns, 1, True, lang), parse_mode="Markdown")
 
+
 # ==========================================
 # 🚦 CORE MESSAGE ROUTER
 # ==========================================
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not update.message or not update.message.text:
+        return
+        
     text = update.message.text
     user_id = update.message.from_user.id
     is_admin = (user_id == ADMIN_USER_ID)
@@ -279,7 +283,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(get_str('welcome', lang), reply_markup=main_menu_keyboard(is_admin, lang))
         return
 
-    # --- 3. BROWSE LIBRARY ---
+    # --- 3. BROWSE LIBRARY (Cascading Menu) ---
     if text == get_str('browse', lang) or (state == 'MAIN_MENU' and text == get_str('browse', lang)):
         await show_lifepaths(update, context, books, lang)
         return
@@ -404,21 +408,19 @@ async def handle_uploads(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ==========================================
 # 🌐 VERCEL WEBHOOK INTEGRATION
 # ==========================================
-# This builds the bot app but does not call run_polling()
+# 1. Build the PTB app
 ptb_app = Application.builder().token(TOKEN).build()
 ptb_app.add_handler(MessageHandler(filters.TEXT, handle_message))
 ptb_app.add_handler(MessageHandler(filters.PHOTO | filters.Document.ALL, handle_uploads))
 
+# 2. Setup the Flask app
 app = Flask(__name__)
 
+# 3. Create a safe wrapper to execute the async code on Vercel
 async def process_update_wrapper(update):
-    """
-    Safely handles the async update per-request so Vercel does not crash
-    from closed event loops.
-    """
     if not ptb_app._initialized:
         await ptb_app.initialize()
-        # Ensure the bot menu commands are set on the first boot
+        # Force set the blue native menu commands on startup
         await ptb_app.bot.set_my_commands([
             BotCommand("start", "Restart the library bot"),
             BotCommand("search", "Find a book by ISBN"),
@@ -426,11 +428,13 @@ async def process_update_wrapper(update):
         ])
     await ptb_app.process_update(update)
 
+# 4. The webhook endpoint that Vercel targets
 @app.route('/api/webhook', methods=['POST'])
 def webhook():
     if request.method == "POST":
         try:
             update = Update.de_json(request.get_json(force=True), ptb_app.bot)
+            # Safely run the async wrapper
             asyncio.run(process_update_wrapper(update))
             return Response('ok', status=200)
         except Exception as e:
